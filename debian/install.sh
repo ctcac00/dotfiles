@@ -23,5 +23,5 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 # restore dotfiles:
 
-cp debian/.zshrc ~/
-cp debian/.p10k.zsh ~/
+cp ~/dotfiles/debian/.zshrc ~/
+cp ~/dotfiles/debian/.p10k.zsh ~/
