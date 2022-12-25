@@ -1,0 +1,12 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/go
+{
+	"name": "Ubuntu",
+	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+	"settings": 
+	{	
+		"dotfiles.repository": "https://github.com/ctcac00/dotfiles.git",
+		"dotfiles.targetPath": "~/dotfiles",
+		"dotfiles.installCommand": "~/dotfiles/debian/install.sh"	
+	}
+}
