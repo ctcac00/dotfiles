@@ -31,8 +31,10 @@ config.use_dead_keys = false
 config.scrollback_lines = 5000
 config.adjust_window_size_when_changing_font_size = false
 
-config.initial_cols = 120
-config.initial_rows = 30
+--config.initial_cols = 120
+--config.initial_rows = 30
+
+config.front_end = "WebGpu"
 
 -- and finally, return the configuration to wezterm
 return config
