@@ -64,7 +64,7 @@ local config = {
   settings = {
     java = {
       -- TODO Replace this with the absolute path to your main java version (JDK 17 or higher)
-      home = "/Users/carloscastro/.jenv/shims/java",
+      home = "/Users/carloscastro/.jenv/versions/17.0.6/bin/java",
       eclipse = {
         downloadSources = true,
       },
@@ -82,12 +82,12 @@ local config = {
             path = "/Users/carloscastro/.jenv/versions/17.0",
           },
           {
-            name = "JavaSE-19",
-            path = "/Users/carloscastro/.jenv/versions/19.0",
-          },
-          {
             name = "JavaSE-20",
             path = "/Users/carloscastro/.jenv/versions/20",
+          },
+          {
+            name = "JavaSE-21",
+            path = "/Users/carloscastro/.jenv/versions/21",
           },
         },
       },
