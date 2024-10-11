@@ -1,4 +1,3 @@
-alacritty: (Alacritty) GPU-accelerated terminal emulator
 brave-browser: (Brave) Web browser focusing on privacy
 dotnet-sdk: (.NET SDK) Developer platform
 font-cascadia-code-nf: (Cascadia Code NF) [no description]
@@ -28,7 +27,6 @@ virtualbox: (Oracle VirtualBox) Virtualiser for x86 hardware
 visual-studio-code: (Microsoft Visual Studio Code, VS Code) Open-source code editor
 vlc: (VLC media player) Multimedia player
 vnc-viewer: (Real VNC Viewer) Remote desktop application focusing on security
-wezterm: (WezTerm) GPU-accelerated cross-platform terminal emulator and multiplexer
 whatsapp: (WhatsApp) Native desktop client for WhatsApp
 zed: (Zed) Multiplayer code editor
 act: Run your GitHub Actions locally
