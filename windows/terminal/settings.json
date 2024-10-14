@@ -1,0 +1,144 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "paste",
+            "id": "User.paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        },
+        {
+            "command": "find",
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "colorScheme": "Night Owl",
+            "cursorShape": "vintage",
+            "font": 
+            {
+                "builtinGlyphs": false,
+                "face": "JetBrainsMono Nerd Font Mono",
+                "size": 12
+            },
+            "opacity": 98
+        },
+        "list": 
+        [
+            {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": true,
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": true,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
+                "hidden": true,
+                "name": "Ubuntu-22.04",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{db07210d-03bc-58df-9458-7279eba14224}",
+                "hidden": true,
+                "name": "Developer Command Prompt for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{d780468c-3bf4-5a40-93f6-21e7555331f0}",
+                "hidden": true,
+                "name": "Developer PowerShell for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+                "hidden": false,
+                "name": "Git Bash",
+                "source": "Git"
+            },
+            {
+                "guid": "{4ff56d04-d9cf-57ea-bae2-ad396374e7e3}",
+                "hidden": false,
+                "name": "Ubuntu 22.04.5 LTS",
+                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#011627",
+            "black": "#011627",
+            "blue": "#82AAFF",
+            "brightBlack": "#575656",
+            "brightBlue": "#82AAFF",
+            "brightCyan": "#7FDBCA",
+            "brightGreen": "#22DA6E",
+            "brightPurple": "#C792EA",
+            "brightRed": "#EF5350",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FFEB95",
+            "cursorColor": "#80A4C2",
+            "cyan": "#21C7A8",
+            "foreground": "#D6DEEB",
+            "green": "#22DA6E",
+            "name": "Night Owl",
+            "purple": "#C792EA",
+            "red": "#EF5350",
+            "selectionBackground": "#1D3B53",
+            "white": "#FFFFFF",
+            "yellow": "#C5E478"
+        }
+    ],
+    "themes": []
+}
