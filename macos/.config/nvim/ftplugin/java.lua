@@ -64,7 +64,7 @@ local config = {
   settings = {
     java = {
       -- TODO Replace this with the absolute path to your main java version (JDK 17 or higher)
-      home = "/Users/carloscastro/.jenv/versions/17.0.6/bin/java",
+      home = "/Users/carloscastro/.asdf/shims/java",
       eclipse = {
         downloadSources = true,
       },
@@ -74,20 +74,16 @@ local config = {
         -- The runtime name parameters need to match specific Java execution environments.  See https://github.com/tamago324/nlsp-settings.nvim/blob/2a52e793d4f293c0e1d61ee5794e3ff62bfbbb5d/schemas/_generated/jdtls.json#L317-L334
         runtimes = {
           {
-            name = "JavaSE-11",
-            path = "/Users/carloscastro/.jenv/versions/11.0",
-          },
-          {
             name = "JavaSE-17",
-            path = "/Users/carloscastro/.jenv/versions/17.0",
+            path = "/Users/carloscastro/.asdf/installs/java/openjdk-17",
           },
           {
-            name = "JavaSE-20",
-            path = "/Users/carloscastro/.jenv/versions/20",
+            name = "JavaSE-19",
+            path = "/Users/carloscastro/.asdf/installs/java/openjdk-19",
           },
           {
             name = "JavaSE-21",
-            path = "/Users/carloscastro/.jenv/versions/21",
+            path = "/Users/carloscastro/.asdf/installs/java/openjdk-21",
           },
         },
       },
