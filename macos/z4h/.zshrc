@@ -70,12 +70,6 @@ source ~/zsh-defer/zsh-defer.plugin.zsh
 # This is just an example that you should delete. It does nothing useful.
 #z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
 #z4h load   ohmyzsh/ohmyzsh/plugins/emoji-clock  # load a plugin
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-zsh-defer eval "$(pyenv init -)"
-
-zsh-defer z4h load ~/.oh-my-zsh/custom/plugins/autoswitch_virtualenv
-zsh-defer z4h source ~/.oh-my-zsh/custom/plugins/autoswitch_virtualenv/autoswitch_virtualenv.plugin.zsh
 
 # Define key bindings.
 z4h bindkey undo Ctrl+/   Shift+Tab  # undo the last command line change
@@ -142,13 +136,32 @@ setopt no_auto_menu  # require an extra TAB press to open the completion menu
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-zsh-defer eval "$(goenv init -)"
-export PATH="$GOROOT/bin:$PATH"
-export PATH="$PATH:$GOPATH/bin"
+. "$HOME/.asdf/asdf.sh"
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
+ 
+zsh-defer z4h load ~/.oh-my-zsh/custom/plugins/autoswitch_virtualenv
+zsh-defer z4h source ~/.oh-my-zsh/custom/plugins/autoswitch_virtualenv/autoswitch_virtualenv.plugin.zsh
 
-export PATH="$HOME/.jenv/bin:$PATH"
-zsh-defer eval "$(jenv init -)"
+# --- setup fzf theme ---
+fg="#CBE0F0"
+bg="#011628"
+bg_highlight="#143652"
+purple="#B388FF"
+blue="#06BCE4"
+cyan="#2CF9ED"
 
-zsh-defer eval "$(nodenv init - zsh)"
+export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
+
+# ----- Bat (better cat) -----
+export BAT_THEME=tokyonight_night
+
+export EDITOR=nvim
+
+# Recursively traverse directories when TAB-completing files.
+zstyle ':z4h:fzf-complete' recurse-dirs yes
+
+zstyle ':z4h:fzf-complete' fzf-bindings tab:repeat
+
