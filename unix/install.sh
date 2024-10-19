@@ -1,10 +1,7 @@
 #!/usr/bin/env sh
 
-sudo apt update -y
-sudo apt install -y curl git zoxide
-
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-source $HOME/.atuin/bin/env
 
 git clone https://github.com/romkatv/zsh-defer.git ~/zsh-defer
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.1
@@ -14,3 +11,7 @@ cd ~/dotfiles/unix
 cp -r .config/. ~/.config
 cp .tmux* ~
 cp -r z4h/. ~
+
+exec zsh
+
+source ~/.atuin/bin/env
