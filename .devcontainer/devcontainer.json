@@ -7,8 +7,7 @@
 		"vscode": {
 			"settings": {
 				"dotfiles.repository": "https://github.com/ctcac00/dotfiles.git",
-				"dotfiles.targetPath": "~/dotfiles",
-				"dotfiles.installCommand": "~/dotfiles/unix/install.sh"
+				"dotfiles.installCommand": "./unix/install.sh"
 			}
 		}
 	}
