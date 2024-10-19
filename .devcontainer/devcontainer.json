@@ -3,10 +3,13 @@
 {
 	"name": "Ubuntu",
 	"image": "mcr.microsoft.com/devcontainers/base:jammy",
-	"settings": 
-	{	
-		"dotfiles.repository": "https://github.com/ctcac00/dotfiles.git",
-		"dotfiles.targetPath": "~/dotfiles",
-		"dotfiles.installCommand": "~/dotfiles/debian/install.sh"	
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"dotfiles.repository": "https://github.com/ctcac00/dotfiles.git",
+				"dotfiles.targetPath": "~/dotfiles",
+				"dotfiles.installCommand": "~/dotfiles/unix/install.sh"
+			}
+		}
 	}
 }
