@@ -1,9 +1,10 @@
 #!/usr/bin/env sh
 
-apt update
-apt install curl git zoxide
+sudo apt update
+sudo apt install curl git zoxide
 
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+source $HOME/.atuin/bin/env
 
 git clone https://github.com/romkatv/zsh-defer.git ~/zsh-defer
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.1
