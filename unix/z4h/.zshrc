@@ -135,11 +135,15 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux aliases
     alias cat='batcat'
+    # Neovim path
+    export PATH="$PATH:/opt/nvim-linux64/bin"
 fi
 
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
+
+source $HOME/.atuin/bin/env
 
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
@@ -172,4 +176,3 @@ export EDITOR=nvim
 zstyle ':z4h:fzf-complete' recurse-dirs yes
 
 zstyle ':z4h:fzf-complete' fzf-bindings tab:repeat
-
