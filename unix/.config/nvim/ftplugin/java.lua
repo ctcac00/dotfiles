@@ -75,15 +75,15 @@ local config = {
         runtimes = {
           {
             name = "JavaSE-17",
-            path = "/Users/carloscastro/.asdf/installs/java/openjdk-17",
+            path = home .. "/.asdf/installs/java/openjdk-17",
           },
           {
             name = "JavaSE-19",
-            path = "/Users/carloscastro/.asdf/installs/java/openjdk-19",
+            path = home .. "/.asdf/installs/java/openjdk-19",
           },
           {
             name = "JavaSE-21",
-            path = "/Users/carloscastro/.asdf/installs/java/openjdk-21",
+            path = home .. "/.asdf/installs/java/openjdk-21",
           },
         },
       },
