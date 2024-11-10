@@ -80,16 +80,6 @@ z4h bindkey z4h-cd-forward Shift+Right  # cd into the next directory
 z4h bindkey z4h-cd-up      Shift+Up     # cd into the parent directory
 z4h bindkey z4h-cd-down    Shift+Down   # cd into a child directory
 
-# Autoload functions.
-autoload -Uz zmv
-
-# Define functions and completions.
-function md() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
-compdef _directories md
-
-# Define named directories: ~w <=> Windows home directory on WSL.
-[[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
-
 # Define aliases.
 alias tree='tree -a -I .git'
 alias python=python3
@@ -101,7 +91,6 @@ alias cd=z
 alias tf='terraform'
 alias tfa='terraform apply'
 alias tfaa='terraform apply -auto-approve'
-alias tfc='terraform console'
 alias tfd='terraform destroy'
 alias 'tfd!'='terraform destroy -auto-approve'
 alias tff='terraform fmt'
@@ -110,9 +99,7 @@ alias tfi='terraform init'
 alias tfiu='terraform init -upgrade'
 alias tfo='terraform output'
 alias tfp='terraform plan'
-alias tfv='terraform validate'
 alias tfs='terraform state'
-alias tft='terraform test'
 alias tfsh='terraform show'
 alias g='git'
 alias ga='git add'
@@ -126,7 +113,6 @@ alias gd='git diff'
 alias gm='git merge'
 alias gl='git pull'
 alias gp='git push'
-alias gd='git diff'
 alias gst='git status'
 alias c='clear'
 
@@ -175,7 +161,3 @@ export EDITOR=nvim
 
 # Recursively traverse directories when TAB-completing files.
 zstyle ':z4h:fzf-complete' fzf-bindings tab:repeat
-
-# Move prompt to the bottom when zsh starts and on Ctrl+L.
-zstyle ':z4h:' prompt-at-bottom 'false'
-
