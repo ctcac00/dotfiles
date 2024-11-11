@@ -141,8 +141,8 @@ fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
  
-zsh-defer z4h load ~/.oh-my-zsh/custom/plugins/autoswitch_virtualenv
-zsh-defer z4h source ~/.oh-my-zsh/custom/plugins/autoswitch_virtualenv/autoswitch_virtualenv.plugin.zsh
+zsh-defer z4h load ~/autoswitch_virtualenv
+zsh-defer z4h source ~/autoswitch_virtualenv/autoswitch_virtualenv.plugin.zsh
 
 # --- setup fzf theme ---
 fg="#CBE0F0"
