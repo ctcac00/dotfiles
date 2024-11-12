@@ -86,7 +86,7 @@
 
     },
     "gapSize" : {
-      "float" : 10
+      "float" : 5
     },
     "hapticFeedbackOnSnap" : {
       "int" : 1
@@ -238,10 +238,6 @@
   },
   "shortcuts" : {
     "almostMaximize" : {
-      "keyCode" : 36,
-      "modifierFlags" : 786432
-    },
-    "bottomHalf" : {
       "keyCode" : 125,
       "modifierFlags" : 786432
     },
@@ -285,6 +281,10 @@
       "keyCode" : 123,
       "modifierFlags" : 786432
     },
+    "maximize" : {
+      "keyCode" : 126,
+      "modifierFlags" : 786432
+    },
     "maximizeHeight" : {
       "keyCode" : 126,
       "modifierFlags" : 917504
@@ -315,10 +315,6 @@
     },
     "toggleTodo" : {
       "keyCode" : 11,
-      "modifierFlags" : 786432
-    },
-    "topHalf" : {
-      "keyCode" : 126,
       "modifierFlags" : 786432
     },
     "topLeft" : {
