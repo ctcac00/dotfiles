@@ -8,10 +8,7 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.1
 
 cd ~/dotfiles/unix
 
-cp -r .config/. ~/.config
-cp .tmux* ~
-cp -r z4h/. ~
+cp -r .config ~
+cp .* ~
 
 exec zsh
-
-source ~/.atuin/bin/env
