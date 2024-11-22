@@ -161,3 +161,5 @@ export EDITOR=nvim
 
 # Recursively traverse directories when TAB-completing files.
 zstyle ':z4h:fzf-complete' fzf-bindings tab:repeat
+
+export DOTNET_ROOT=$(echo $HOME/.asdf/installs/dotnet/8.0.404)
