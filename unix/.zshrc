@@ -115,6 +115,7 @@ alias gl='git pull'
 alias gp='git push'
 alias gst='git status'
 alias c='clear'
+alias diff='diff --color=always'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS aliases
