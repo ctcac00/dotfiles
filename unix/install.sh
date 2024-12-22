@@ -69,7 +69,6 @@ asdf install python 3.13.1
 asdf install golang 1.23.4
 asdf install rust 1.83.0
 
-cp -r .config ~
-cp .* ~
+cp -r .* ~
 
 exec zsh
