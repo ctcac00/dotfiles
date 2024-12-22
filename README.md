@@ -1,20 +1,6 @@
 # Linux Dev env setup
 
-## install vim-awesome
-
-```bash
-sudo apt install -y vim
-git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-sh ~/.vim_runtime/install_awesome_vimrc.sh
-```
-
-## Install tmux
-
-```bash
-sudo apt install tmux
-```
-
-## Restore dotfiles
+## Install tools and dotfiles
 
 ```bash
 cd unix
