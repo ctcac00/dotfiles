@@ -124,7 +124,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux aliases
     alias cat='batcat'
     # Neovim path
-    export PATH="$PATH:/opt/nvim-linux64/bin"
+    export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 fi
 
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
