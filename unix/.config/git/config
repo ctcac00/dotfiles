@@ -1,0 +1,147 @@
+; This is your global Git configuration file.
+; You can find more information about Git configuration at:
+; https://git-scm.com/docs/git-config
+
+; [user]
+; This section defines your identity.
+; It's crucial for committing changes.
+; Replace "Your Name" and "your.email@example.com" with your actual details.
+[user]
+    name = Carlos Castro
+    email = carloscastro7@gmail.com 
+    ; If you use GPG for signing commits, uncomment and set your signing key:
+    ; signingkey = YOUR_GPG_KEY_ID
+
+; [core]
+; Core Git settings.
+[core]
+    ; Sets your preferred text editor for commit messages, rebase operations, etc.
+    ; Common options: "nano", "vim", "code --wait", "subl --wait", "notepad.exe"
+    editor = vim
+
+    ; Disables the "C-style block comments" warning for commit messages.
+    ; This is often desired as many people start commit messages with "#" for comments.
+    commentchar = auto
+
+[help]
+    ; Set to true if you want Git to automatically correct typos in commands.
+    ; A value of "auto" will prompt you before correcting.
+    autocorrect = auto
+
+; [color]
+; Configure Git's output colors.
+[color]
+    ; Automatically color Git output if stdout is a terminal.
+    ui = auto
+
+    ; Specific coloring for various Git commands.
+    ; Set to "always", "auto", or "never"
+    ; branch = auto
+    ; diff = auto
+    ; status = auto
+    ; interactive = auto
+    ; ui = auto
+
+; [alias]
+; Define shortcuts for common Git commands.
+; These make your command line experience much faster.
+[alias]
+    ; Shows a concise log with graph, ideal for quick history checks.
+    lg = log --oneline --graph --decorate --all
+
+    ; Shows the status of your working directory.
+    st = status
+
+    ; Adds all untracked and modified files to the staging area.
+    ; Use `git add .` for current directory or `git add <file>` for specific file.
+    ; all = add -A
+
+    ; Commits staged changes with a message.
+    ; ci = commit
+
+    ; Commits all tracked changes in one go (skips staging for modified files).
+    ; NOT recommended for new users, as it bypasses the staging area.
+    ; ca = commit -a
+
+    ; Amends the last commit, useful for fixing commit messages or adding forgotten files.
+    ; Requires an editor.
+    amend = commit --amend --no-edit
+
+    ; Checks out a branch (or files).
+    co = checkout
+
+    ; Creates and checks out a new branch.
+    cob = checkout -b
+
+    ; Pushes changes to the upstream remote branch.
+    ; Set upstream (-u) for the first push.
+    ; push = push -u origin HEAD
+
+    ; Pulls changes from the upstream remote branch.
+    pl = pull
+
+    ; Shows the difference of unstaged changes.
+    df = diff
+
+    ; Shows the difference of staged changes.
+    ds = diff --staged
+
+    ; Shows all local and remote branches.
+    br = branch -va
+
+    ; Deletes a local branch (force delete with -D).
+    ; brd = branch -d
+
+    ; Shows all remote repositories.
+    remotes = remote -v
+
+    ; Cleans up local branches that no longer exist on the remote.
+    ; prune = remote prune origin
+
+    ; Resets the current branch to a specified commit.
+    ; Use with caution! Default is --soft. --hard will discard local changes.
+    ; undo = reset HEAD~1
+    ; undo-hard = reset --hard HEAD~1
+
+    ; Stashes changes (saves them for later).
+    stash-save = stash push -m
+
+    ; Applies the latest stash.
+    stash-apply = stash pop
+
+; [init]
+; Settings related to git init.
+ [init]
+     defaultBranch = main ; Already defined in [core]
+
+; [url]
+; URL rewriting rules. Useful for using specific protocols or proxies.
+; [url "git@github.com:"]
+;    insteadOf = "https://github.com/"
+
+; [credential]
+; Credential helper configuration.
+; Helper options: store, cache, wincred (Windows), osxkeychain (macOS)
+; [credential]
+;    helper = store ; Stores credentials indefinitely (less secure for public machines)
+;    helper = cache --timeout=3600 ; Caches credentials for 1 hour
+
+; [push]
+; Default behavior for git push.
+; Options: current, upstream, simple, matching, nothing
+ [push]
+;    default = simple
+    autoSetupRemote = true ; Automatically sets upstream for new branches
+
+; [pull]
+; Default behavior for git pull.
+; [pull]
+;    rebase = false ; Set to true to rebase instead of merge on pull. Useful for clean history.
+;    ff = only ; Only fast-forward merges, otherwise fail (no merge commit).
+
+; [includeIf "gitdir:~/work/"]
+; Conditional includes based on the repository path.
+; This allows you to have different configurations for work and personal projects.
+; For example, a different user.email or GPG key for work repos.
+; Path must end with a slash.
+; path = ~/work/.gitconfig-work
