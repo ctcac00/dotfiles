@@ -12,6 +12,9 @@ return {
       temperature = 0,
       max_tokens = 4096,
     },
+    selector = {
+      provider = "snacks",
+    },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",
@@ -23,7 +26,6 @@ return {
     "MunifTanjim/nui.nvim",
     --- The below dependencies are optional,
     "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-    "ibhagwan/fzf-lua", -- for file_selector provider fzf
     "echasnovski/mini.icons", -- or echasnovski/mini.icons
     {
       -- support for image pasting
