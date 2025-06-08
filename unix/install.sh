@@ -4,8 +4,9 @@ if [ -f /etc/os-release ]; then
   . /etc/os-release
   if [ "$ID" = "ubuntu" ]; then
     echo "Running Ubuntu"
+    sudo apt update
     sudo mkdir -p /etc/apt/keyrings
-    sudo apt install -y vim git curl zsh tmux wget gpg
+    sudo apt install -y vim git curl zsh tmux wget gpg ripgrep fd-find fzf
     wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
     echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
     sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
@@ -13,7 +14,8 @@ if [ -f /etc/os-release ]; then
     sudo apt install -y eza bat
   elif [ "$ID" = "arch" ]; then
     echo "Running Arch Linux"
-    sudo pacman -Syu vim git curl zsh tmux wget gnupg eza bat
+    sudo pacman -Syu
+    sudo pacman -Syu vim git curl zsh tmux wget gnupg eza bat ripgrep fd-find fzf
   else
     echo "Unknown Linux distribution"
   fi
@@ -69,6 +71,11 @@ asdf install nodejs 22.12.0
 asdf install python 3.13.1
 asdf install golang 1.23.4
 asdf install rust 1.83.0
+
+asdf global nodejs 22.12.0
+asdf global python 3.13.1
+asdf global golang 1.23.4
+asdf global rust 1.83.0
 
 cp -r .config ~
 cp .p10k.zsh ~
