@@ -6,6 +6,10 @@
 
 # Periodic auto-update on Zsh startup: 'ask' or 'no'.
 # You can manually run `z4h update` to update everything.
+if [ -n "${ZSH_DEBUGRC+1}" ]; then
+    zmodload zsh/zprof
+fi
+
 zstyle ':z4h:' auto-update      'no'
 # Ask whether to auto-update this often; has no effect if auto-update is 'no'.
 zstyle ':z4h:' auto-update-days '28'
@@ -81,7 +85,7 @@ z4h bindkey z4h-cd-up      Shift+Up     # cd into the parent directory
 z4h bindkey z4h-cd-down    Shift+Down   # cd into a child directory
 
 # Define aliases.
-alias tree='tree -a -I .git'
+alias tree='eza --tree'
 alias python=python3
 alias ls='eza --icons=auto'
 alias l='ls -lh'     #size,show type,human readable
@@ -116,7 +120,16 @@ alias gp='git push'
 alias gst='git status'
 alias c='clear'
 alias diff='diff --color=always'
-alias cat='bat'
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS aliases
+    alias cat='bat'
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # Linux aliases
+    alias cat='batcat'
+    # Neovim path
+    export PATH="$PATH:/opt/nvim-linux64/bin"
+fi
 
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
 setopt glob_dots     # no special treatment for file names with a leading dot
@@ -155,3 +168,7 @@ export EDITOR=nvim
 zstyle ':z4h:fzf-complete' fzf-bindings tab:repeat
 
 export DOTNET_ROOT=$(echo $HOME/.asdf/installs/dotnet/8.0.404)
+
+if [ -n "${ZSH_DEBUGRC+1}" ]; then
+    zprof
+fi
