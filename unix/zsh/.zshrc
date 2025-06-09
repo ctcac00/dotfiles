@@ -116,16 +116,7 @@ alias gp='git push'
 alias gst='git status'
 alias c='clear'
 alias diff='diff --color=always'
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    # macOS aliases
-    alias cat='bat'
-elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    # Linux aliases
-    alias cat='batcat'
-    # Neovim path
-    export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-fi
+alias cat='bat'
 
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
 setopt glob_dots     # no special treatment for file names with a leading dot

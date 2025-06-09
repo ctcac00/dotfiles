@@ -77,9 +77,18 @@ asdf global python 3.13.1
 asdf global golang 1.23.4
 asdf global rust 1.83.0
 
-cp -r .config ~
-cp .p10k.zsh ~
-cp .zshrc ~
-cp .zshenv ~
+expected_dir="unix"
+
+# Get the current directory's base name.
+current_dir=$(basename "$PWD")
+
+# Check if the current directory matches the expected directory.
+if [[ "$current_dir" != "$expected_dir" ]]; then
+    echo "Error: This script must be run from the '$expected_dir' directory (current: '$current_dir')." >&2
+    exit 1
+fi
+
+stow --adopt -t "$HOME"/.config .config
+stow --adopt -t "$HOME" zsh
 
 exec zsh
