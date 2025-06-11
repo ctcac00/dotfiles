@@ -6,11 +6,11 @@ return {
     -- add any opts here
     -- for example
     provider = "gemini", -- Recommend using Claude
-    gemini = {
-      -- @see https://ai.google.dev/gemini-api/docs/models/gemini
-      model = "gemini-2.5-flash-preview-05-20",
-      temperature = 0,
-      max_tokens = 4096,
+    providers = {
+      gemini = {
+        -- @see https://ai.google.dev/gemini-api/docs/models/gemini
+        model = "gemini-2.5-flash-preview-05-20",
+      },
     },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
@@ -22,5 +22,5 @@ return {
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
   },
-  enabled = false,
+  enabled = true,
 }
