@@ -19,19 +19,19 @@ return {
         -- NOTE: Keymaps
         keys = {
             { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
-            { "<leader>/", LazyVim.pick("grep"), desc = "Grep (Root Dir)" },
+            { "<leader>/", LazyVim.pick("grep", { root = false }), desc = "Grep (cwd)" },
             { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
-            { "<leader><space>", LazyVim.pick("files"), desc = "Find Files (Root Dir)" },
+            { "<leader><space>", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
             { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
             -- find
             { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
             { "<leader>fB", function() Snacks.picker.buffers({ hidden = true, nofile = true }) end, desc = "Buffers (all)" },
             { "<leader>fc", LazyVim.pick.config_files(), desc = "Find Config File" },
-            { "<leader>ff", LazyVim.pick("files"), desc = "Find Files (Root Dir)" },
-            { "<leader>fF", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
+            -- { "<leader>ff", LazyVim.pick("files"), desc = "Find Files (Root Dir)" },
+            { "<leader>ff", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
             { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Files (git-files)" },
-            { "<leader>fr", LazyVim.pick("oldfiles"), desc = "Recent" },
-            { "<leader>fR", function() Snacks.picker.recent({ filter = { cwd = true }}) end, desc = "Recent (cwd)" },
+            -- { "<leader>fr", LazyVim.pick("oldfiles"), desc = "Recent" },
+            { "<leader>fr", function() Snacks.picker.recent({ filter = { cwd = true }}) end, desc = "Recent (cwd)" },
             { "<leader>fp", function() Snacks.picker.projects({ layout = "default" }) end, desc = "Projects" },
             -- git
             { "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Git Diff (hunks)" },
@@ -40,8 +40,8 @@ return {
             -- Grep
             { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
             { "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
-            { "<leader>sg", LazyVim.pick("live_grep"), desc = "Grep (Root Dir)" },
-            { "<leader>sG", LazyVim.pick("live_grep", { root = false }), desc = "Grep (cwd)" },
+            -- { "<leader>sg", LazyVim.pick("live_grep"), desc = "Grep (Root Dir)" },
+            { "<leader>sg", LazyVim.pick("live_grep", { root = false }), desc = "Grep (cwd)" },
             { "<leader>sp", function() Snacks.picker.lazy() end, desc = "Search for Plugin Spec" },
             { "<leader>sw", LazyVim.pick("grep_word"), desc = "Visual selection or word (Root Dir)", mode = { "n", "x" } },
             { "<leader>sW", LazyVim.pick("grep_word", { root = false }), desc = "Visual selection or word (cwd)", mode = { "n", "x" } },
