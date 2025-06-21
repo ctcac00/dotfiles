@@ -2,26 +2,25 @@
 */
 
 /* Define colors */ /* {{{ */
-/* @define-color background  rgba(21, 21, 32, 0.75); */
-@define-color background  #151520;
-@define-color warning     #f38ba8;
-@define-color caution     #45475a;
-@define-color performance #f5c2e7;
-@define-color audio       #cba6f7;
-@define-color misc        #94e2d5;
-@define-color date        #a6e3a1;
-@define-color work        #b4befe;
-@define-color window      #b4befe;
-@define-color resize      #eba0ac;
-@define-color process     #89b4fa;
+/* Previously, background was #151520 – now set to Night Owl’s deep navy,
+   and the accent colors have been brightened */
+@define-color background  rgba(1,22,39, 0.9);
+@define-color warning     #ff5370;  /* Bright red (error/critical) */
+@define-color caution     #ffcb6b;  /* Vivid yellow (alerts) */
+@define-color performance #82aaff;  /* Night Owl blue for CPU, network, etc. */
+@define-color audio       #c792ea;  /* Signature purple for audio */
+@define-color misc        #c3e88d;  /* Bright green for battery, language, etc. */
+@define-color date        #7efcff;  /* A bright cyan twist for date modules */
+@define-color work        #a3d1ff;  /* Light blue for workspaces */
+@define-color window      #a3d1ff;  /* Light blue for window modules */
+@define-color resize      #ff9f68;  /* A bright coral/orange for resize hints */
+@define-color process     #8ec6ff;  /* A soft, bright blue for processing states */
 /* }}} */
 
 /* Reset all styles */ /* {{{ */
 * {
-  background: @background;
-  opacity: 0.95;
   border: none;
-  border-radius: 10;
+  border-radius: 10px;
   min-height: 0;
   margin: 0;
   padding: 0;
@@ -30,7 +29,7 @@
 } /* }}} */
 
 /* Main bar keyframes */ /* {{{ */
-/* Keyframes for main bar criticals */
+/* Keyframes for main bar critical texts */
 @keyframes blink-critical-text {
   to {
     color: @warning;
@@ -46,15 +45,15 @@
 
 /* Main bar defaults */ /* {{{ */
 #waybar.main {
-  background: transparent;
+  background: @background;
   font-family: "JetBrains Mono Nerd Font";
-  font-size: 11pt;
+  font-size: 12pt;
   font-weight: 500;
 }
 
 #waybar.main button {
   font-family: JetBrains Mono Nerd Font;
-  font-size: 11pt;
+  font-size: 12pt;
   font-weight: 500;
   transition: all 0.15s ease-in-out;
 } /* }}} */
@@ -83,7 +82,6 @@
   padding-right: 8pt;
   padding-bottom: 4px;
   padding-top: 4px;
-  background: transparent;
 }
 
 #waybar.main #tray {
@@ -131,7 +129,6 @@
   padding-right: 10px;
   padding-left: 10px;
   color: @caution;
-  background: transparent;
 }
 
 #waybar.main #network.info.wifi.normal,
@@ -194,7 +191,7 @@
   color: @warning;
 } /* }}} */
 
-/* Battery chargin */ /* {{{ */
+/* Battery charging */ /* {{{ */
 #waybar.main #custom-battery.charging {
   color: @misc;
   animation-iteration-count: infinite;
@@ -207,9 +204,9 @@
 /* Workspace */ /* {{{ */
 /* Default workspace settings */
 #waybar.main #workspaces button {
+  font-size: 11pt;
   color: @caution;
-  background: transparent;
-  border: 1.5px solid transparent;
+  border: 1.5px solid @background;
   padding-left: 2pt;
   padding-right: 2pt;
   border-radius: 16px;
@@ -236,9 +233,9 @@
   color: @window;
 }
 
-/* Special workplace animation */
+/* Special workspace animation */
 #waybar.main #workspaces button.special.active {
-  border: 1.5px solid transparent;
+  border: 1.5px solid @background;
   color: @window;
   transition: all 0s ease;
   animation-iteration-count: infinite;
@@ -252,20 +249,18 @@
 #waybar.main #custom-spacer1,
 #waybar.main #custom-spacer2,
 #waybar.main #custom-spacer3 {
-  font-size: 11pt;
+  font-size: 12pt;
   font-weight: bold;
   color: @caution;
-  background: transparent;
 }
 /* }}} */
 
 /* Custom tray icon */ /* {{{ */
 #waybar.main #custom-trayicon {
-  font-size: 11pt;
+  font-size: 12pt;
   font-weight: bold;
   font-style: italic;
   color: @process;
-  background: transparent;
   padding-right: 6pt;
   padding-left: 2pt;
 }
@@ -273,7 +268,6 @@
 
 /* Tooltip */ /* {{{ */
 tooltip {
-  background: @background;
   border: 3px solid @caution;
   border-radius: 8px;
   font-weight: 500;
@@ -281,7 +275,6 @@ tooltip {
 }
 
 #waybar.main #tray menu {
-  background: @background;
   border: 3px solid @caution;
   border-radius: 8px;
 } /* }}} */
@@ -317,20 +310,18 @@ tooltip {
   }
 } /* }}} */
 
-/* indicator bar battery module */ /* {{{ */
+/* Indicator bar battery module */ /* {{{ */
 
 /* Set defaults for indicator bar */
 #waybar.indicator {
   font-size: 27px;
   /* This makes indicator thicker */
   color: rgba(0, 0, 0, 0);
-  background: rgba(0, 0, 0, 0);
 }
 
 /* Set "battery bar" style */
 #waybar.indicator #custom-batteryindicator {
   border: 2.5px solid @caution;
-  background: @background;
   border-radius: 8pt;
   padding-left: 2237.5px;
   /* Use this for padding:  */
@@ -347,7 +338,7 @@ tooltip {
   animation-timing-function: steps(15);
 }
 
-/* Blink red twice when battry is low battery */
+/* Blink red twice when battery is low battery */
 #waybar.indicator #custom-batteryindicator.warning {
   animation-iteration-count: 4;
   animation-direction: alternate;
@@ -384,7 +375,7 @@ tooltip {
 } 
 
 #custom-arch {
-  font-size: 13pt;
+  font-size: 15pt;
   color: #d6deeb;
   padding: 0 10px;
 }
