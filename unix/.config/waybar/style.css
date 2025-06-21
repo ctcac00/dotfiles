@@ -13,6 +13,7 @@
 */
 window#waybar {
   background: @shadow;
+  opacity: 0.85
 }
 
 /* ───────────────────────────────────────────────────────────┤ background ├───
