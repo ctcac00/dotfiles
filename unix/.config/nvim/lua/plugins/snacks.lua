@@ -27,10 +27,10 @@ return {
             { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
             { "<leader>fB", function() Snacks.picker.buffers({ hidden = true, nofile = true }) end, desc = "Buffers (all)" },
             { "<leader>fc", LazyVim.pick.config_files(), desc = "Find Config File" },
-            -- { "<leader>ff", LazyVim.pick("files"), desc = "Find Files (Root Dir)" },
+            { "<leader>fF", LazyVim.pick("files"), desc = "Find Files (Root Dir)" },
             { "<leader>ff", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
             { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Files (git-files)" },
-            -- { "<leader>fr", LazyVim.pick("oldfiles"), desc = "Recent" },
+            { "<leader>fR", LazyVim.pick("oldfiles"), desc = "Recent" },
             { "<leader>fr", function() Snacks.picker.recent({ filter = { cwd = true }}) end, desc = "Recent (cwd)" },
             { "<leader>fp", function() Snacks.picker.projects({ layout = "default" }) end, desc = "Projects" },
             -- git
@@ -40,7 +40,7 @@ return {
             -- Grep
             { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
             { "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
-            -- { "<leader>sg", LazyVim.pick("live_grep"), desc = "Grep (Root Dir)" },
+            { "<leader>sG", LazyVim.pick("live_grep"), desc = "Grep (Root Dir)" },
             { "<leader>sg", LazyVim.pick("live_grep", { root = false }), desc = "Grep (cwd)" },
             { "<leader>sp", function() Snacks.picker.lazy() end, desc = "Search for Plugin Spec" },
             { "<leader>sw", LazyVim.pick("grep_word"), desc = "Visual selection or word (Root Dir)", mode = { "n", "x" } },
