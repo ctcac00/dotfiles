@@ -120,27 +120,15 @@ alias gp='git push'
 alias gst='git status'
 alias c='clear'
 alias diff='diff --color=always'
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    # macOS aliases
-    alias cat='bat'
-elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    # Linux aliases
-    alias cat='batcat'
-    # Neovim path
-    export PATH="$PATH:/opt/nvim-linux64/bin"
-fi
+alias cat='bat'
 
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
-source $HOME/.atuin/bin/env
-
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 
-. "$HOME/.asdf/asdf.sh"
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit

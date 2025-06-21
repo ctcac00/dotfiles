@@ -20,6 +20,10 @@
       "hyprland/window"
     ],
 
+    "modules-center": [
+      "custom/arch"
+    ],
+
     "modules-right": [
       "custom/spacer1",
       "cpu",
@@ -305,6 +309,14 @@
       "format": "",
       "tooltip": false,
       "on-click": "aplay /home/jan-aarela/.config/sounds/pacman.wav> /dev/null 2>/dev/null & kitty --title Pacman fish -c '~/.config/fish/Pacman.sh & sudo pacman -Syu'"
+    },
+
+    "custom/arch": {
+      "exec": "echo ''",
+      "interval": 3600,
+      "format": "{}",
+      "tooltip": "Arch Linux",
+      "on-click": "xdg-open https://archlinux.org"
     }
   }
 ]

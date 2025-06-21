@@ -381,4 +381,13 @@ tooltip {
   animation-name: blink-full-battery;
   animation-duration: 0.2s;
   animation-timing-function: steps(15);
-} /* }}} */
+} 
+
+#custom-arch {
+  font-family: "JetBrains Mono Nerd Font";
+  font-size: 24px;
+  color: #d6deeb;
+  padding: 0 10px;
+}
+
+/* }}} */
