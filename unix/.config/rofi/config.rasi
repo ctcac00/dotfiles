@@ -12,23 +12,26 @@ configuration{
     modi: "run,drun,window";
     icon-theme: "Oranchelo";
     show-icons: true;
-    terminal: "Alacritty";
+    terminal: "kitty";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
     display-drun: "   Apps ";
     display-run: "   Run ";
-    display-window: " 﩯  Window";
+    display-window: "  Window";
     display-Network: " 󰤨  Network";
     sidebar-mode: true;
 }
 
+* {
+    font: "MapleMono NF 12";
+}
 
 window {
     height: 50%;
-    weight: 30%;
-    border: 2px;
+    width: 30%;
+    border: 1px;
     border-radius: 8px;
     border-color: @accent;
     background-color: @bg;
