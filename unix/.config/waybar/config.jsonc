@@ -1,6 +1,5 @@
 [
   {
-    // MAIN BAR //
     "layer": "top",
     "position": "top",
     "name": "main",
@@ -20,12 +19,8 @@
       "hyprland/window"
     ],
 
-    "modules-center": [
-      "custom/arch"
-    ],
-
     "modules-right": [
-      "custom/spacer1",
+      // "custom/spacer1",
       "cpu",
       "temperature",
       // "custom/nvidia",
@@ -37,13 +32,16 @@
       "custom/spacer1",
       "pulseaudio#input",
       "pulseaudio#output",
+      // "custom/spacer1",
+      // "hyprland/language",
       "custom/spacer1",
-      "hyprland/language",
-      "backlight",
+      "keyboard-state",
+      // "backlight",
       // "custom/battery",
       "custom/spacer1",
       // "custom/weather",
-      "clock"
+      "clock",
+      "custom/power"
     ],
 
     // Modules
@@ -52,7 +50,6 @@
       "format": " {percentage_used}%",
       "tooltip": "{}",
       "tooltip-format": "Free {free}",
-      // "on-click": "qdirstat & aplay ~/.config/sounds/interact.wav",
       "states": {
         "warning": 85,
         "critical": 95
@@ -75,7 +72,7 @@
         "children-class": "drawer-child"
         //"click-to-reveal": "false"
       },
-      "modules": ["custom/trayicon", "tray"]
+      "modules": ["custom/arch", "tray"]
     },
 
     "group/storage": {
@@ -96,25 +93,24 @@
       "scroll-step": 5
     },
 
-    "custom/nvidia": {
-      "interval": 4,
-      "return-type": "json",
-      "exec": "~/.config/hypr/themes/Mocha/nvidia.sh",
-      "format": "<span size='x-large' rise='-2500'>󰢮</span>{text}",
-      "tooltip": "true",
-      "tooltip-format": "{alt}"
-    },
+    // "custom/nvidia": {
+    //   "interval": 4,
+    //   "return-type": "json",
+    //   "exec": "~/.config/hypr/themes/Mocha/nvidia.sh",
+    //   "format": "<span size='x-large' rise='-2500'>󰢮</span>{text}",
+    //   "tooltip": "true",
+    //   "tooltip-format": "{alt}"
+    // },
 
-    "custom/battery": {
-      "interval": 4,
-      "return-type": "json",
-      "exec": "~/.config/hypr/themes/Mocha/bat-pp.sh refresh",
-      "exec-on-event": true,
-      "format": "{text}%",
-      "on-click": "~/.config/hypr/themes/Mocha/bat-pp.sh toggle & aplay ~/.config/sounds/interact.wav",
-      "tooltip": "true",
-      "tooltip-format": "{alt}W"
-    },
+    // "custom/battery": {
+    //   "interval": 4,
+    //   "return-type": "json",
+    //   "exec": "~/.config/hypr/themes/Mocha/bat-pp.sh refresh",
+    //   "exec-on-event": true,
+    //   "format": "{text}%",
+    //   "tooltip": "true",
+    //   "tooltip-format": "{alt}W"
+    // },
 
     "clock": {
       "interval": 1,
@@ -133,7 +129,7 @@
           "today": "<span color='#f5e0dc'><b><u>{}</u></b></span>"
         }
       },
-      "on-click": "chromium --app=https://calendar.google.com & aplay ~/.config/sounds/interact.wav"
+      "on-click": "brave --app=https://calendar.google.com"
     },
 
     "cpu": {
@@ -150,7 +146,7 @@
       "format-fi": "Vittu",
       "format-ru": "Блять",
       "min-length": 7,
-      "on-click": "hyprctl switchxkblayout current next & aplay ~/.config/sounds/interact.wav",
+      "on-click": "hyprctl switchxkblayout current next",
       "tooltip": false,
       "class": "language"
     },
@@ -182,7 +178,6 @@
       "tooltip": "{}",
       "tooltip-format-wifi": "{ifname}\n{essid}\n{signalStrength}% \n{frequency} GHz\n󰇚 {bandwidthDownBits}\n󰕒 {bandwidthUpBits}",
       "tooltip-format-ethernet": "{ifname}\n󰇚 {bandwidthDownBits} \n󰕒 {bandwidthUpBits}",
-      "on-click": "iwgtk& aplay ~/.config/sounds/interact.wav",
       "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨"],
       "states": {
         "normal": 25
@@ -257,7 +252,7 @@
         "default": ["", ""]
       },
       "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-      "on-click": "pwvucontrol & aplay ~/.config/sounds/interact.wav",
+      "on-click": "pwvucontrol",
       "tooltip": true,
       "scroll-step": 5
     },
@@ -270,7 +265,7 @@
       "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
       "max-volume": "100",
       "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-      "on-click": "pwvucontrol & aplay ~/.config/sounds/interact.wav",
+      "on-click": "pwvucontrol",
       "tooltip-format": "{source_desc}"
     },
 
@@ -302,21 +297,28 @@
       "tooltip": false
     },
 
-    "custom/trayicon": {
-      // "format": "",
-      // "format": "Zäni",
-      // "format": "󰣇",
-      "format": "",
-      "tooltip": false,
-      "on-click": "aplay /home/jan-aarela/.config/sounds/pacman.wav> /dev/null 2>/dev/null & kitty --title Pacman fish -c '~/.config/fish/Pacman.sh & sudo pacman -Syu'"
+    "custom/arch": {
+      "format": "󰣇",
+      "tooltip": "Arch Linux",
+      "on-click": "rofi -show drun"
     },
 
-    "custom/arch": {
-      "exec": "echo ''",
-      "interval": 3600,
-      "format": "{}",
-      "tooltip": "Arch Linux",
-      "on-click": "xdg-open https://archlinux.org"
-    }
+    "keyboard-state": {
+      "numlock": true,
+      "capslock": true,
+      "format": "{name} {icon}",
+      "format-icons": {
+          "locked": "",
+          "unlocked": ""
+      }
+    },
+
+  "custom/power": {
+    "format" : "⏻ ",
+    "tooltip": true,
+		"tooltip-format": "Power Menu",
+    "on-click": "wlogout"
+   }
+
   }
 ]
