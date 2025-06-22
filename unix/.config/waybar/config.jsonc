@@ -300,7 +300,7 @@
     "custom/arch": {
       "format": "󰣇",
       "tooltip": "Arch Linux",
-      "on-click": "rofi -show drun"
+      "on-click": "rofi -theme ~/.config/rofi/config.rasi -show drun"
     },
 
     "keyboard-state": {
