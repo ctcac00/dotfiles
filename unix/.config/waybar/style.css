@@ -15,6 +15,7 @@
 @define-color window      #a3d1ff;  /* Light blue for window modules */
 @define-color resize      #ff9f68;  /* A bright coral/orange for resize hints */
 @define-color process     #8ec6ff;  /* A soft, bright blue for processing states */
+@define-color spacer      #2e3440;  /* Dark gray for spacers */
 /* }}} */
 
 /* Reset all styles */ /* {{{ */
@@ -251,7 +252,7 @@
 #waybar.main #custom-spacer3 {
   font-size: 12pt;
   font-weight: bold;
-  color: @caution;
+  color: @spacer;
 }
 /* }}} */
 
@@ -268,7 +269,8 @@
 
 /* Tooltip */ /* {{{ */
 tooltip {
-  border: 3px solid @caution;
+  background: @background;
+  border: 1px solid @performance;
   border-radius: 8px;
   font-weight: 500;
   font-family: "JetBrains Mono Nerd Font";
