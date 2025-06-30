@@ -89,6 +89,6 @@ if [[ "$current_dir" != "$expected_dir" ]]; then
 fi
 
 stow --adopt -t "$HOME"/.config .config
-stow --adopt -t "$HOME" zsh
+stow --adopt -t "$HOME" home
 
 exec zsh
