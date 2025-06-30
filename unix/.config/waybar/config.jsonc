@@ -9,14 +9,15 @@
     "margin-right": 10,
 
     "modules-left": [
-      "group/tray",
+      "custom/arch",
+      "tray",
       "custom/spacer3",
       "custom/spacer2",
       "hyprland/workspaces",
       "custom/spacer2",
       "custom/spacer3",
       "hyprland/submap",
-      "hyprland/window"
+      "hyprland/window",
     ],
 
     "modules-right": [
@@ -41,7 +42,7 @@
       "custom/spacer1",
       // "custom/weather",
       "clock",
-      "custom/power"
+      "custom/power",
     ],
 
     // Modules
@@ -52,8 +53,8 @@
       "tooltip-format": "Free {free}",
       "states": {
         "warning": 85,
-        "critical": 95
-      }
+        "critical": 95,
+      },
     },
 
     "custom/weather": {
@@ -61,7 +62,7 @@
       "tooltip": true,
       "interval": 1800,
       "exec": "wttrbar --nerd --location Inari",
-      "return-type": "json"
+      "return-type": "json",
     },
 
     "group/tray": {
@@ -69,10 +70,10 @@
       "drawer": {
         "transition-duration": "500",
         "transition-left-to-right": "true",
-        "children-class": "drawer-child"
+        "children-class": "drawer-child",
         //"click-to-reveal": "false"
       },
-      "modules": ["custom/arch", "tray"]
+      "modules": ["custom/arch", "tray"],
     },
 
     "group/storage": {
@@ -80,17 +81,17 @@
       "drawer": {
         "transition-duration": "500",
         "transition-left-to-right": "true",
-        "children-class": "drawer-child"
+        "children-class": "drawer-child",
         //"click-to-reveal": "false"
       },
-      "modules": ["memory#ram", "memory#swap", "disk"]
+      "modules": ["memory#ram", "memory#swap", "disk"],
     },
 
     "backlight": {
       "device": "intel_backlight",
       "format": "{icon} {percent}%",
       "format-icons": ["󱩎", "󱩑", "󱩓", "󱩕", "󰛨"],
-      "scroll-step": 5
+      "scroll-step": 5,
     },
 
     // "custom/nvidia": {
@@ -126,10 +127,10 @@
           "days": "<span color='#cdd6f4'><b>{}</b></span>",
           "weeks": "<span color='#94e2d5'> W{}</span>",
           "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
-          "today": "<span color='#f5e0dc'><b><u>{}</u></b></span>"
-        }
+          "today": "<span color='#f5e0dc'><b><u>{}</u></b></span>",
+        },
       },
-      "on-click": "brave --app=https://calendar.google.com"
+      "on-click": "brave --app=https://calendar.google.com",
     },
 
     "cpu": {
@@ -137,8 +138,8 @@
       "format": " {usage}%",
       "states": {
         "warning": 80,
-        "critical": 95
-      }
+        "critical": 95,
+      },
     },
 
     "hyprland/language": {
@@ -148,7 +149,7 @@
       "min-length": 7,
       "on-click": "hyprctl switchxkblayout current next",
       "tooltip": false,
-      "class": "language"
+      "class": "language",
     },
 
     "memory#ram": {
@@ -156,17 +157,17 @@
       "format": " {percentage}%",
       "states": {
         "warning": 80,
-        "critical": 95
+        "critical": 95,
       },
       "tooltip": "{}",
-      "tooltip-format": "{used}/{total} GiB"
+      "tooltip-format": "{used}/{total} GiB",
     },
 
     "memory#swap": {
       "interval": 16,
       "format": "󰾵 {swapPercentage}%",
       "tooltip": "{}",
-      "tooltip-format": "{swapUsed}/{swapTotal}GiB"
+      "tooltip-format": "{swapUsed}/{swapTotal}GiB",
     },
 
     "network#info": {
@@ -180,8 +181,8 @@
       "tooltip-format-ethernet": "{ifname}\n󰇚 {bandwidthDownBits} \n󰕒 {bandwidthUpBits}",
       "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨"],
       "states": {
-        "normal": 25
-      }
+        "normal": 25,
+      },
     },
 
     "network#up": {
@@ -190,7 +191,7 @@
       "format-wifi": "󰕒 {bandwidthUpBits}",
       "format-ethernet": "󰕒 {bandwidthUpBits}",
       "format-disconnected": " ",
-      "min-length": 11
+      "min-length": 11,
     },
 
     "network#down": {
@@ -198,7 +199,7 @@
       "format": "󰇚 {bandwidthDownBits}",
       "format-wifi": "󰇚 {bandwidthDownBits}",
       "format-ethernet": "󰇚 {bandwidthDownBits}",
-      "min-length": 11
+      "min-length": 11,
     },
 
     "hyprland/submap": {
@@ -206,7 +207,7 @@
       "default-submap": "",
       "format": "{}",
       "format-RESIZE": "{}lol",
-      "tooltip": false
+      "tooltip": false,
     },
 
     "hyprland/window": {
@@ -215,7 +216,7 @@
       "tooltip": false,
       "icon": true,
       "icon-size": 18,
-      "tooltip": true
+      "tooltip": true,
     },
 
     "hyprland/workspaces": {
@@ -227,15 +228,15 @@
       "special-visible-only": false,
       "format-icons": {
         "magic": " ",
-        "10": "󰊴 "
+        "10": "󰊴 ",
       },
       "persistent-workspaces": {
-        "1" :[],
-        "2" :[],
-        "3" :[],
-        "4" :[],
-        "5" :[],
-    }
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+      },
     },
 
     "pulseaudio#output": {
@@ -249,12 +250,12 @@
         "phone": "",
         "portable": "",
         "car": "",
-        "default": ["", ""]
+        "default": ["", ""],
       },
       "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
       "on-click": "pwvucontrol",
       "tooltip": true,
-      "scroll-step": 5
+      "scroll-step": 5,
     },
 
     "pulseaudio#input": {
@@ -266,7 +267,7 @@
       "max-volume": "100",
       "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
       "on-click": "pwvucontrol",
-      "tooltip-format": "{source_desc}"
+      "tooltip-format": "{source_desc}",
     },
 
     "temperature": {
@@ -274,33 +275,33 @@
       "interval": 4,
       "format": "{icon} {temperatureC}°",
       "format-icons": ["", "", "", "", ""],
-      "tooltip": false
+      "tooltip": false,
     },
 
     "tray": {
       "icon-size": 17,
-      "spacing": 8
+      "spacing": 8,
     },
 
     "custom/spacer1": {
       "format": " \\\\ ",
-      "tooltip": false
+      "tooltip": false,
     },
 
     "custom/spacer2": {
       "format": " ",
-      "tooltip": false
+      "tooltip": false,
     },
 
     "custom/spacer3": {
       "format": " // ",
-      "tooltip": false
+      "tooltip": false,
     },
 
     "custom/arch": {
       "format": "󰣇",
       "tooltip": "Arch Linux",
-      "on-click": "rofi -theme ~/.config/rofi/config.rasi -show drun"
+      "on-click": "rofi -theme ~/.config/rofi/config.rasi -show drun",
     },
 
     "keyboard-state": {
@@ -308,17 +309,16 @@
       "capslock": true,
       "format": "{name} {icon}",
       "format-icons": {
-          "locked": "",
-          "unlocked": ""
-      }
+        "locked": "",
+        "unlocked": "",
+      },
     },
 
-  "custom/power": {
-    "format" : "⏻ ",
-    "tooltip": true,
-		"tooltip-format": "Power Menu",
-    "on-click": "wlogout"
-   }
-
-  }
+    "custom/power": {
+      "format": "⏻ ",
+      "tooltip": true,
+      "tooltip-format": "Power Menu",
+      "on-click": "wlogout",
+    },
+  },
 ]
