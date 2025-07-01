@@ -4,18 +4,17 @@
 /* Define colors */ /* {{{ */
 /* Previously, background was #151520 – now set to Night Owl’s deep navy,
    and the accent colors have been brightened */
-@define-color background  rgba(1,22,39, 0.9);
-@define-color warning     #ff5370;  /* Bright red (error/critical) */
-@define-color caution     #ffcb6b;  /* Vivid yellow (alerts) */
-@define-color performance #82aaff;  /* Night Owl blue for CPU, network, etc. */
-@define-color audio       #c792ea;  /* Signature purple for audio */
-@define-color misc        #c3e88d;  /* Bright green for battery, language, etc. */
-@define-color date        #7efcff;  /* A bright cyan twist for date modules */
-@define-color work        #a3d1ff;  /* Light blue for workspaces */
-@define-color window      #a3d1ff;  /* Light blue for window modules */
-@define-color resize      #ff9f68;  /* A bright coral/orange for resize hints */
-@define-color process     #8ec6ff;  /* A soft, bright blue for processing states */
-@define-color spacer      #2e3440;  /* Dark gray for spacers */
+@define-color night-owl-blue          rgba(1,22,39, 0.9);
+@define-color bright-red              #ff5370; /* Bright red (error/critical) */
+@define-color vivid-yellow            #ffcb6b; /* Vivid yellow (alerts) */
+@define-color night-owl-blue-accent   #82aaff; /* Night Owl blue for CPU, network, etc. */
+@define-color signature-purple        #c792ea; /* Signature purple for audio */
+@define-color bright-green            #c3e88d; /* Bright green for battery, language, etc. */
+@define-color bright-cyan             #7efcff; /* A bright cyan twist for date modules */
+@define-color light-blue              #a3d1ff; /* Light blue for workspaces */
+@define-color bright-coral            #ff9f68; /* A bright coral/orange for resize hints */
+@define-color soft-bright-blue        #8ec6ff; /* A soft, bright blue for processing states */
+@define-color dark-gray               #2e3440; /* Dark gray for spacers */
 /* }}} */
 
 /* Reset all styles */ /* {{{ */
@@ -29,48 +28,48 @@
   text-shadow: none;
 } /* }}} */
 
-/* Main bar keyframes */ /* {{{ */
-/* Keyframes for main bar critical texts */
-@keyframes blink-critical-text {
+/* Animations & Keyframes */ /* {{{ */
+
+/* A subtle pulse for warnings and modifiers */
+@keyframes pulse-warning {
   to {
-    color: @warning;
+    color: @vivid-yellow;
+    text-shadow: 0 0 5px @vivid-yellow;
   }
 }
 
-/* Keyframes for main bar modifiers */
-@keyframes blink-modifier-text {
+/* A more prominent pulse for critical alerts */
+@keyframes pulse-critical {
   to {
-    color: @caution;
+    color: @bright-red;
+    text-shadow: 0 0 8px @bright-red;
   }
-} /* }}} */
+}
+
+/* GTK CSS does not support 'transform', so a spin animation is not possible.
+   Consider swapping icons or text in your config for loading states. */
+
+/* }}} */
 
 /* Main bar defaults */ /* {{{ */
 #waybar.main {
-  background: @background;
-  font-family: "JetBrains Mono Nerd Font";
+  background: @night-owl-blue;
+  font-family: "Maple Mono NF";
   font-size: 12pt;
   font-weight: 500;
 }
 
 #waybar.main button {
-  font-family: JetBrains Mono Nerd Font;
+  font-family: Maple Mono NF;
   font-size: 12pt;
   font-weight: 500;
-  transition: all 0.15s ease-in-out;
 } /* }}} */
 
 /* Main bar modules */ /* {{{ */
-#waybar.main #custom-nvidia,
-#waybar.main #custom-weather,
-#waybar.main #custom-weather,
-#waybar.main #custom-battery,
 #waybar.main #keyboard-state,
 #waybar.main #network,
-#waybar.main #battery,
-#waybar.main #backlight,
 #waybar.main #clock,
 #waybar.main #cpu,
-#waybar.main #language,
 #waybar.main #memory.swap,
 #waybar.main #memory.ram,
 #waybar.main #submap,
@@ -79,171 +78,154 @@
 #waybar.main #tray,
 #waybar.main #window,
 #waybar.main #disk {
-  padding-left: 8pt;
-  padding-right: 8pt;
-  padding-bottom: 4px;
-  padding-top: 4px;
+  padding: 4px 8pt;
+  background-color: transparent;
+  /* Universal transition for smooth animations */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Hover glow effect for all modules */
+#waybar.main #keyboard-state:hover,
+#waybar.main #network:hover,
+#waybar.main #clock:hover,
+#waybar.main #cpu:hover,
+#waybar.main #memory.swap:hover,
+#waybar.main #memory.ram:hover,
+#waybar.main #submap:hover,
+#waybar.main #pulseaudio:hover,
+#waybar.main #temperature:hover,
+#waybar.main #tray:hover,
+#waybar.main #window:hover,
+#waybar.main #disk:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 5px currentColor;
 }
 
 #waybar.main #tray {
   padding-right: 6pt;
 }
-
-#waybar.main #custom-weather {
-  padding-right: 3pt;
-}
 /* }}} */
 
 /* Module colors */ /* {{{ */
-#waybar.main #custom-nvidia,
 #waybar.main #cpu,
 #waybar.main #temperature,
 #waybar.main #memory.ram,
 #waybar.main #memory.swap,
 #waybar.main #disk,
 #waybar.main #network {
-  color: @performance;
+  color: @night-owl-blue-accent;
 }
 
 #waybar.main #pulseaudio {
-  color: @audio;
+  color: @signature-purple;
 }
 
-#waybar.main #custom-battery,
-#waybar.main #language,
-#waybar.main #backlight,
-#waybar.main #battery {
-  color: @misc;
-}
-
-#waybar.main #custom-weather,
 #waybar.main #clock {
-  color: @date;
+  color: @bright-cyan;
 }
 
 #waybar.main #window {
-  color: @window;
-  margin-top: -0px;
+  color: @light-blue;
 }
 
 #waybar.main #network.info {
-  padding-right: 10px;
-  padding-left: 10px;
-  color: @caution;
+  padding: 0 10px;
+  color: @vivid-yellow;
 }
 
 #waybar.main #network.info.wifi.normal,
 #waybar.main #network.info.ethernet {
-  color: @performance;
+  color: @night-owl-blue-accent;
   padding-right: 15px;
 }
 
 #waybar.main #network.info.wifi {
-  color: @warning;
+  color: @bright-red;
   padding-right: 15px;
 } /* }}} */
 
 /* Submap */ /* {{{ */
 #waybar.main #submap.󰲏 {
-  color: @resize;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-name: blink-modifier-text;
+  color: @bright-coral;
+  animation-name: pulse-warning;
   animation-duration: 1s;
-  animation-timing-function: steps(15);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
 #waybar.main #submap. {
-  color: @date;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-name: blink-modifier-text;
+  color: @bright-cyan;
+  animation-name: pulse-warning;
   animation-duration: 1s;
-  animation-timing-function: steps(15);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 /* }}} */
 
 /* Main bar criticals */ /* {{{ */
-#waybar.main #custom-nvidia.critical,
-#waybar.main #custom-battery.critical,
 #waybar.main #workspaces button.urgent,
 #waybar.main #workspaces button.special.urgent,
 #waybar.main #memory.swap.critical,
 #waybar.main #memory.ram.critical,
 #waybar.main #cpu.critical,
-#waybar.main #temperature.critical,
-#waybar.main #battery.critical.discharging {
-  color: @caution;
-  animation-iteration-count: infinite;
+#waybar.main #temperature.critical {
+  color: @bright-red;
+  animation-name: pulse-critical;
+  animation-duration: 0.7s;
   animation-direction: alternate;
-  animation-name: blink-critical-text;
-  animation-duration: 1s;
-  animation-timing-function: steps(15);
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 } /* }}} */
 
 /* Main bar warnings */ /* {{{ */
 #waybar.main #pulseaudio.output.muted,
 #waybar.main #pulseaudio.input.source-muted {
-  color: @caution;
+  color: @vivid-yellow;
 }
-
-#waybar.main #custom-battery.warning,
-#waybar.main #battery.warning.discharging {
-  color: @warning;
-} /* }}} */
-
-/* Battery charging */ /* {{{ */
-#waybar.main #custom-battery.charging {
-  color: @misc;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-name: blink-modifier-text;
-  animation-duration: 1s;
-  animation-timing-function: steps(15);
-} /* }}} */
+/* }}} */
 
 /* Workspace */ /* {{{ */
 /* Default workspace settings */
 #waybar.main #workspaces button {
   font-size: 11pt;
-  color: @caution;
-  border: 1.5px solid @background;
-  padding-left: 2pt;
-  padding-right: 2pt;
-  border-radius: 16px;
-  margin-bottom: 8px;
-  margin-top: 8px;
-  margin-left: 4px;
-  margin-right: 4px;
-  transition: all 0.25s ease;
+  color: @bright-cyan;
+  border: 1px solid @dark-gray;
+  padding: 0 2pt;
+  margin: 8px 4px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* Focused workspace */
 #waybar.main #workspaces button.visible {
-  color: @window;
+  color: @light-blue;
+  border: 1px solid @bright-cyan;
 }
 
 /* Focused workspace & monitor */
-#waybar.main #workspaces button.active {
-  color: @window;
-  border: 1.5px solid @caution;
+#waybar.main #workspaces button.active:not(.special) {
+  background-color: @bright-cyan;
+  color: @night-owl-blue;
+  border-color: @bright-cyan;
 }
 
-/* Style when cursor is on the button */
-#waybar.main #workspaces button:hover {
-  color: @window;
+/* Hovered workspace */
+#waybar.main #workspaces button:hover:not(.special) {
+  background-color: @bright-cyan;
+  color: @night-owl-blue;
+  border-color: @bright-cyan;
 }
 
 /* Special workspace animation */
 #waybar.main #workspaces button.special.active {
-  border: 1.5px solid @background;
-  color: @window;
-  transition: all 0s ease;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-name: blink-modifier-text;
+  border: 1px solid @night-owl-blue;
+  color: @light-blue;
+  animation-name: pulse-warning;
   animation-duration: 1s;
-  animation-timing-function: steps(15);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 } /* }}} */
 
 /* Custom slashes as spacers */ /* {{{ */
@@ -252,129 +234,23 @@
 #waybar.main #custom-spacer3 {
   font-size: 12pt;
   font-weight: bold;
-  color: @spacer;
-}
-/* }}} */
-
-/* Custom tray icon */ /* {{{ */
-#waybar.main #custom-trayicon {
-  font-size: 12pt;
-  font-weight: bold;
-  font-style: italic;
-  color: @process;
-  padding-right: 6pt;
-  padding-left: 2pt;
+  color: @dark-gray;
 }
 /* }}} */
 
 /* Tooltip */ /* {{{ */
 tooltip {
-  background: @background;
-  border: 1px solid @performance;
+  background: @night-owl-blue;
+  border: 1px solid @night-owl-blue-accent;
   border-radius: 8px;
   font-weight: 500;
-  font-family: "JetBrains Mono Nerd Font";
+  font-family: "Maple Mono NF";
 }
 
 #waybar.main #tray menu {
-  border: 3px solid @caution;
+  border: 3px solid @vivid-yellow;
   border-radius: 8px;
 } /* }}} */
-
-/* Indicator bar keyframes */ /* {{{ */
-@keyframes blink-critical-battery {
-  to {
-    border-color: @warning;
-  }
-}
-
-@keyframes blink-warning-battery {
-  to {
-    border-color: @warning;
-  }
-}
-
-@keyframes blink-discharging-battery {
-  to {
-    border-color: @warning;
-  }
-}
-
-@keyframes blink-charging-battery {
-  to {
-    border-color: @misc;
-  }
-}
-
-@keyframes blink-full-battery {
-  to {
-    border-color: @misc;
-  }
-} /* }}} */
-
-/* Indicator bar battery module */ /* {{{ */
-
-/* Set defaults for indicator bar */
-#waybar.indicator {
-  font-size: 27px;
-  /* This makes indicator thicker */
-  color: rgba(0, 0, 0, 0);
-}
-
-/* Set "battery bar" style */
-#waybar.indicator #custom-batteryindicator {
-  border: 2.5px solid @caution;
-  border-radius: 8pt;
-  padding-left: 2237.5px;
-  /* Use this for padding:  */
-  /* (H_rez / scaling) - L_margin -R_margin - 2 * border - (font-size / 2)*/
-  /* For example: (2880px / 1.25) - 24 - 24 - 2 * 2.5 - (27 / 2) = 2237.5px */
-}
-
-/* Blink red when battery is very low */
-#waybar.indicator #custom-batteryindicator.critical {
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-name: blink-critical-battery;
-  animation-duration: 1s;
-  animation-timing-function: steps(15);
-}
-
-/* Blink red twice when battery is low battery */
-#waybar.indicator #custom-batteryindicator.warning {
-  animation-iteration-count: 4;
-  animation-direction: alternate;
-  animation-name: blink-warning-battery;
-  animation-duration: 0.2s;
-  animation-timing-function: steps(15);
-}
-
-/* Blink once red when disconnected from AC */
-#waybar.indicator #custom-batteryindicator.discharging {
-  animation-iteration-count: 2;
-  animation-direction: alternate;
-  animation-name: blink-discharging-battery;
-  animation-duration: 0.3s;
-  animation-timing-function: steps(15);
-}
-
-/* Blink once cyan when plugged to AC */
-#waybar.indicator #custom-batteryindicator.charging {
-  animation-iteration-count: 2;
-  animation-direction: alternate;
-  animation-name: blink-charging-battery;
-  animation-duration: 0.3s;
-  animation-timing-function: steps(15);
-}
-
-/* Blink cyan twice when battery is full */
-#waybar.indicator #custom-batteryindicator.full {
-  animation-iteration-count: 4;
-  animation-direction: alternate;
-  animation-name: blink-full-battery;
-  animation-duration: 0.2s;
-  animation-timing-function: steps(15);
-} 
 
 #custom-arch {
   font-size: 15pt;
@@ -383,25 +259,32 @@ tooltip {
 }
 
 #keyboard-state {
-    color: @misc;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
+  color: @bright-green;
+  padding: 0 0px;
+  /* margin: 0 5px; */
+  min-width: 16px;
 }
 
 #keyboard-state > label {
-    padding: 0 5px;
+  padding: 0 5px;
 }
 
 #keyboard-state > label.locked {
-  color: @warning;
+  color: @bright-red;
 }
 
 #custom-power {
-  color: @warning;
+  color: @bright-red;
+  padding: 0 0px;
+  margin: 0 5px;
+  min-width: 16px;
+}
+
+#custom-notification {
   padding: 0 0px;
   margin: 0 5px;
   min-width: 16px;
 }
 
 /* }}} */
+

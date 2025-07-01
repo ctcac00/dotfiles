@@ -17,33 +17,23 @@
       "custom/spacer2",
       "custom/spacer3",
       "hyprland/submap",
-      "hyprland/window",
+      "hyprland/window"
     ],
 
     "modules-right": [
-      // "custom/spacer1",
       "cpu",
       "temperature",
-      // "custom/nvidia",
-      // "memory#ram",
       "group/storage",
-      // "memory#swap",
-      // "disk",
       "network#info",
       "custom/spacer1",
       "pulseaudio#input",
       "pulseaudio#output",
-      // "custom/spacer1",
-      // "hyprland/language",
       "custom/spacer1",
       "keyboard-state",
-      // "backlight",
-      // "custom/battery",
       "custom/spacer1",
-      // "custom/weather",
       "clock",
       "custom/notification",
-      "custom/power",
+      "custom/power"
     ],
 
     // Modules
@@ -54,27 +44,8 @@
       "tooltip-format": "Free {free}",
       "states": {
         "warning": 85,
-        "critical": 95,
-      },
-    },
-
-    "custom/weather": {
-      "format": "{}°",
-      "tooltip": true,
-      "interval": 1800,
-      "exec": "wttrbar --nerd --location Inari",
-      "return-type": "json",
-    },
-
-    "group/tray": {
-      "orientation": "horizontal",
-      "drawer": {
-        "transition-duration": "500",
-        "transition-left-to-right": "true",
-        "children-class": "drawer-child",
-        //"click-to-reveal": "false"
-      },
-      "modules": ["custom/arch", "tray"],
+        "critical": 95
+      }
     },
 
     "group/storage": {
@@ -82,37 +53,10 @@
       "drawer": {
         "transition-duration": "500",
         "transition-left-to-right": "true",
-        "children-class": "drawer-child",
-        //"click-to-reveal": "false"
+        "children-class": "drawer-child"
       },
-      "modules": ["memory#ram", "memory#swap", "disk"],
+      "modules": ["memory#ram", "memory#swap", "disk"]
     },
-
-    "backlight": {
-      "device": "intel_backlight",
-      "format": "{icon} {percent}%",
-      "format-icons": ["󱩎", "󱩑", "󱩓", "󱩕", "󰛨"],
-      "scroll-step": 5,
-    },
-
-    // "custom/nvidia": {
-    //   "interval": 4,
-    //   "return-type": "json",
-    //   "exec": "~/.config/hypr/themes/Mocha/nvidia.sh",
-    //   "format": "<span size='x-large' rise='-2500'>󰢮</span>{text}",
-    //   "tooltip": "true",
-    //   "tooltip-format": "{alt}"
-    // },
-
-    // "custom/battery": {
-    //   "interval": 4,
-    //   "return-type": "json",
-    //   "exec": "~/.config/hypr/themes/Mocha/bat-pp.sh refresh",
-    //   "exec-on-event": true,
-    //   "format": "{text}%",
-    //   "tooltip": "true",
-    //   "tooltip-format": "{alt}W"
-    // },
 
     "clock": {
       "interval": 1,
@@ -121,17 +65,17 @@
       "calendar": {
         "mode": "month",
         "mode-mon-col": 3,
-        "weeks-pos": "right", // Nicked from Archttila
+        "weeks-pos": "right",
         "on-scroll": 1,
         "format": {
           "months": "<span color='#cba6f7'><b>{}</b></span>",
           "days": "<span color='#cdd6f4'><b>{}</b></span>",
           "weeks": "<span color='#94e2d5'> W{}</span>",
           "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
-          "today": "<span color='#f5e0dc'><b><u>{}</u></b></span>",
-        },
+          "today": "<span color='#f5e0dc'><b><u>{}</u></b></span>"
+        }
       },
-      "on-click": "brave --app=https://calendar.google.com",
+      "on-click": "brave --app=https://calendar.google.com"
     },
 
     "cpu": {
@@ -139,18 +83,8 @@
       "format": " {usage}%",
       "states": {
         "warning": 80,
-        "critical": 95,
-      },
-    },
-
-    "hyprland/language": {
-      "format": " {}",
-      "format-fi": "Vittu",
-      "format-ru": "Блять",
-      "min-length": 7,
-      "on-click": "hyprctl switchxkblayout current next",
-      "tooltip": false,
-      "class": "language",
+        "critical": 95
+      }
     },
 
     "memory#ram": {
@@ -158,17 +92,17 @@
       "format": " {percentage}%",
       "states": {
         "warning": 80,
-        "critical": 95,
+        "critical": 95
       },
       "tooltip": "{}",
-      "tooltip-format": "{used}/{total} GiB",
+      "tooltip-format": "{used}/{total} GiB"
     },
 
     "memory#swap": {
       "interval": 16,
       "format": "󰾵 {swapPercentage}%",
       "tooltip": "{}",
-      "tooltip-format": "{swapUsed}/{swapTotal}GiB",
+      "tooltip-format": "{swapUsed}/{swapTotal}GiB"
     },
 
     "network#info": {
@@ -182,25 +116,8 @@
       "tooltip-format-ethernet": "{ifname}\n󰇚 {bandwidthDownBits} \n󰕒 {bandwidthUpBits}",
       "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨"],
       "states": {
-        "normal": 25,
-      },
-    },
-
-    "network#up": {
-      "interval": 4,
-      "format": " ",
-      "format-wifi": "󰕒 {bandwidthUpBits}",
-      "format-ethernet": "󰕒 {bandwidthUpBits}",
-      "format-disconnected": " ",
-      "min-length": 11,
-    },
-
-    "network#down": {
-      "interval": 4,
-      "format": "󰇚 {bandwidthDownBits}",
-      "format-wifi": "󰇚 {bandwidthDownBits}",
-      "format-ethernet": "󰇚 {bandwidthDownBits}",
-      "min-length": 11,
+        "normal": 25
+      }
     },
 
     "hyprland/submap": {
@@ -208,7 +125,7 @@
       "default-submap": "",
       "format": "{}",
       "format-RESIZE": "{}lol",
-      "tooltip": false,
+      "tooltip": false
     },
 
     "hyprland/window": {
@@ -216,7 +133,7 @@
       "max-length": 48,
       "tooltip": false,
       "icon": true,
-      "icon-size": 18,
+      "icon-size": 18
     },
 
     "hyprland/workspaces": {
@@ -229,7 +146,7 @@
       "on-scroll-up": "hyprctl dispatch workspace e+1",
       "on-scroll-down": "hyprctl dispatch workspace e-1",
       "persistent-workspaces": {
-        "*": 5,
+        "*": 5
       },
       "format": "{}{windows}",
       "format-window-separator": "",
@@ -256,6 +173,7 @@
         "class<discord|[Ww]ebcord|Vesktop>": "  ",
         "title<.*whatsapp.*>": "  ",
         "title<.*zapzap.*>": "  ",
+        "title<.*WasIstLos.*>": "  ",
         "title<.*messenger.*>": "  ",
         "title<.*facebook.*>": "  ",
         "title<.*reddit.*>": "  ",
@@ -303,12 +221,12 @@
         "class<android-studio>": "  ",
         "class<org.pipewire.Helvum>": " 󰓃",
         "class<localsend>": " ",
-        "class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>": " 󰹛",
+        "class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>": " 󰹛"
       },
       "disable-scroll-wraparound": true,
       "smooth-scrolling-threshold": 4,
       "enable-bar-scroll": true,
-      "special-visible-only": false,
+      "special-visible-only": false
     },
 
     "pulseaudio#output": {
@@ -322,12 +240,12 @@
         "phone": "",
         "portable": "",
         "car": "",
-        "default": ["", ""],
+        "default": ["", ""]
       },
       "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
       "on-click": "pwvucontrol",
       "tooltip": true,
-      "scroll-step": 5,
+      "scroll-step": 5
     },
 
     "pulseaudio#input": {
@@ -339,7 +257,7 @@
       "max-volume": "100",
       "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
       "on-click": "pwvucontrol",
-      "tooltip-format": "{source_desc}",
+      "tooltip-format": "{source_desc}"
     },
 
     "temperature": {
@@ -347,33 +265,33 @@
       "interval": 4,
       "format": "{icon} {temperatureC}°",
       "format-icons": ["", "", "", "", ""],
-      "tooltip": false,
+      "tooltip": false
     },
 
     "tray": {
       "icon-size": 17,
-      "spacing": 8,
+      "spacing": 8
     },
 
     "custom/spacer1": {
-      "format": " \\\\ ",
-      "tooltip": false,
+      "format": " \\ ",
+      "tooltip": false
     },
 
     "custom/spacer2": {
       "format": " ",
-      "tooltip": false,
+      "tooltip": false
     },
 
     "custom/spacer3": {
       "format": " // ",
-      "tooltip": false,
+      "tooltip": false
     },
 
     "custom/arch": {
       "format": "󰣇",
       "tooltip": "Arch Linux",
-      "on-click": "rofi -theme ~/.config/rofi/config.rasi -show drun",
+      "on-click": "rofi -theme ~/.config/rofi/config.rasi -show drun"
     },
 
     "keyboard-state": {
@@ -382,15 +300,15 @@
       "format": "{name} {icon}",
       "format-icons": {
         "locked": "",
-        "unlocked": "",
-      },
+        "unlocked": ""
+      }
     },
 
     "custom/power": {
       "format": "⏻ ",
       "tooltip": true,
       "tooltip-format": "Power Menu",
-      "on-click": "wlogout -s -b 6 -T 600 -B 600",
+      "on-click": "wlogout -s -b 6 -T 600 -B 600"
     },
 
     "custom/notification": {
@@ -404,14 +322,14 @@
         "inhibited-notification": "<span foreground='red'><sup></sup></span>",
         "inhibited-none": "",
         "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-        "dnd-inhibited-none": "",
+        "dnd-inhibited-none": ""
       },
       "return-type": "json",
       "exec-if": "which swaync-client",
       "exec": "swaync-client -swb",
       "on-click": "swaync-client -t -sw",
       "on-click-right": "swaync-client -d -sw",
-      "escape": true,
-    },
-  },
+      "escape": true
+    }
+  }
 ]
