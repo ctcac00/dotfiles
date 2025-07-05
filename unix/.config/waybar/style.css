@@ -258,6 +258,16 @@ tooltip {
   padding: 0 10px;
 }
 
+#custom-hypridle {
+  color: @bright-green;
+  padding: 0 5px;
+}
+
+#custom-updater {
+  color: @vivid-yellow;
+  padding: 0 5px;
+}
+
 #keyboard-state {
   color: @bright-green;
   padding: 0 0px;
@@ -281,10 +291,14 @@ tooltip {
 }
 
 #custom-notification {
+  color: @signature-purple;
   padding: 0 0px;
   margin: 0 5px;
   min-width: 16px;
 }
 
-/* }}} */
+#tray {
+  color: @light-blue;
+}
 
+/* }}} */

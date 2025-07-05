@@ -12,12 +12,10 @@
       "custom/arch",
       "tray",
       "custom/spacer3",
-      "custom/spacer2",
       "hyprland/workspaces",
-      "custom/spacer2",
       "custom/spacer3",
       "hyprland/submap",
-      "hyprland/window"
+      "hyprland/window",
     ],
 
     "modules-right": [
@@ -32,8 +30,12 @@
       "keyboard-state",
       "custom/spacer1",
       "clock",
+      "custom/spacer1",
+      "custom/hypridle",
+      "custom/updater",
       "custom/notification",
-      "custom/power"
+      "custom/spacer1",
+      "custom/power",
     ],
 
     // Modules
@@ -44,8 +46,8 @@
       "tooltip-format": "Free {free}",
       "states": {
         "warning": 85,
-        "critical": 95
-      }
+        "critical": 95,
+      },
     },
 
     "group/storage": {
@@ -53,14 +55,14 @@
       "drawer": {
         "transition-duration": "500",
         "transition-left-to-right": "true",
-        "children-class": "drawer-child"
+        "children-class": "drawer-child",
       },
-      "modules": ["memory#ram", "memory#swap", "disk"]
+      "modules": ["memory#ram", "memory#swap", "disk"],
     },
 
     "clock": {
       "interval": 1,
-      "format": " {:%H:%M:%S    %d.%m}",
+      "format": " {:%H:%M:%S    %d.%m.%y}",
       "tooltip-format": "{:%d.%m.%Y   Week %W}\n\n<tt><small>{calendar}</small></tt>",
       "calendar": {
         "mode": "month",
@@ -72,10 +74,10 @@
           "days": "<span color='#cdd6f4'><b>{}</b></span>",
           "weeks": "<span color='#94e2d5'> W{}</span>",
           "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
-          "today": "<span color='#f5e0dc'><b><u>{}</u></b></span>"
-        }
+          "today": "<span color='#f5e0dc'><b><u>{}</u></b></span>",
+        },
       },
-      "on-click": "brave --app=https://calendar.google.com"
+      "on-click": "brave --app=https://calendar.google.com",
     },
 
     "cpu": {
@@ -83,8 +85,8 @@
       "format": " {usage}%",
       "states": {
         "warning": 80,
-        "critical": 95
-      }
+        "critical": 95,
+      },
     },
 
     "memory#ram": {
@@ -92,17 +94,17 @@
       "format": " {percentage}%",
       "states": {
         "warning": 80,
-        "critical": 95
+        "critical": 95,
       },
       "tooltip": "{}",
-      "tooltip-format": "{used}/{total} GiB"
+      "tooltip-format": "{used}/{total} GiB",
     },
 
     "memory#swap": {
       "interval": 16,
       "format": "󰾵 {swapPercentage}%",
       "tooltip": "{}",
-      "tooltip-format": "{swapUsed}/{swapTotal}GiB"
+      "tooltip-format": "{swapUsed}/{swapTotal}GiB",
     },
 
     "network#info": {
@@ -116,8 +118,8 @@
       "tooltip-format-ethernet": "{ifname}\n󰇚 {bandwidthDownBits} \n󰕒 {bandwidthUpBits}",
       "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨"],
       "states": {
-        "normal": 25
-      }
+        "normal": 25,
+      },
     },
 
     "hyprland/submap": {
@@ -125,15 +127,15 @@
       "default-submap": "",
       "format": "{}",
       "format-RESIZE": "{}lol",
-      "tooltip": false
+      "tooltip": false,
     },
 
     "hyprland/window": {
       "format": "{title}",
-      "max-length": 48,
+      // "max-length": 48,
       "tooltip": false,
       "icon": true,
-      "icon-size": 18
+      "icon-size": 18,
     },
 
     "hyprland/workspaces": {
@@ -146,7 +148,7 @@
       "on-scroll-up": "hyprctl dispatch workspace e+1",
       "on-scroll-down": "hyprctl dispatch workspace e-1",
       "persistent-workspaces": {
-        "*": 5
+        "*": 5,
       },
       "format": "{}{windows}",
       "format-window-separator": "",
@@ -221,12 +223,12 @@
         "class<android-studio>": "  ",
         "class<org.pipewire.Helvum>": " 󰓃",
         "class<localsend>": " ",
-        "class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>": " 󰹛"
+        "class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>": " 󰹛",
       },
       "disable-scroll-wraparound": true,
       "smooth-scrolling-threshold": 4,
       "enable-bar-scroll": true,
-      "special-visible-only": false
+      "special-visible-only": false,
     },
 
     "pulseaudio#output": {
@@ -240,12 +242,12 @@
         "phone": "",
         "portable": "",
         "car": "",
-        "default": ["", ""]
+        "default": ["", ""],
       },
       "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
       "on-click": "pwvucontrol",
       "tooltip": true,
-      "scroll-step": 5
+      "scroll-step": 5,
     },
 
     "pulseaudio#input": {
@@ -257,7 +259,7 @@
       "max-volume": "100",
       "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
       "on-click": "pwvucontrol",
-      "tooltip-format": "{source_desc}"
+      "tooltip-format": "{source_desc}",
     },
 
     "temperature": {
@@ -265,50 +267,51 @@
       "interval": 4,
       "format": "{icon} {temperatureC}°",
       "format-icons": ["", "", "", "", ""],
-      "tooltip": false
+      "tooltip": false,
     },
 
     "tray": {
       "icon-size": 17,
-      "spacing": 8
+      "spacing": 8,
     },
 
     "custom/spacer1": {
-      "format": " \\ ",
-      "tooltip": false
+      "format": " \\\\ ",
+      "tooltip": false,
     },
 
     "custom/spacer2": {
       "format": " ",
-      "tooltip": false
+      "tooltip": false,
     },
 
     "custom/spacer3": {
       "format": " // ",
-      "tooltip": false
+      "tooltip": false,
     },
 
     "custom/arch": {
       "format": "󰣇",
-      "tooltip": "Arch Linux",
-      "on-click": "rofi -theme ~/.config/rofi/config.rasi -show drun"
+      "tooltip": true,
+      "tooltip-format": "App Menu",
+      "on-click": "rofi -theme ~/.config/rofi/config.rasi -show drun",
     },
 
     "keyboard-state": {
-      "numlock": true,
+      "numlock": false,
       "capslock": true,
       "format": "{name} {icon}",
       "format-icons": {
         "locked": "",
-        "unlocked": ""
-      }
+        "unlocked": "",
+      },
     },
 
     "custom/power": {
       "format": "⏻ ",
       "tooltip": true,
       "tooltip-format": "Power Menu",
-      "on-click": "wlogout -s -b 6 -T 600 -B 600"
+      "on-click": "wlogout -s -b 6 -T 600 -B 600",
     },
 
     "custom/notification": {
@@ -322,14 +325,36 @@
         "inhibited-notification": "<span foreground='red'><sup></sup></span>",
         "inhibited-none": "",
         "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-        "dnd-inhibited-none": ""
+        "dnd-inhibited-none": "",
       },
       "return-type": "json",
       "exec-if": "which swaync-client",
       "exec": "swaync-client -swb",
       "on-click": "swaync-client -t -sw",
       "on-click-right": "swaync-client -d -sw",
-      "escape": true
-    }
-  }
+      "escape": true,
+    },
+
+    "custom/updater": {
+      "format": "{}  ",
+      "exec": "checkupdates | wc -l",
+      "exec-if": "[[ $(checkupdates | wc -l) ]]",
+      "interval": 43200, // (Arch Linux will try to check 12 hrs interval only
+      "on-click": "$HOME/.config/hypr/scripts/Distro_update.sh",
+      "tooltip": true,
+      "tooltip-format": "Left Click: Update System\nArch (w/ notification)\nclick to update",
+    },
+
+    // Hypridle inhibitor
+    "custom/hypridle": {
+      "format": "󱫗 ",
+      "return-type": "json",
+      "escape": true,
+      "exec-on-event": true,
+      "interval": 60,
+      "exec": "$HOME/.config/hypr/scripts/Hypridle.sh status",
+      "on-click": "$HOME/.config/hypr/scripts/Hypridle.sh toggle",
+      "on-click-right": "hyprlock",
+    },
+  },
 ]
