@@ -258,6 +258,14 @@ tooltip {
   padding: 0 10px;
 }
 
+#custom-hypridle {
+  padding: 0 5px;
+}
+
+#custom-updater {
+  padding: 0 5px;
+}
+
 #keyboard-state {
   color: @bright-green;
   padding: 0 0px;
@@ -287,4 +295,3 @@ tooltip {
 }
 
 /* }}} */
-
