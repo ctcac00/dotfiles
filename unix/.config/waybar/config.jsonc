@@ -308,7 +308,7 @@
     },
 
     "custom/power": {
-      "format": "⏻ ",
+      "format": "󰐥 ",
       "tooltip": true,
       "tooltip-format": "Power Menu",
       "on-click": "wlogout -s -b 6 -T 600 -B 600",

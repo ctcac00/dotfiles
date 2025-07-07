@@ -61,7 +61,6 @@
 
 #waybar.main button {
   font-family: "Maple Mono";
-  font-size: 12pt;
   font-weight: 500;
 } /* }}} */
 
@@ -232,7 +231,6 @@
 #waybar.main #custom-spacer1,
 #waybar.main #custom-spacer2,
 #waybar.main #custom-spacer3 {
-  font-size: 12pt;
   font-weight: bold;
   color: @dark-gray;
 }
@@ -241,7 +239,7 @@
 /* Tooltip */ /* {{{ */
 tooltip {
   background: @night-owl-blue;
-  border: 1px solid @night-owl-blue-accent;
+  border: 1px solid @dark-gray;
   border-radius: 8px;
   font-weight: 500;
   font-family: "Maple Mono";
@@ -253,7 +251,6 @@ tooltip {
 } /* }}} */
 
 #custom-arch {
-  font-size: 15pt;
   color: #d6deeb;
   padding: 0 10px;
 }
