@@ -126,13 +126,15 @@ alias cat='bat'
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
-source $HOME/.atuin/bin/env
+. $HOME/.atuin/bin/env
 
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 # append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
  
@@ -162,5 +164,3 @@ export DOTNET_ROOT=$(echo $HOME/.asdf/installs/dotnet/8.0.404)
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
     zprof
 fi
-
-. "$HOME/.atuin/bin/env"
