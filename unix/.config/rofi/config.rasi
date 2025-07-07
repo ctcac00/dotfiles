@@ -21,7 +21,7 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    font:                        "Maple Mono NF 11";
+    font:                        "Maple Mono 11";
     background:                  #011627;
     background-alt:              #1D3B53;
     foreground:                  #D6DEEB;

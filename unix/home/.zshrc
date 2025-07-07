@@ -126,6 +126,8 @@ alias cat='bat'
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
+source $HOME/.atuin/bin/env
+
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 
@@ -160,3 +162,5 @@ export DOTNET_ROOT=$(echo $HOME/.asdf/installs/dotnet/8.0.404)
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
     zprof
 fi
+
+. "$HOME/.atuin/bin/env"
