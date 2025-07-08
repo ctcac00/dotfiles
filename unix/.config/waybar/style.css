@@ -57,6 +57,7 @@
   font-family: "Maple Mono";
   font-size: 12pt;
   font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 #waybar.main button {
@@ -239,10 +240,9 @@
 /* Tooltip */ /* {{{ */
 tooltip {
   background: @night-owl-blue;
-  border: 1px solid @dark-gray;
-  border-radius: 8px;
   font-weight: 500;
   font-family: "Maple Mono";
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 #waybar.main #tray menu {
