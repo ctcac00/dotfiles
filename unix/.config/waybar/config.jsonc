@@ -276,7 +276,7 @@
     },
 
     "custom/spacer1": {
-      "format": " \\\\ ",
+      "format": "\\\\",
       "tooltip": false,
     },
 
@@ -286,7 +286,7 @@
     },
 
     "custom/spacer3": {
-      "format": " // ",
+      "format": "//",
       "tooltip": false,
     },
 
