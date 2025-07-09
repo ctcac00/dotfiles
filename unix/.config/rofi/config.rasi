@@ -74,16 +74,7 @@ inputbar {
     background-color:            transparent;
     text-color:                  @foreground;
     orientation:                 horizontal;
-    children:                    [ "textbox-prompt-colon", "entry", "dummy", "mode-switcher" ];
-}
-textbox-prompt-colon {
-    enabled:                     true;
-    expand:                      false;
-    str:                         "";
-    padding:                     12px 15px;
-    border-radius:               100%;
-    background-color:            @background-alt;
-    text-color:                  inherit;
+    children:                    [ "entry", "dummy", "mode-switcher" ];
 }
 entry {
     enabled:                     true;

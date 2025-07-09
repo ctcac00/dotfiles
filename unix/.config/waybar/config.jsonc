@@ -10,26 +10,24 @@
 
     "modules-left": [
       "custom/arch",
-      "tray",
-      "custom/spacer3",
       "hyprland/workspaces",
       "custom/spacer3",
       "hyprland/submap",
       "hyprland/window",
     ],
 
+    "modules-center": ["clock"],
+
     "modules-right": [
-      "cpu",
-      "temperature",
-      "group/storage",
-      "network#info",
+      // "cpu",
+      // "temperature",
+      // "group/storage",
+      // "network#info",
+      "tray",
       "custom/spacer1",
-      "pulseaudio#input",
-      "pulseaudio#output",
+      "group/audio",
       "custom/spacer1",
       "keyboard-state",
-      "custom/spacer1",
-      "clock",
       "custom/spacer1",
       "custom/hypridle",
       "custom/updater",
@@ -60,9 +58,19 @@
       "modules": ["memory#ram", "memory#swap", "disk"],
     },
 
+    "group/audio": {
+      "orientation": "horizontal",
+      "drawer": {
+        "transition-duration": "500",
+        "transition-left-to-right": "true",
+        "children-class": "drawer-child",
+      },
+      "modules": ["pulseaudio#output", "pulseaudio#input"],
+    },
+
     "clock": {
       "interval": 1,
-      "format": " {:%H:%M:%S    %d.%m.%y}",
+      "format": "{:%c}",
       "tooltip-format": "{:%d.%m.%Y   Week %W}\n\n<tt><small>{calendar}</small></tt>",
       "calendar": {
         "mode": "month",
