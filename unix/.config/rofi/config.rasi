@@ -22,8 +22,8 @@ configuration {
 /*****----- Global Properties -----*****/
 * {
     font:                        "Maple Mono 11";
-    background:                  #011627;
-    background-alt:              #1D3B53;
+    background:                  rgba(1, 22, 39, 0.9);
+    background-alt:              rgba(29, 59, 83, 0.9);
     foreground:                  #D6DEEB;
     selected:                    #6B95E0;
     active:                      #C792EA;
