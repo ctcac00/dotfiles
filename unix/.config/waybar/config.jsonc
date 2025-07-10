@@ -302,7 +302,7 @@
       "format": "󰣇",
       "tooltip": true,
       "tooltip-format": "App Menu",
-      "on-click": "rofi -theme ~/.config/rofi/config.rasi -show drun",
+      "on-click": "rofi -theme ~/.config/rofi/config.rasi -run-command 'uwsm app -- {cmd}' -show drun",
     },
 
     "keyboard-state": {
