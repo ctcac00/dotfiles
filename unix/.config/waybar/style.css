@@ -57,7 +57,7 @@
   font-family: "Maple Mono";
   font-size: 12pt;
   font-weight: 500;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 #waybar.main button {
@@ -189,11 +189,11 @@
 /* Workspace */ /* {{{ */
 /* Default workspace settings */
 #waybar.main #workspaces button {
-  font-size: 11pt;
+  font-size: 12pt;
   color: @bright-cyan;
   border: 1px solid @dark-gray;
-  padding: 0 2pt;
-  margin: 8px 4px;
+  padding: 0 4px;
+  margin: 6px 4px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -242,7 +242,7 @@ tooltip {
   background: @night-owl-blue;
   font-weight: 500;
   font-family: "Maple Mono";
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 #waybar.main #tray menu {
