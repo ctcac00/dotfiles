@@ -160,7 +160,7 @@
       },
       "format": "{}{windows}",
       "format-window-separator": "",
-      "window-rewrite-default": " ",
+      "window-rewrite-default": "  ",
       "window-rewrite": {
         "title<.*amazon.*>": "  ",
         "title<.*reddit.*>": "  ",
