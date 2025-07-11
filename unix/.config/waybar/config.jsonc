@@ -232,6 +232,7 @@
         "class<org.pipewire.Helvum>": " 󰓃",
         "class<localsend>": " ",
         "class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>": " 󰹛",
+        "class<MongoDB Compass": "  ",
       },
       "disable-scroll-wraparound": true,
       "smooth-scrolling-threshold": 4,
