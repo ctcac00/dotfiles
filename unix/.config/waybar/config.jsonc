@@ -33,6 +33,8 @@
       "custom/updater",
       "custom/notification",
       "custom/spacer1",
+      "power-profiles-daemon",
+      "custom/spacer1",
       "custom/power",
     ],
 
@@ -364,6 +366,17 @@
       "exec": "$HOME/.config/hypr/scripts/Hypridle.sh status",
       "on-click": "$HOME/.config/hypr/scripts/Hypridle.sh toggle",
       "on-click-right": "hyprlock",
+    },
+    "power-profiles-daemon": {
+      "format": "{icon} {profile}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": "",
+      },
     },
   },
 ]

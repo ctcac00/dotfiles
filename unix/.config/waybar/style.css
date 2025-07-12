@@ -298,4 +298,21 @@ tooltip {
   color: @light-blue;
 }
 
+#power-profiles-daemon {
+  margin: 0 5px;
+  color: @signature-purple;
+}
+
+#power-profiles-daemon.performance {
+  color: @bright-red;
+}
+
+#power-profiles-daemon.balanced {
+  color: @vivid-yellow;
+}
+
+#power-profiles-daemon.power-saver {
+  color: @bright-green;
+}
+
 /* }}} */
