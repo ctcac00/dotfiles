@@ -458,8 +458,11 @@ set -g @plugin 'christoomey/vim-tmux-navigator'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'alexwforsythe/tmux-which-key'
 set -g @plugin 'lost-melody/tmux-command-palette'
+set -g @plugin 'sainnhe/tmux-fzf'
 
 set -g @continuum-restore 'on'
+
+bind-key -T prefix F run-shell -b "$HOME/.config/tmux/plugins/tmux-fzf/main.sh"
 
 # -- custom variables ----------------------------------------------------------
 
