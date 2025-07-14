@@ -246,8 +246,6 @@ tooltip {
 }
 
 #waybar.main #tray menu {
-  border: 3px solid @vivid-yellow;
-  border-radius: 8px;
 } /* }}} */
 
 #custom-arch {
