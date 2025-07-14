@@ -102,24 +102,25 @@ tmux_conf_theme=enabled
 # tmux_conf_theme_colour_16="#d70000"   # red
 # tmux_conf_theme_colour_17="#e4e4e4"   # white
 
-# Tokyonight theme
-tmux_conf_theme_colour_1="#1a1b26"    # dark background (blackish)
-tmux_conf_theme_colour_2="#24283b"    # dark grayish blue
-tmux_conf_theme_colour_3="#565f89"    # muted blue-gray (light grayish blue)
-tmux_conf_theme_colour_4="#7aa2f7"    # light blue (neon blue)
-tmux_conf_theme_colour_5="#e0af68"    # warm yellow-orange
-tmux_conf_theme_colour_6="#1a1b26"    # dark background (blackish)
-tmux_conf_theme_colour_7="#d9e0ee"    # lightest grayish blue (almost white)
-tmux_conf_theme_colour_8="#1a1b26"    # dark background (blackish)
-tmux_conf_theme_colour_9="#e0af68"    # warm yellow-orange
-tmux_conf_theme_colour_10="#f7768e"   # soft pink
-tmux_conf_theme_colour_11="#9ece6a"   # light green (neon green)
-tmux_conf_theme_colour_12="#565f89"   # muted blue-gray (light grayish blue)
-tmux_conf_theme_colour_13="#d9e0ee"   # lightest grayish blue (almost white)
-tmux_conf_theme_colour_14="#1a1b26"   # dark background (blackish)
-tmux_conf_theme_colour_15="#1a1b26"   # dark background (blackish)
-tmux_conf_theme_colour_16="#f07178"   # soft red (warm red)
-tmux_conf_theme_colour_17="#d9e0ee"   # lightest grayish blue (almost white)
+# Night Owl theme
+# Based on https://github.com/sdras/night-owl-vscode-theme
+tmux_conf_theme_colour_1="#011627"    # dark background
+tmux_conf_theme_colour_2="#0b253a"    # dark grayish blue
+tmux_conf_theme_colour_3="#5f7e97"    # muted blue-gray
+tmux_conf_theme_colour_4="#82aaff"    # blue
+tmux_conf_theme_colour_5="#ffcb8b"    # yellow
+tmux_conf_theme_colour_6="#011627"    # dark background
+tmux_conf_theme_colour_7="#d6deeb"    # foreground
+tmux_conf_theme_colour_8="#011627"    # dark background
+tmux_conf_theme_colour_9="#addb67"    # light green
+tmux_conf_theme_colour_10="#c792ea"   # purple
+tmux_conf_theme_colour_11="#22da6e"   # green
+tmux_conf_theme_colour_12="#5f7e97"   # muted blue-gray
+tmux_conf_theme_colour_13="#d6deeb"   # foreground
+tmux_conf_theme_colour_14="#011627"   # dark background
+tmux_conf_theme_colour_15="#011627"   # dark background
+tmux_conf_theme_colour_16="#8860d0"   # darker purple
+tmux_conf_theme_colour_17="#5a9aef"   # darker blue
 
 # default theme (ansi)
 #tmux_conf_theme_colour_1="colour0"
