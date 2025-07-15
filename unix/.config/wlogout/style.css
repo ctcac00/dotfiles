@@ -4,11 +4,11 @@
 }
 
 window {
-  background-color: rgba(1, 22, 39, 0.5); /* Deep navy base */
+  background-color: rgba(1, 22, 39, 0.1); /* Deep navy base */
 }
 
 button {
-  border-radius: 0;
+  border-radius: 10px;
   border-color: #0b2942; /* Subtle deep border */
   text-decoration-color: #d6deeb; /* Night Owl foreground */
   color: #d6deeb;
@@ -17,7 +17,9 @@ button {
   border-width: 1px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 25%;
+  background-size: 10%;
+  animation: gradient_f 20s ease-in infinite;
+  margin: 10px;
 }
 
 button:focus,
@@ -25,6 +27,9 @@ button:active,
 button:hover {
   background-color: #094771; /* Night Owl selection blue */
   outline-style: none;
+  background-size: 20%;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.28, 1.682);
 }
 
 #lock {
@@ -63,8 +68,5 @@ button:hover {
 }
 
 #reboot {
-  background-image: image(
-    url("/usr/share/wlogout/icons/reboot.png"),
-    url("/usr/local/share/wlogout/icons/reboot.png")
-  );
+  background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
 }
