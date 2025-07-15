@@ -72,8 +72,9 @@
 
     "clock": {
       "interval": 1,
-      "format": "{:%c}",
-      "tooltip-format": "{:%d.%m.%Y   Week %W}\n\n<tt><small>{calendar}</small></tt>",
+      // "format": "{:%c}",
+      "format": "{:%a %d %r}",
+      "tooltip-format": "{:%d.%m.%Y   Week %W}\n\n<tt>{calendar}</tt>",
       "calendar": {
         "mode": "month",
         "mode-mon-col": 3,
