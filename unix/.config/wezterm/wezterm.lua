@@ -20,7 +20,7 @@ config.window_frame = {
 }
 config.line_height = 1
 -- config.font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Medium", stretch = "Normal", style = "Normal" })
-config.font = wezterm.font("Maple Mono", {
+config.font = wezterm.font("Maple Mono NF", {
 	weight = "Regular",
 	stretch = "Normal",
 	style = "Normal",
@@ -30,7 +30,7 @@ config.font_rules = {
 	{
 		intensity = "Bold",
 		-- font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Bold", stretch = "Normal", style = "Normal" }),
-		font = wezterm.font("Maple Mono", {
+		font = wezterm.font("Maple Mono NF", {
 			weight = "Regular",
 			stretch = "Normal",
 			style = "Normal",
