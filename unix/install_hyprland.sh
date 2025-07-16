@@ -146,7 +146,8 @@ paru -Sy --noconfirm \
   qt5-wayland \
   qt6-wayland \
   sddm \
-  maplemono-nf-unhinted
+  maplemono-nf-unhinted \
+  bibata-cursor-git
 
 echo "--> Installing GUI Applications..."
 paru -Sy --noconfirm \
