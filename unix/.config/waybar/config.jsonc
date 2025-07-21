@@ -19,13 +19,9 @@
     "modules-center": ["clock"],
 
     "modules-right": [
-      // "cpu",
-      // "temperature",
-      // "group/storage",
-      // "network#info",
       "tray",
-      "bluetooth",
       "custom/spacer1",
+      "bluetooth",
       "group/audio",
       "custom/spacer1",
       "keyboard-state",
@@ -33,6 +29,8 @@
       "custom/hypridle",
       "custom/updater",
       "custom/notification",
+      "custom/spacer1",
+      "custom/layout",
       "custom/spacer1",
       "power-profiles-daemon",
       "custom/spacer1",
@@ -387,5 +385,13 @@
       "tooltip": true,
       "on-click": "blueman-manager",
     },
+    "custom/layout": {
+      "format": "{} 󰕴",
+      "exec": "$HOME/.config/hypr/scripts/GetLayout.sh",
+      "interval": 10,
+      "tooltip": true,
+      "tooltip-format": "Current Layout",
+    },
   },
 ]
+

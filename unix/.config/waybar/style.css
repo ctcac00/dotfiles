@@ -77,28 +77,14 @@
 #waybar.main #temperature,
 #waybar.main #tray,
 #waybar.main #window,
+#waybar.main #custom-layout,
+#waybar.main #custom-notification,
+#waybar.main #custom-hypridle,
 #waybar.main #disk {
   padding: 4px 8pt;
   background-color: transparent;
   /* Universal transition for smooth animations */
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* Hover glow effect for all modules */
-#waybar.main #keyboard-state:hover,
-#waybar.main #network:hover,
-#waybar.main #clock:hover,
-#waybar.main #cpu:hover,
-#waybar.main #memory.swap:hover,
-#waybar.main #memory.ram:hover,
-#waybar.main #submap:hover,
-#waybar.main #pulseaudio:hover,
-#waybar.main #temperature:hover,
-#waybar.main #tray:hover,
-#waybar.main #window:hover,
-#waybar.main #disk:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  text-shadow: 0 0 5px currentColor;
 }
 
 #waybar.main #tray {
@@ -255,23 +241,17 @@ tooltip {
 
 #custom-hypridle {
   color: @bright-green;
-  padding: 0 5px;
 }
 
 #custom-updater {
   color: @vivid-yellow;
-  padding: 0 5px;
 }
 
 #keyboard-state {
   color: @bright-green;
-  padding: 0 0px;
-  /* margin: 0 5px; */
-  min-width: 16px;
 }
 
 #keyboard-state > label {
-  padding: 0 5px;
 }
 
 #keyboard-state > label.locked {
@@ -280,15 +260,11 @@ tooltip {
 
 #custom-power {
   color: @bright-red;
-  padding: 0 0px;
-  margin: 0 5px;
   min-width: 16px;
 }
 
 #custom-notification {
   color: @signature-purple;
-  padding: 0 0px;
-  margin: 0 5px;
   min-width: 16px;
 }
 
@@ -297,7 +273,6 @@ tooltip {
 }
 
 #power-profiles-daemon {
-  margin: 0 5px;
   color: @signature-purple;
 }
 
@@ -313,4 +288,12 @@ tooltip {
   color: @bright-green;
 }
 
+#custom-layout {
+  color: @light-blue;
+}
+
+#bluetooth {
+  color: @signature-purple;
+  margin-left: 5px;
+}
 /* }}} */
