@@ -80,6 +80,8 @@
 #waybar.main #custom-layout,
 #waybar.main #custom-notification,
 #waybar.main #custom-hypridle,
+#waybar.main #power-profiles-daemon,
+#waybar.main #custom-power,
 #waybar.main #disk {
   padding: 4px 8pt;
   background-color: transparent;
@@ -294,6 +296,6 @@ tooltip {
 
 #bluetooth {
   color: @signature-purple;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 /* }}} */
