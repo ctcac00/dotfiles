@@ -21,7 +21,7 @@
     "modules-right": [
       "tray",
       "custom/spacer1",
-      "bluetooth",
+      // "bluetooth",
       "group/audio",
       "custom/spacer1",
       "keyboard-state",
@@ -394,4 +394,3 @@
     },
   },
 ]
-

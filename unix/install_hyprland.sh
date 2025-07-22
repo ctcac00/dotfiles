@@ -148,7 +148,10 @@ paru -Sy --noconfirm \
   sddm \
   maplemono-nf-unhinted \
   bibata-cursor-git \
-  blueman
+  blueman \
+  gnome-keyring \
+  xdg-desktop-portal-gtk \
+  hyprcursor
 
 echo "--> Installing GUI Applications..."
 paru -Sy --noconfirm \
@@ -156,7 +159,9 @@ paru -Sy --noconfirm \
   spotify \
   zoom \
   obs-studio \
-  brave
+  brave \
+  vlc \
+  speedcrunch
 
 echo "--> Installing Virtualization Tools..."
 paru -Sy --noconfirm \
