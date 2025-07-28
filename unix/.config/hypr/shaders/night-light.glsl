@@ -1,5 +1,5 @@
 // from https://github.com/hyprwm/Hyprland/issues/1140#issuecomment-1335128437
-
+#version 300 es
 precision highp float;
 varying vec2 v_texcoord;
 uniform sampler2D tex;
