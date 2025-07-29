@@ -246,7 +246,7 @@
         "default": ["", ""],
       },
       "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-      "on-click": "pwvucontrol",
+      "on-click": "pavucontrol",
       "tooltip": true,
       "scroll-step": 5,
     },
@@ -259,7 +259,7 @@
       "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
       "max-volume": "100",
       "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-      "on-click": "pwvucontrol",
+      "on-click": "pavucontrol",
       "tooltip-format": "{source_desc}",
     },
 
