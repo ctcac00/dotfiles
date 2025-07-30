@@ -19,6 +19,8 @@
     "modules-center": ["clock"],
 
     "modules-right": [
+      "mpris",
+      "custom/spacer1",
       "tray",
       "custom/spacer1",
       // "bluetooth",
@@ -31,8 +33,6 @@
       "custom/notification",
       "custom/spacer1",
       "custom/layout",
-      "custom/spacer1",
-      "power-profiles-daemon",
       "custom/spacer1",
       "custom/power",
     ],
@@ -384,6 +384,19 @@
       "interval": 10,
       "tooltip": true,
       "tooltip-format": "Current Layout",
+    },
+    "mpris": {
+      "player": "spotify",
+      "format": "{status_icon} {title} - {artist}",
+      "format-paused": "{status_icon} <i>{title} - {artist}</i>",
+      "status-icons": {
+        "playing": "",
+        "paused": "",
+      },
+      "on-click": "playerctl -p spotify play-pause",
+      "on-scroll-up": "playerctl -p spotify next",
+      "on-scroll-down": "playerctl -p spotify previous",
+      "max-length": 45,
     },
   },
 ]

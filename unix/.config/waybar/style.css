@@ -110,6 +110,7 @@
 
 #waybar.main #clock {
   color: @bright-cyan;
+  font-weight: bold;
 }
 
 #waybar.main #window {
@@ -297,5 +298,9 @@ tooltip {
 #bluetooth {
   color: @signature-purple;
   margin-left: 10px;
+}
+#mpris {
+  padding: 0 5px;
+  color: @signature-purple;
 }
 /* }}} */
