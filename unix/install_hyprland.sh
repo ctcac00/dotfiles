@@ -111,7 +111,10 @@ paru -Sy --noconfirm \
   asdf-vm \
   ncdu \
   udiskie \
-  atuin
+  atuin \
+  net-tools \
+  httpie \
+  curlie
 
 echo "--> Installing Hyprland & Wayland Ecosystem..."
 paru -Sy --noconfirm \
@@ -151,7 +154,10 @@ paru -Sy --noconfirm \
   blueman \
   gnome-keyring \
   xdg-desktop-portal-gtk \
-  hyprcursor
+  hyprcursor \
+  unzip \
+  xarchiver \
+  exiftool
 
 echo "--> Installing GUI Applications..."
 paru -Sy --noconfirm \
@@ -161,7 +167,9 @@ paru -Sy --noconfirm \
   obs-studio \
   brave \
   vlc \
-  speedcrunch
+  speedcrunch \
+  pdfmerger \
+  solaar
 
 echo "--> Installing Virtualization Tools..."
 paru -Sy --noconfirm \
