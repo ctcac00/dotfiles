@@ -67,7 +67,7 @@ export GPG_TTY=$TTY
 
 # Source additional local files if they exist.
 z4h source ~/.env.zsh
-source ~/zsh-defer/zsh-defer.plugin.zsh
+source ~/.zsh-defer/zsh-defer.plugin.zsh
 
 # Use additional Git repositories pulled in with `z4h install`.
 #
@@ -127,8 +127,6 @@ alias k='kubectl'
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
-. $HOME/.atuin/bin/env
-
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 
@@ -139,8 +137,8 @@ fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
  
-zsh-defer z4h load ~/autoswitch_virtualenv
-zsh-defer z4h source ~/autoswitch_virtualenv/autoswitch_virtualenv.plugin.zsh
+zsh-defer z4h load ~/.autoswitch_virtualenv
+zsh-defer z4h source ~/.autoswitch_virtualenv/autoswitch_virtualenv.plugin.zsh
 
 # --- setup fzf theme ---
 fg="#CBE0F0"
@@ -160,7 +158,6 @@ export EDITOR=nvim
 # Recursively traverse directories when TAB-completing files.
 zstyle ':z4h:fzf-complete' fzf-bindings tab:repeat
 
-export DOTNET_ROOT=$(echo $HOME/.asdf/installs/dotnet/8.0.404)
 
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
     zprof
