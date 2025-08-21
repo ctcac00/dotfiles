@@ -68,6 +68,7 @@
         pkgs.maccy
         pkgs.telegram-desktop
         pkgs.whatsapp-for-mac
+        pkgs.skhd
       ];
 
       homebrew = {
