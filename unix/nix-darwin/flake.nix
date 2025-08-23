@@ -69,6 +69,9 @@
         pkgs.telegram-desktop
         pkgs.whatsapp-for-mac
         pkgs.skhd
+        pkgs.ripgrep
+        pkgs.k3d
+        pkgs.k9s
       ];
 
       homebrew = {
@@ -173,8 +176,6 @@
             DSDontWriteNetworkStores = true;
             DSDontWriteUSBStores = true;
           };
-          # Show battery percentage
-          "/Users/carlos/Library/Preferences/ByHost/com.apple.controlcenter".BatteryShowPercentage = true;
           # Privacy
           "com.apple.AdLib".allowApplePersonalizedAdvertising = false;
         };
