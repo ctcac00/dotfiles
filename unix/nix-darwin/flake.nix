@@ -72,11 +72,17 @@
         pkgs.ripgrep
         pkgs.k3d
         pkgs.k9s
+        pkgs.ncdu
+        pkgs.gh
+        pkgs.exiftool
+        pkgs.qemu
+        pkgs.spotify
       ];
 
       homebrew = {
         enable = true;
         brews = [
+          "superfile"
         ];
         casks = [
           "docker-desktop"
@@ -178,6 +184,10 @@
           };
           # Privacy
           "com.apple.AdLib".allowApplePersonalizedAdvertising = false;
+          "com.apple.CoreBrightness" = {
+            CBBlueReductionEnabled = 1;
+            CBBlueReductionMode = 2;
+          };
         };
       };
 

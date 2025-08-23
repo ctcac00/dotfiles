@@ -112,7 +112,7 @@ cmd-minus = 'resize smart -50'
 cmd-equal = 'resize smart +50'
 
 cmd-m = 'fullscreen'
-cmd-f = 'macos-native-fullscreen'
+# cmd-f = 'macos-native-fullscreen' # interferes with the find command
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 cmd-1 = 'workspace 1'
