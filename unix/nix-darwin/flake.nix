@@ -77,6 +77,8 @@
         pkgs.exiftool
         pkgs.qemu
         pkgs.spotify
+        pkgs.mongosh
+        pkgs.mongodb-compass
       ];
 
       homebrew = {
