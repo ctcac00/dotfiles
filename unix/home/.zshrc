@@ -127,6 +127,10 @@ alias k='kubectl'
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
+if [[ "$(uname)" == "Linux" ]]; then
+  . $HOME/.atuin/bin/env
+fi
+
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 
