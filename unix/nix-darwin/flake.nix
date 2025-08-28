@@ -92,6 +92,7 @@
           "obs"
           "vlc"
           "gimp"
+          "spotmenu"
         ];
         masApps = {
           "Xcode" = 497799835;
