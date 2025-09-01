@@ -3,7 +3,6 @@ return {
     {
         "folke/snacks.nvim",
         -- priority = 1000,
-        dependencies = { "yetone/avante.nvim" },
         -- lazy = false,
         -- NOTE: Options
         opts = {
@@ -14,6 +13,22 @@ return {
                     -- override picker layout in keymaps function as a param below
                     preset = "ivy", -- defaults to this layout unless overidden
                 },
+                win = {
+                    -- input window
+                    input = {
+                      keys = {
+                        ["<C-A-h>"] = { "toggle_hidden", mode = { "i", "n" } },
+                        ["<C-A-i>"] = { "toggle_ignored", mode = { "i", "n" } }
+                      }
+                    }
+                },
+                -- result list window
+                list = {
+                    keys = {
+                      ["<C-A-h>"] = "toggle_hidden",
+                      ["<C-A-i>"] = "toggle_ignored",
+                    },
+                },
             },
         },
         -- NOTE: Keymaps
@@ -21,14 +36,14 @@ return {
             { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
             { "<leader>/", LazyVim.pick("grep", { root = false }), desc = "Grep (cwd)" },
             { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
-            { "<leader><space>", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
+            { "<leader><space>", LazyVim.pick("files", { root = false, hidden = true }), desc = "Find Files (cwd)" },
             { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
             -- find
             { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
             { "<leader>fB", function() Snacks.picker.buffers({ hidden = true, nofile = true }) end, desc = "Buffers (all)" },
             { "<leader>fc", LazyVim.pick.config_files(), desc = "Find Config File" },
-            { "<leader>fF", LazyVim.pick("files"), desc = "Find Files (Root Dir)" },
-            { "<leader>ff", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
+            { "<leader>fF", LazyVim.pick("files",{  hidden = true }), desc = "Find Files (Root Dir)" },
+            { "<leader>ff", LazyVim.pick("files", { root = false, hidden = true  }), desc = "Find Files (cwd)" },
             { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Files (git-files)" },
             { "<leader>fR", LazyVim.pick("oldfiles"), desc = "Recent" },
             { "<leader>fr", function() Snacks.picker.recent({ filter = { cwd = true }}) end, desc = "Recent (cwd)" },
@@ -40,8 +55,8 @@ return {
             -- Grep
             { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
             { "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
-            { "<leader>sG", LazyVim.pick("live_grep"), desc = "Grep (Root Dir)" },
-            { "<leader>sg", LazyVim.pick("live_grep", { root = false }), desc = "Grep (cwd)" },
+            { "<leader>sG", LazyVim.pick("live_grep", { hidden = true  }), desc = "Grep (Root Dir)" },
+            { "<leader>sg", LazyVim.pick("live_grep", { root = false , hidden = true}), desc = "Grep (cwd)" },
             { "<leader>sp", function() Snacks.picker.lazy() end, desc = "Search for Plugin Spec" },
             { "<leader>sw", LazyVim.pick("grep_word"), desc = "Visual selection or word (Root Dir)", mode = { "n", "x" } },
             { "<leader>sW", LazyVim.pick("grep_word", { root = false }), desc = "Visual selection or word (cwd)", mode = { "n", "x" } },
@@ -66,6 +81,6 @@ return {
             { "<leader>su", function() Snacks.picker.undo() end, desc = "Undotree" },
             -- ui
             { "<leader>uC", function() Snacks.picker.colorschemes({ layout = "default" }) end, desc = "Colorschemes" },
-        }
+        },
     },
 }
