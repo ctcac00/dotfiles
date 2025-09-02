@@ -81,7 +81,6 @@
         pkgs.mongodb-compass
         pkgs.raycast
         pkgs.hidden-bar
-        pkgs.sqlfluff
       ];
 
       homebrew = {
