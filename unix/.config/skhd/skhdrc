@@ -104,20 +104,3 @@
 #    "terminal"
 #    "qutebrowser"
 # ]
-
-# open terminal, blazingly fast compared to iTerm/Hyper
-cmd - return : open -na /Applications/Nix\ Trampolines/kitty.app --args --single-instance -d ~
-
-# open Browser
-cmd - b : open -na /Applications/Brave\ Browser.app
-
-# Override macos default keybindings in favor or aerospace
-cmd + shift - 3 : aerospace move-node-to-workspace 3
-cmd + shift - 4 : aerospace move-node-to-workspace 4
-
-# Recreate the screenshot shortcuts
-cmd + ctrl - 3 : screencapture ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png
-cmd + ctrl - 4 : screencapture -i ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png
-
-# Open File Explorer
-cmd - e : open ~

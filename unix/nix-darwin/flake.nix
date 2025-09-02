@@ -79,10 +79,14 @@
         pkgs.spotify
         pkgs.mongosh
         pkgs.mongodb-compass
+        pkgs.raycast
+        pkgs.hidden-bar
+        pkgs.sqlfluff
       ];
 
       homebrew = {
         enable = true;
+        taps = [];
         brews = [
           "superfile"
         ];
