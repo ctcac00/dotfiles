@@ -101,8 +101,9 @@ alt-b = 'exec-and-forget open -na /Applications/Brave\ Browser.app'
 alt-e = 'exec-and-forget open ~'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
+alt-t = 'layout tiling floating'
 alt-ctrl-j = 'layout h_tiles v_tiles'
-alt-ctrl-l = 'layout tiling floating'
+alt-ctrl-l = 'layout h_accordion v_accordion'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-h = 'focus left'

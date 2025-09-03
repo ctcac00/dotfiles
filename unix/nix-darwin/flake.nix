@@ -88,6 +88,7 @@
         taps = [];
         brews = [
           "superfile"
+          "helm"
         ];
         casks = [
           "docker-desktop"
@@ -144,6 +145,8 @@
           FXPreferredViewStyle = "clmv";
           ShowPathbar = true;
           ShowStatusBar = true;
+          FXDefaultSearchScope = "SCcf";
+          _FXShowPosixPathInTitle = true;
         };
         trackpad = {
           Clicking = true;
@@ -178,8 +181,6 @@
             # Set home directory as startup window
             NewWindowTargetPath = "file:///Users/carlos/";
             NewWindowTarget = "PfHm";
-            # Set search scope to directory
-            FXDefaultSearchScope = "SCcf";
             # Multi-file tab view
             FinderSpawnTab = true;
           };
