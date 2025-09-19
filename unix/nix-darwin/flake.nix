@@ -85,7 +85,9 @@
 
       homebrew = {
         enable = true;
-        taps = [];
+        taps = [
+          "homebrew/command-not-found"
+        ];
         brews = [
           "superfile"
           "helm"
@@ -228,7 +230,7 @@
             # Optional: Enable fully-declarative tap management
             #
             # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
-            mutableTaps = false;
+            mutableTaps = true;
           };
         }
         # Optional: Align homebrew taps config with nix-homebrew

@@ -91,6 +91,9 @@ outer.right = 8
 # end tell'
 # '''
 
+cmd-h = []     # Disable "hide application"
+cmd-alt-h = [] # Disable "hide others"
+
 # open terminal, blazingly fast compared to iTerm/Hyper
 alt-enter = 'exec-and-forget open -na /Applications/Nix\ Trampolines/kitty.app --args -d ~'
 
