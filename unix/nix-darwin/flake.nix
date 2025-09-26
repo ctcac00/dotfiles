@@ -76,11 +76,11 @@
         pkgs.gh
         pkgs.exiftool
         pkgs.qemu
-        pkgs.spotify
         pkgs.mongosh
         pkgs.mongodb-compass
         pkgs.raycast
         pkgs.hidden-bar
+        pkgs.pipx
       ];
 
       homebrew = {
@@ -99,6 +99,7 @@
           "vlc"
           "gimp"
           "spotmenu"
+          "spotify"
         ];
         masApps = {
           "Xcode" = 497799835;
