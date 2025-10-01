@@ -81,6 +81,8 @@
         pkgs.raycast
         pkgs.hidden-bar
         pkgs.pipx
+        pkgs.uv
+        pkgs.claude-code
       ];
 
       homebrew = {
