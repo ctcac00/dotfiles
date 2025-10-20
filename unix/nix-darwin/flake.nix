@@ -83,6 +83,7 @@
         pkgs.pipx
         pkgs.uv
         pkgs.claude-code
+        pkgs.nmap
       ];
 
       homebrew = {
@@ -102,6 +103,7 @@
           "gimp"
           "spotmenu"
           "spotify"
+          "vnc-viewer"
         ];
         masApps = {
           "Xcode" = 497799835;
