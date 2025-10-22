@@ -44,6 +44,7 @@
         pkgs.nodejs_22
         pkgs.go
         pkgs.python313
+        pkgs.python313Packages.pip
         pkgs.fzf
         pkgs.fd
         pkgs.lazygit
@@ -84,6 +85,7 @@
         pkgs.uv
         pkgs.claude-code
         pkgs.nmap
+        pkgs.jankyborders
       ];
 
       homebrew = {
@@ -130,6 +132,7 @@
       '';
 
       security.pam.services.sudo_local.touchIdAuth = true;
+      security.pam.services.sudo_local.reattach = true;
 
       system.primaryUser = "carlos";
       system.defaults = {
