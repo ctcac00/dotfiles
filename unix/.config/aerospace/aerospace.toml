@@ -95,7 +95,7 @@ cmd-h = []     # Disable "hide application"
 cmd-alt-h = [] # Disable "hide others"
 
 # open terminal, blazingly fast compared to iTerm/Hyper
-alt-enter = 'exec-and-forget open -na /Applications/Nix\ Trampolines/kitty.app --args -d ~'
+alt-enter = 'exec-and-forget open -na /Applications/Nix\ Apps/kitty.app --args -d ~'
 
 # open Browser
 alt-b = 'exec-and-forget open -na /Applications/Brave\ Browser.app'
