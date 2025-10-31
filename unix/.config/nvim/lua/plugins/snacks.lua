@@ -13,22 +13,6 @@ return {
                     -- override picker layout in keymaps function as a param below
                     preset = "ivy", -- defaults to this layout unless overidden
                 },
-                win = {
-                    -- input window
-                    input = {
-                      keys = {
-                        ["<C-A-h>"] = { "toggle_hidden", mode = { "i", "n" } },
-                        ["<C-A-i>"] = { "toggle_ignored", mode = { "i", "n" } }
-                      }
-                    }
-                },
-                -- result list window
-                list = {
-                    keys = {
-                      ["<C-A-h>"] = "toggle_hidden",
-                      ["<C-A-i>"] = "toggle_ignored",
-                    },
-                },
             },
         },
         -- NOTE: Keymaps

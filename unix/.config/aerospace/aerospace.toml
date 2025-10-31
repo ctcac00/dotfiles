@@ -121,8 +121,8 @@ alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-alt-ctrl-left = 'resize smart -50'
-alt-ctrl-right = 'resize smart +50'
+alt-ctrl-left = 'resize smart -100'
+alt-ctrl-right = 'resize smart +100'
 
 alt-m = 'fullscreen'
 alt-f = 'macos-native-fullscreen'

@@ -1,5 +1,5 @@
 {
-  description = "Example nix-darwin system flake";
+  description = "Macbook Air M4 Setup";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -17,6 +17,10 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    dbt-labs = {
+      url = "github:dbt-labs/dbt-cli";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {
@@ -27,6 +31,7 @@
     nix-homebrew,
     homebrew-core,
     homebrew-cask,
+    dbt-labs,
   }: let
     configuration = {pkgs, ...}: {
       # List packages installed in system profile. To search by name, run:
@@ -96,6 +101,7 @@
         brews = [
           "superfile"
           "helm"
+          "dbt"
         ];
         casks = [
           "docker-desktop"
@@ -233,6 +239,7 @@
             taps = {
               "homebrew/homebrew-core" = homebrew-core;
               "homebrew/homebrew-cask" = homebrew-cask;
+              "dbt-labs/dbt-cli" = dbt-labs;
             };
 
             # Optional: Enable fully-declarative tap management
