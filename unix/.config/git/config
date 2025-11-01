@@ -145,3 +145,5 @@
 ; For example, a different user.email or GPG key for work repos.
 ; Path must end with a slash.
 ; path = ~/work/.gitconfig-work
+[fetch]
+	prune = true

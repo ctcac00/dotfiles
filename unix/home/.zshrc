@@ -166,10 +166,15 @@ zstyle ':z4h:fzf-complete' fzf-bindings tab:repeat
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
     zprof
 fi
+
 # Added by dbt Fusion extension (ensure dbt binary dir on PATH)
 if [[ ":$PATH:" != *":/Users/carlos/.local/bin:"* ]]; then
   export PATH="$PATH":/Users/carlos/.local/bin
 fi
 # Added by dbt Fusion extension
 alias dbtf=/Users/carlos/.local/bin/dbt
+
 alias dbt-cloud=dbt
+
+# opencode
+export PATH=/home/carlos/.opencode/bin:$PATH
