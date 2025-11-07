@@ -73,7 +73,6 @@
         pkgs.stats
         pkgs.maccy
         pkgs.telegram-desktop
-        pkgs.whatsapp-for-mac
         pkgs.skhd
         pkgs.ripgrep
         pkgs.k3d
@@ -117,7 +116,10 @@
           "Xcode" = 497799835;
           "Wireguard" = 1451685025;
         };
+        onActivation.autoUpdate = true;
+        global.autoUpdate = true;
       };
+
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
       nixpkgs.config.allowUnfree = true;
