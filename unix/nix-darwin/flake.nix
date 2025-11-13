@@ -42,6 +42,8 @@
         pkgs.tmux
         pkgs.zoxide
         pkgs.kitty
+        pkgs.iterm2
+        pkgs.alacritty
         pkgs.stow
         pkgs.bat
         pkgs.atuin
