@@ -1,2 +1,5 @@
 unix/.config/waypaper/config.ini
 unix/.config/tmux/plugins
+unix/.config/vlc/vlc-qt-interface.conf
+unix/.config/Thunar/accels.scm
+unix/.config/SpeedCrunch/SpeedCrunch.ini
