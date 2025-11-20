@@ -18,14 +18,5 @@ return {
         },
       },
     },
-    sources = {
-      -- adding any nvim-cmp sources here will enable them
-      -- with blink.compat
-      compat = {
-        "avante_commands",
-        "avante_mentions",
-        "avante_files",
-      },
-    },
   },
 }

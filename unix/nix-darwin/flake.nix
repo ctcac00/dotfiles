@@ -107,7 +107,6 @@
         casks = [
           "docker-desktop"
           "garmin-express"
-          "obs"
           "vlc"
           "gimp"
           "spotmenu"
