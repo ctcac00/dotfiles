@@ -11,13 +11,9 @@ is_running() {
 
 if [[ "$1" == "status" ]]; then
   if is_running; then
-    echo '{"text": "RUNNING", "class": "active", "tooltip": "idle_inhibitor NOT ACTIVE
-Left Click: Deactivate
-Right Click: Lock Screen"}'
+    echo '{"text": "RUNNING", "class": "active", "tooltip": "idle_inhibitor NOT ACTIVE\nLeft Click: Deactivate\nRight Click: Lock Screen"}'
   else
-    echo '{"text": "NOT RUNNING", "class": "notactive", "tooltip": "idle_inhibitor is ACTIVE
-Left Click: Activate
-Right Click: Lock Screen"}'
+    echo '{"text": "NOT RUNNING", "class": "notactive", "tooltip": "idle_inhibitor is ACTIVE\nLeft Click: Activate\nRight Click: Lock Screen"}'
   fi
 elif [[ "$1" == "toggle" ]]; then
   # Toggle hypridle.service on and off via systemctl

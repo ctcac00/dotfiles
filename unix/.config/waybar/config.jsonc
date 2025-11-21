@@ -11,9 +11,11 @@
     "modules-left": [
       "custom/arch",
       "hyprland/workspaces",
+      "niri/workspaces",
       "custom/spacer3",
       "hyprland/submap",
       "hyprland/window",
+      "niri/window",
     ],
 
     "modules-center": ["clock"],
@@ -230,6 +232,14 @@
       "smooth-scrolling-threshold": 4,
       "enable-bar-scroll": true,
       "special-visible-only": false,
+    },
+
+    "niri/workspaces": {
+      "format": "{}",
+    },
+
+    "niri/window": {
+      "format": "{}",
     },
 
     "pulseaudio#output": {
