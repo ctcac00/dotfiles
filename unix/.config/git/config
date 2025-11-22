@@ -17,11 +17,11 @@
 [core]
     ; Sets your preferred text editor for commit messages, rebase operations, etc.
     ; Common options: "nano", "vim", "code --wait", "subl --wait", "notepad.exe"
-    editor = vim
+    editor = nvim
 
     ; Disables the "C-style block comments" warning for commit messages.
     ; This is often desired as many people start commit messages with "#" for comments.
-    commentchar = auto
+    ; commentchar = auto
 
 [help]
     ; Set to true if you want Git to automatically correct typos in commands.
