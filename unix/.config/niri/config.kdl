@@ -370,7 +370,11 @@ binds {
     Mod+B hotkey-overlay-title="Open Browser: brave" { spawn-sh "uwsm app -- brave"; }
     Mod+E hotkey-overlay-title="Open TUI File Manager" { spawn-sh "kitty spf"; }
     Mod+Shift+E hotkey-overlay-title="Open GUI File Manager: thunar" { spawn "thunar"; }
+    Mod+Shift+W hotkey-overlay-title="Open Wallpaper Selector: waypaper" { spawn-sh "waypaper"; }
+    Mod+V hotkey-overlay-title="Open Clipboard Manager: clipse" { spawn-sh "kitty --class clipse -e clipse"; }
+    Mod+N hotkey-overlay-title="Toggle Notification Panel: swaync" { spawn-sh "swaync-client -t -sw"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    Mod+Ctrl+Q hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -581,7 +585,7 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
+    Mod+T       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
@@ -612,8 +616,8 @@ binds {
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
-    Mod+Shift+Q { quit; }
-    Ctrl+Alt+Delete { quit; }
+    Mod+Shift+Q hotkey-overlay-title="Logout" { spawn-sh "$HOME/.config/hypr/scripts/Logout.sh"; }
+    Ctrl+Alt+Delete hotkey-overlay-title="Logout" { spawn-sh "$HOME/.config/hypr/scripts/Logout.sh"; }
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
