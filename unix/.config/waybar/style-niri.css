@@ -166,7 +166,6 @@
   font-size: 12pt;
   color: @niri-accent;
   border: 1px solid @dark-gray;
-  padding: 0 6px;
   margin: 6px 4px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   background-color: transparent;

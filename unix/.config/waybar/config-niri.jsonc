@@ -132,6 +132,8 @@
 
     "niri/window": {
       "format": "{}",
+      "icon": true,
+      "icon-size": 18,
     },
 
     "pulseaudio#output": {
