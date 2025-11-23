@@ -1,0 +1,281 @@
+/* vim:fileencoding=utf-8:foldmethod=marker
+*/
+
+/* Define colors */ /* {{{ */
+/* Niri-specific color scheme - based on Night Owl but with unique accents */
+@define-color night-owl-blue          rgba(1,22,39, 0.9);
+@define-color bright-red              #ff5370; /* Bright red (error/critical) */
+@define-color vivid-yellow            #ffcb6b; /* Vivid yellow (alerts) */
+@define-color night-owl-blue-accent   #82aaff; /* Night Owl blue for CPU, network, etc. */
+@define-color signature-purple        #c792ea; /* Signature purple for audio */
+@define-color bright-green            #c3e88d; /* Bright green for battery, language, etc. */
+@define-color bright-cyan             #7efcff; /* A bright cyan twist for date modules */
+@define-color light-blue              #a3d1ff; /* Light blue for workspaces */
+@define-color bright-coral            #ff9f68; /* A bright coral/orange for resize hints */
+@define-color soft-bright-blue        #8ec6ff; /* A soft, bright blue for processing states */
+@define-color dark-gray               #2e3440; /* Dark gray for spacers */
+@define-color niri-accent             #89ddff; /* Niri-specific accent color */
+/* }}} */
+
+/* Reset all styles */ /* {{{ */
+* {
+  border: none;
+  border-radius: 10px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  text-shadow: none;
+} /* }}} */
+
+/* Animations & Keyframes */ /* {{{ */
+
+/* A subtle pulse for warnings and modifiers */
+@keyframes pulse-warning {
+  to {
+    color: @vivid-yellow;
+    text-shadow: 0 0 5px @vivid-yellow;
+  }
+}
+
+/* A more prominent pulse for critical alerts */
+@keyframes pulse-critical {
+  to {
+    color: @bright-red;
+    text-shadow: 0 0 8px @bright-red;
+  }
+}
+
+/* Smooth fade-in for workspace transitions */
+@keyframes fade-in {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* }}} */
+
+/* Main bar defaults */ /* {{{ */
+#waybar.main {
+  background: @night-owl-blue;
+  font-family: "Maple Mono NF";
+  font-size: 12pt;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#waybar.main button {
+  font-family: "Maple Mono NF";
+  font-weight: 500;
+} /* }}} */
+
+/* Main bar modules */ /* {{{ */
+#waybar.main #keyboard-state,
+#waybar.main #network,
+#waybar.main #clock,
+#waybar.main #cpu,
+#waybar.main #memory.swap,
+#waybar.main #memory.ram,
+#waybar.main #pulseaudio,
+#waybar.main #temperature,
+#waybar.main #tray,
+#waybar.main #window,
+#waybar.main #custom-notification,
+#waybar.main #custom-hypridle,
+#waybar.main #power-profiles-daemon,
+#waybar.main #custom-power,
+#waybar.main #disk {
+  padding: 4px 8pt;
+  background-color: transparent;
+  /* Universal transition for smooth animations */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#waybar.main #tray {
+  padding-right: 6pt;
+}
+/* }}} */
+
+/* Module colors */ /* {{{ */
+#waybar.main #cpu,
+#waybar.main #temperature,
+#waybar.main #memory.ram,
+#waybar.main #memory.swap,
+#waybar.main #disk,
+#waybar.main #network {
+  color: @night-owl-blue-accent;
+}
+
+#waybar.main #pulseaudio {
+  color: @signature-purple;
+}
+
+#waybar.main #clock {
+  color: @bright-cyan;
+  font-weight: bold;
+}
+
+#waybar.main #window {
+  color: @niri-accent;
+  font-style: italic;
+}
+
+#waybar.main #network.info {
+  padding: 0 10px;
+  color: @vivid-yellow;
+}
+
+#waybar.main #network.info.wifi.normal,
+#waybar.main #network.info.ethernet {
+  color: @night-owl-blue-accent;
+  padding-right: 15px;
+}
+
+#waybar.main #network.info.wifi {
+  color: @bright-red;
+  padding-right: 15px;
+} /* }}} */
+
+/* Main bar criticals */ /* {{{ */
+#waybar.main #workspaces button.urgent,
+#waybar.main #memory.swap.critical,
+#waybar.main #memory.ram.critical,
+#waybar.main #cpu.critical,
+#waybar.main #temperature.critical {
+  color: @bright-red;
+  animation-name: pulse-critical;
+  animation-duration: 0.7s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+} /* }}} */
+
+/* Main bar warnings */ /* {{{ */
+#waybar.main #pulseaudio.output.muted,
+#waybar.main #pulseaudio.input.source-muted {
+  color: @vivid-yellow;
+}
+/* }}} */
+
+/* Niri Workspaces - Unique styling for Niri's scrollable workspaces */ /* {{{ */
+/* Default workspace settings */
+#waybar.main #workspaces button {
+  font-size: 12pt;
+  color: @niri-accent;
+  border: 1px solid @dark-gray;
+  padding: 0 6px;
+  margin: 6px 4px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: transparent;
+}
+
+/* Active workspace - the one currently focused */
+#waybar.main #workspaces button.active {
+  background-color: @niri-accent;
+  color: @night-owl-blue;
+  border-color: @niri-accent;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(137, 221, 255, 0.4);
+}
+
+/* Hovered workspace */
+#waybar.main #workspaces button:hover {
+  background-color: rgba(137, 221, 255, 0.2);
+  border-color: @niri-accent;
+  color: @niri-accent;
+}
+
+/* Urgent workspace */
+#waybar.main #workspaces button.urgent {
+  border-color: @bright-red;
+  background-color: rgba(255, 83, 112, 0.15);
+}
+/* }}} */
+
+/* Custom slashes as spacers */ /* {{{ */
+#waybar.main #custom-spacer1,
+#waybar.main #custom-spacer2,
+#waybar.main #custom-spacer3 {
+  font-weight: bold;
+  color: @dark-gray;
+}
+/* }}} */
+
+/* Tooltip */ /* {{{ */
+tooltip {
+  background: @night-owl-blue;
+  font-weight: 500;
+  font-family: "Maple Mono NF";
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#waybar.main #tray menu {
+} /* }}} */
+
+#custom-arch {
+  color: #d6deeb;
+  padding: 0 10px;
+}
+
+#custom-hypridle {
+  color: @bright-green;
+}
+
+#custom-updater {
+  color: @vivid-yellow;
+}
+
+#keyboard-state {
+  color: @bright-green;
+}
+
+#keyboard-state > label {
+}
+
+#keyboard-state > label.locked {
+  color: @bright-red;
+}
+
+#custom-power {
+  color: @bright-red;
+  min-width: 16px;
+}
+
+#custom-notification {
+  color: @signature-purple;
+  min-width: 16px;
+}
+
+#tray {
+  color: @light-blue;
+}
+
+#power-profiles-daemon {
+  color: @signature-purple;
+}
+
+#power-profiles-daemon.performance {
+  color: @bright-red;
+}
+
+#power-profiles-daemon.balanced {
+  color: @vivid-yellow;
+}
+
+#power-profiles-daemon.power-saver {
+  color: @bright-green;
+}
+
+#bluetooth {
+  color: @signature-purple;
+  margin-left: 10px;
+}
+
+#mpris {
+  padding: 0 5px;
+  color: @signature-purple;
+}
+/* }}} */

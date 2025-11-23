@@ -268,7 +268,7 @@ layout {
 // See the binds section below for more spawn examples.
 
 // Autostart applications
-spawn-at-startup "waybar" "-c" "$HOME/.config/waybar/config-niri.jsonc"
+spawn-at-startup "waybar" "-c" "$HOME/.config/waybar/config-niri.jsonc" "-s" "$HOME/.config/waybar/style-niri.css"
 spawn-at-startup "hypridle"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "swaync"
