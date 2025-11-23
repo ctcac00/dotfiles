@@ -12,7 +12,7 @@
 }
 {
     "label" : "logout",
-    "action" : "sleep 1; uwsm stop",
+    "action" : "loginctl terminate-user $USER",
     "text" : "Logout",
     "keybind" : "e"
 }

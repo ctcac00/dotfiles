@@ -177,6 +177,7 @@
   color: @night-owl-blue;
   border-color: @niri-accent;
   font-weight: bold;
+  padding: 0 8px;
   box-shadow: 0 0 8px rgba(137, 221, 255, 0.4);
 }
 
