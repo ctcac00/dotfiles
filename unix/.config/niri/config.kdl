@@ -270,11 +270,11 @@ layout {
 // Autostart applications
 spawn-sh-at-startup "waybar -c $HOME/.config/waybar/config-niri.jsonc -s $HOME/.config/waybar/style-niri.css"
 spawn-at-startup "swayidle"
+spawn-at-startup "wlsunset" "-l" "51.5" "-L" "-0.1"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "swaync"
 spawn-sh-at-startup "wl-clip-persist --clipboard regular"
 spawn-sh-at-startup "clipse -listen"
-spawn-sh-at-startup "hyprshade auto"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
