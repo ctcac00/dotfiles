@@ -269,7 +269,7 @@ layout {
 
 // Autostart applications
 spawn-sh-at-startup "waybar -c $HOME/.config/waybar/config-niri.jsonc -s $HOME/.config/waybar/style-niri.css"
-spawn-at-startup "hypridle"
+spawn-at-startup "swayidle"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "swaync"
 spawn-sh-at-startup "wl-clip-persist --clipboard regular"
