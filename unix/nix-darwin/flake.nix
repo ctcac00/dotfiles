@@ -91,7 +91,7 @@
         pkgs.uv
         pkgs.claude-code
         pkgs.nmap
-        pkgs.jankyborders
+        pkgs.numi
       ];
 
       homebrew = {
