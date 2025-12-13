@@ -147,3 +147,7 @@
 ; path = ~/work/.gitconfig-work
 [fetch]
 	prune = true
+[pull]
+	ff = only
+[merge]
+	ff = only
