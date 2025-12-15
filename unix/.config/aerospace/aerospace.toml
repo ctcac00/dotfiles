@@ -103,6 +103,9 @@ alt-b = 'exec-and-forget open -na /Applications/Brave\ Browser.app'
 # Open File Explorer
 alt-e = 'exec-and-forget open ~'
 
+# Open neovim in terminal
+alt-n = 'exec-and-forget open -na /Applications/Nix\ Apps/kitty.app --args nvim'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-t = 'layout tiling floating'
 alt-ctrl-j = 'layout h_tiles v_tiles'
