@@ -122,6 +122,7 @@ alias c='clear'
 alias diff='diff --color=always'
 alias cat='bat'
 alias k='kubectl'
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
 
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
 setopt glob_dots     # no special treatment for file names with a leading dot
