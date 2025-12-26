@@ -12,6 +12,13 @@ return {
             },
           },
         },
+        gopls = {
+          settings = {
+            gopls = {
+              experimentalWorkspaceModule = true,
+            },
+          },
+        },
       },
     },
   },
