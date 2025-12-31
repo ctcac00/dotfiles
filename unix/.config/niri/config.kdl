@@ -395,7 +395,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open Terminal: kitty" { spawn "kitty"; }
     Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -theme ~/.config/rofi/config.rasi -show drun"; }
-    Mod+B hotkey-overlay-title="Open Browser: brave" { spawn-sh "uwsm app -- brave"; }
+    Mod+B hotkey-overlay-title="Open Browser: brave" { spawn-sh "brave-beta"; }
     Mod+E hotkey-overlay-title="Open TUI File Manager" { spawn-sh "kitty spf"; }
     Mod+Shift+E hotkey-overlay-title="Open GUI File Manager: thunar" { spawn "thunar"; }
     Mod+Shift+W hotkey-overlay-title="Open Wallpaper Selector: waypaper" { spawn-sh "waypaper"; }
