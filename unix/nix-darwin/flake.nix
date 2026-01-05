@@ -96,9 +96,6 @@
 
       homebrew = {
         enable = true;
-        taps = [
-          "homebrew/command-not-found"
-        ];
         brews = [
           "superfile"
           "helm"
@@ -233,7 +230,7 @@
             enable = true;
 
             # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
-            enableRosetta = true;
+            enableRosetta = false;
 
             # User owning the Homebrew prefix
             user = "carlos";
