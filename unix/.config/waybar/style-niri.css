@@ -84,7 +84,7 @@
 #waybar.main #tray,
 #waybar.main #window,
 #waybar.main #custom-notification,
-#waybar.main #custom-hypridle,
+#waybar.main #custom-swayidle,
 #waybar.main #power-profiles-daemon,
 #waybar.main #custom-power,
 #waybar.main #disk {
@@ -220,7 +220,7 @@ tooltip {
   padding: 0 10px;
 }
 
-#custom-hypridle {
+#custom-swayidle {
   color: @bright-green;
 }
 

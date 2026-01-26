@@ -26,7 +26,7 @@
 [help]
     ; Set to true if you want Git to automatically correct typos in commands.
     ; A value of "auto" will prompt you before correcting.
-    autocorrect = auto
+	autocorrect = 0
 
 ; [color]
 ; Configure Git's output colors.

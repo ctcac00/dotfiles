@@ -27,7 +27,7 @@
       "custom/spacer1",
       "keyboard-state",
       "custom/spacer1",
-      "custom/hypridle",
+      "custom/swayidle",
       "custom/updater",
       "custom/notification",
       "custom/spacer1",
@@ -250,15 +250,15 @@
       "tooltip-format": "Left Click: Update System\nArch (w/ notification)\nclick to update",
     },
 
-    // Hypridle inhibitor
-    "custom/hypridle": {
+    // Swayidle inhibitor
+    "custom/swayidle": {
       "format": "󱫗 ",
       "return-type": "json",
       "escape": true,
       "exec-on-event": true,
       "interval": 60,
-      "exec": "$HOME/.config/hypr/scripts/Hypridle.sh status",
-      "on-click": "$HOME/.config/hypr/scripts/Hypridle.sh toggle",
+      "exec": "$HOME/.config/niri/scripts/Swayidle.sh status",
+      "on-click": "$HOME/.config/niri/scripts/Swayidle.sh toggle",
       "on-click-right": "hyprlock",
     },
 

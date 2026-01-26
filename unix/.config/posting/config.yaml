@@ -1,2 +1,16 @@
 keymap:
   send-request: ctrl+r
+  save-request: ctrl+s
+  focus-url: ctrl+u
+  focus-method: ctrl+g
+  toggle-collection: ctrl+b
+  new-request: ctrl+n
+  commands: ctrl+p
+  search-requests: ctrl+f
+  expand-section: ctrl+x
+  # help: ctrl+;
+  open-in-editor: ctrl+e
+  open-in-pager: ctrl+v
+  quit: ctrl+c
+
+use_host_environment: true
