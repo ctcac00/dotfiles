@@ -1,0 +1,16 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "theme": "nightowl",
+  "keybinds": {
+    "session_child_cycle": "alt+right",
+    "session_child_cycle_reverse": "alt+left",
+  },
+  "permission": {
+    "bash": {
+      "sudo": "ask",
+      "pkill": "ask",
+      "rm -rf": "ask",
+    },
+  },
+  "autoupdate": true,
+}
