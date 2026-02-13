@@ -92,6 +92,8 @@
         pkgs.claude-code
         pkgs.nmap
         pkgs.numi
+        pkgs.mpv
+        pkgs.graphviz
       ];
 
       homebrew = {
