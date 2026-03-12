@@ -93,6 +93,8 @@
         pkgs.nmap
         pkgs.numi
         pkgs.mpv
+        pkgs.pnpm
+        pkgs.yarn
         pkgs.graphviz
       ];
 
