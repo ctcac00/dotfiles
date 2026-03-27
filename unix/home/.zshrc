@@ -179,3 +179,5 @@ alias dbt-cloud=dbt
 
 # opencode
 export PATH=/home/carlos/.opencode/bin:$PATH
+
+export PATH="/home/carlos/.asdf/installs/golang/1.25.5/bin:$PATH"

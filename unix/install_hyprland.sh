@@ -121,7 +121,7 @@ paru -Sy --noconfirm \
   hyprland \
   waybar \
   wlogout \
-  swww \
+  awww \
   rofi-wayland \
   hyprlock \
   hypridle \

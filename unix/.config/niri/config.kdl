@@ -282,7 +282,7 @@ environment {
 spawn-sh-at-startup "waybar -c $HOME/.config/waybar/config-niri.jsonc -s $HOME/.config/waybar/style-niri.css"
 spawn-at-startup "swayidle" "-w"
 spawn-at-startup "wlsunset" "-l" "51.5" "-L" "-0.1"
-spawn-at-startup "swww-daemon"
+spawn-at-startup "awww-daemon"
 spawn-at-startup "swaync"
 spawn-sh-at-startup "wl-clip-persist --clipboard regular"
 spawn-sh-at-startup "clipse -listen"
@@ -377,6 +377,14 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match is-window-cast-target=true
+
+    focus-ring {
+        active-gradient from="#f38ba8ee" to="#cc241dee" angle=45
+    }
+}
+
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
@@ -404,6 +412,7 @@ binds {
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Mod+Ctrl+Q hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Mod+Shift+N hotkey-overlay-title="Open Neovim in Terminal" { spawn-sh "kitty --class nvim -e nvim"; }
+    Mod+X hotkey-overlay-title="Cast focused window" { spawn-sh "niri msg action set-dynamic-cast-window --id $(niri msg -j focused-window | jq .id)"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
