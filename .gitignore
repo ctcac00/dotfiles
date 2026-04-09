@@ -3,3 +3,11 @@ unix/.config/tmux/plugins
 unix/.config/vlc/vlc-qt-interface.conf
 unix/.config/Thunar/accels.scm
 unix/.config/SpeedCrunch/SpeedCrunch.ini
+.todos/
+.sidecar/
+.sidecar-agent
+.sidecar-task
+.sidecar-pr
+.sidecar-start.sh
+.sidecar-base
+.td-root

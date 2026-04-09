@@ -96,6 +96,7 @@
         pkgs.pnpm
         pkgs.yarn
         pkgs.graphviz
+        pkgs.terraform
       ];
 
       homebrew = {
