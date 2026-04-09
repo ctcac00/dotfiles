@@ -46,13 +46,6 @@ zstyle ':z4h:direnv'         enable 'no'
 # enabled hosts.
 # zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
 
-# Clone additional Git repositories from GitHub.
-#
-# This doesn't do anything apart from cloning the repository and keeping it
-# up-to-date. Cloned files can be used after `z4h init`. This is just an
-# example. If you don't plan to use Oh My Zsh, delete this line.
-# z4h install ohmyzsh/ohmyzsh || return
-
 # Install or update core components (fzf, zsh-autosuggestions, etc.) and
 # initialize Zsh. After this point console I/O is unavailable until Zsh
 # is fully initialized. Everything that requires user interaction or can
@@ -64,16 +57,11 @@ path=(~/bin $path)
 
 # Export environment variables.
 export GPG_TTY=$TTY
+export EDITOR=nvim
 
 # Source additional local files if they exist.
 z4h source ~/.env.zsh
 source ~/.zsh-defer/zsh-defer.plugin.zsh
-
-# Use additional Git repositories pulled in with `z4h install`.
-#
-# This is just an example that you should delete. It does nothing useful.
-#z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
-#z4h load   ohmyzsh/ohmyzsh/plugins/emoji-clock  # load a plugin
 
 # Define key bindings.
 z4h bindkey undo Ctrl+/   Shift+Tab  # undo the last command line change
@@ -128,24 +116,23 @@ alias get_idf='. $HOME/esp/esp-idf/export.sh'
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
-if [[ "$(uname)" == "Linux" ]]; then
-  . $HOME/.atuin/bin/env
-fi
-
+# Initialise shell tools.
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 
+# asdf shims and completions.
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-
-# append completions to fpath
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
-# initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
- 
+
+# Deferred plugin loading.
 zsh-defer z4h load ~/.autoswitch_virtualenv
 zsh-defer z4h source ~/.autoswitch_virtualenv/autoswitch_virtualenv.plugin.zsh
 
-# --- setup fzf theme ---
+# Recursively traverse directories when TAB-completing files.
+zstyle ':z4h:fzf-complete' fzf-bindings tab:repeat
+
+# --- fzf theme ---
 fg="#CBE0F0"
 bg="#011628"
 bg_highlight="#143652"
@@ -155,29 +142,34 @@ cyan="#2CF9ED"
 
 export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
 
-# ----- Bat (better cat) -----
 export BAT_THEME=tokyonight_night
 
-export EDITOR=nvim
+# =============================================================================
+# OS-specific configuration
+# =============================================================================
 
-# Recursively traverse directories when TAB-completing files.
-zstyle ':z4h:fzf-complete' fzf-bindings tab:repeat
+if [[ "$(uname)" == "Darwin" ]]; then
+  # dbt Fusion extension
+  if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+    export PATH="$PATH:$HOME/.local/bin"
+  fi
+  alias dbtf="$HOME/.local/bin/dbt"
+  alias dbt-cloud=dbt
 
+  # Go binaries
+  export PATH="$HOME/go/bin:$PATH"
+
+elif [[ "$(uname)" == "Linux" ]]; then
+  # Atuin binary (installed via curl installer, not in system PATH by default)
+  . "$HOME/.atuin/bin/env"
+
+  # opencode
+  export PATH="$HOME/.opencode/bin:$PATH"
+
+  # Go via asdf (version-pinned)
+  export PATH="$HOME/.asdf/installs/golang/1.25.5/bin:$PATH"
+fi
 
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
     zprof
 fi
-
-# Added by dbt Fusion extension (ensure dbt binary dir on PATH)
-if [[ ":$PATH:" != *":/Users/carlos/.local/bin:"* ]]; then
-  export PATH="$PATH":/Users/carlos/.local/bin
-fi
-# Added by dbt Fusion extension
-alias dbtf=/Users/carlos/.local/bin/dbt
-
-alias dbt-cloud=dbt
-
-# opencode
-export PATH=/home/carlos/.opencode/bin:$PATH
-
-export PATH="/home/carlos/.asdf/installs/golang/1.25.5/bin:$PATH"
