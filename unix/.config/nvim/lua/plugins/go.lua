@@ -1,6 +1,7 @@
 return {
   {
     "leoluz/nvim-dap-go",
+    ft = "go",
     opts = {
       -- dap_configurations: can be used to add/override configurations
       dap_configurations = {
