@@ -116,6 +116,11 @@ alias get_idf='. $HOME/esp/esp-idf/export.sh'
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
+# Load atuin binary path on Linux (installed via curl, not in system PATH)
+if [[ "$(uname)" == "Linux" ]]; then
+  . "$HOME/.atuin/bin/env"
+fi
+
 # Initialise shell tools.
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
@@ -160,9 +165,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
   export PATH="$HOME/go/bin:$PATH"
 
 elif [[ "$(uname)" == "Linux" ]]; then
-  # Atuin binary (installed via curl installer, not in system PATH by default)
-  . "$HOME/.atuin/bin/env"
-
   # opencode
   export PATH="$HOME/.opencode/bin:$PATH"
 
@@ -173,3 +175,8 @@ fi
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
     zprof
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/carlos/.lmstudio/bin"
+# End of LM Studio CLI section
+
