@@ -73,6 +73,7 @@ z4h bindkey z4h-cd-up      Shift+Up     # cd into the parent directory
 z4h bindkey z4h-cd-down    Shift+Down   # cd into a child directory
 
 # Define aliases.
+alias n='nvim'
 alias tree='eza --tree'
 alias python=python3
 alias ls='eza --icons=auto'
@@ -165,6 +166,8 @@ if [[ "$(uname)" == "Darwin" ]]; then
   export PATH="$HOME/go/bin:$PATH"
 
 elif [[ "$(uname)" == "Linux" ]]; then
+  export PATH="$PATH:/home/carlos/.lmstudio/bin"
+
   # opencode
   export PATH="$HOME/.opencode/bin:$PATH"
 
@@ -176,7 +179,4 @@ if [ -n "${ZSH_DEBUGRC+1}" ]; then
     zprof
 fi
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/carlos/.lmstudio/bin"
-# End of LM Studio CLI section
 
