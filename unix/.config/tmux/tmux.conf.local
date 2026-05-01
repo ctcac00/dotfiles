@@ -418,6 +418,8 @@ bind C-a send-prefix
 # move status line to top
 set -g status-position top
 
+set -s extended-keys on
+set -g extended-keys-format csi-u
 
 # -- tpm -----------------------------------------------------------------------
 

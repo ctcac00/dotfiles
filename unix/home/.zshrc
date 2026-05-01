@@ -173,10 +173,16 @@ elif [[ "$(uname)" == "Linux" ]]; then
 
   # Go via asdf (version-pinned)
   export PATH="$HOME/.asdf/installs/golang/1.25.5/bin:$PATH"
+
+  # bun completions
+  [ -s "/home/carlos/.bun/_bun" ] && source "/home/carlos/.bun/_bun"
+
+  # bun
+  export BUN_INSTALL="$HOME/.bun"
+  export PATH="$BUN_INSTALL/bin:$PATH"
 fi
 
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
     zprof
 fi
-
 
