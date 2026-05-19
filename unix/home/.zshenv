@@ -43,3 +43,5 @@ fi
 . "$Z4H"/z4h.zsh || return
 
 setopt rcs
+
+if [ -e /home/carlos/.nix-profile/etc/profile.d/nix.sh ]; then . /home/carlos/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
