@@ -21,6 +21,10 @@
       url = "github:dbt-labs/dbt-cli";
       flake = false;
     };
+    astronomer-tap-astro = {
+      url = "github:astronomer/homebrew-tap";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {
@@ -32,6 +36,7 @@
     homebrew-core,
     homebrew-cask,
     dbt-labs,
+    astronomer-tap-astro,
   }: let
     configuration = {pkgs, ...}: {
       # List packages installed in system profile. To search by name, run:
@@ -106,6 +111,7 @@
           "superfile"
           "helm"
           "dbt"
+          "astro"
         ];
         casks = [
           "docker-desktop"
@@ -246,6 +252,7 @@
               "homebrew/homebrew-core" = homebrew-core;
               "homebrew/homebrew-cask" = homebrew-cask;
               "dbt-labs/dbt-cli" = dbt-labs;
+              "astronomer/tap" = astronomer-tap-astro;
             };
 
             # Optional: Enable fully-declarative tap management

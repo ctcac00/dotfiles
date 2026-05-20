@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "astronomer-tap-astro": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1778613254,
+        "narHash": "sha256-Xxp5ezYec9hzwVvMPwemoFTx+CzV7xTYLX/Sa2R5bD0=",
+        "owner": "astronomer",
+        "repo": "homebrew-tap",
+        "rev": "b7425bafa2d3b326d5728b2129fbb63f507d6bdf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "astronomer",
+        "repo": "homebrew-tap",
+        "type": "github"
+      }
+    },
     "brew-src": {
       "flake": false,
       "locked": {
@@ -300,6 +316,7 @@
     },
     "root": {
       "inputs": {
+        "astronomer-tap-astro": "astronomer-tap-astro",
         "dbt-labs": "dbt-labs",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
