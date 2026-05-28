@@ -103,6 +103,7 @@
         pkgs.graphviz
         pkgs.terraform
         pkgs.act
+        pkgs.poetry
       ];
 
       homebrew = {
