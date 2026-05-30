@@ -166,6 +166,13 @@ if [[ "$(uname)" == "Darwin" ]]; then
   export PATH="$HOME/go/bin:$PATH"
 
 elif [[ "$(uname)" == "Linux" ]]; then
+  # Android SDK
+  if [[ -d "$HOME/Android/Sdk" ]]; then
+    export ANDROID_HOME="$HOME/Android/Sdk"
+    export ANDROID_AVD_HOME="$HOME/.config/.android/avd"
+    export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$PATH"
+  fi
+
   export PATH="$PATH:/home/carlos/.lmstudio/bin"
 
   # opencode
@@ -186,3 +193,4 @@ if [ -n "${ZSH_DEBUGRC+1}" ]; then
     zprof
 fi
 
+[[ -f ~/.secrets.zsh ]] && source ~/.secrets.zsh
