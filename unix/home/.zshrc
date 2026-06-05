@@ -160,7 +160,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
     export PATH="$PATH:$HOME/.local/bin"
   fi
   alias dbtf="$HOME/.local/bin/dbt"
-  alias dbt-cloud=dbt
 
   # Go binaries
   export PATH="$HOME/go/bin:$PATH"

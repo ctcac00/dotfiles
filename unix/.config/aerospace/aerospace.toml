@@ -95,7 +95,7 @@ cmd-h = []     # Disable "hide application"
 cmd-alt-h = [] # Disable "hide others"
 
 # open terminal, blazingly fast compared to iTerm/Hyper
-alt-enter = 'exec-and-forget open -na /Applications/Nix\ Apps/kitty.app --args -d ~'
+alt-enter = 'exec-and-forget /Applications/kitty.app/Contents/MacOS/kitty --directory ~'
 
 # open Browser
 alt-b = 'exec-and-forget open -na /Applications/Brave\ Browser.app'
@@ -104,7 +104,7 @@ alt-b = 'exec-and-forget open -na /Applications/Brave\ Browser.app'
 alt-e = 'exec-and-forget open ~'
 
 # Open neovim in terminal
-alt-n = 'exec-and-forget open -na /Applications/Nix\ Apps/kitty.app --args nvim'
+alt-n = 'exec-and-forget /Applications/kitty.app/Contents/MacOS/kitty nvim'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-t = 'layout tiling floating'
