@@ -22,12 +22,6 @@ return {
     end,
   },
   {
-    "folke/tokyonight.nvim",
-    opts = {
-      style = "night",
-    },
-  },
-  {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "night-owl",
