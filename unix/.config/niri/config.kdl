@@ -360,6 +360,12 @@ window-rule {
     clip-to-geometry true
 }
 
+window-rule {
+    match app-id="Emulator"
+    default-column-width {}
+    default-window-height {}
+}
+
 // Clipse clipboard manager
 window-rule {
     match app-id="^clipse$"
@@ -403,7 +409,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open Terminal: kitty" { spawn "kitty"; }
     Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -theme ~/.config/rofi/config.rasi -show drun"; }
-    Mod+B hotkey-overlay-title="Open Browser: brave" { spawn-sh "brave-beta"; }
+    Mod+B hotkey-overlay-title="Open Browser: brave" { spawn-sh "brave"; }
     Mod+E hotkey-overlay-title="Open TUI File Manager" { spawn-sh "kitty spf"; }
     Mod+Shift+E hotkey-overlay-title="Open GUI File Manager: thunar" { spawn "thunar"; }
     Mod+Shift+W hotkey-overlay-title="Open Wallpaper Selector: waypaper" { spawn-sh "waypaper"; }
