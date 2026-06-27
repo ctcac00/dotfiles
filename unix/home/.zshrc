@@ -127,7 +127,7 @@ eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 
 # asdf shims and completions.
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH="${ASDF_DIR:-$HOME/.asdf}/bin:${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 autoload -Uz compinit && compinit
 
@@ -186,6 +186,11 @@ elif [[ "$(uname)" == "Linux" ]]; then
   # bun
   export BUN_INSTALL="$HOME/.bun"
   export PATH="$BUN_INSTALL/bin:$PATH"
+
+  # Android SDK
+  export ANDROID_HOME="$HOME/Android/Sdk"
+  export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
+  export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
 fi
 
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
