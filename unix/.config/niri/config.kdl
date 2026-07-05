@@ -113,6 +113,10 @@ layout {
     // Set gaps around windows in logical pixels.
     gaps 8
 
+    // Transparent so the backdrop wallpaper (awww, moved there by the layer-rule
+    // below) shows through workspace gaps in normal view, not a solid fill.
+    background-color "transparent"
+
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
     //   or right edge of the screen.
@@ -389,6 +393,14 @@ window-rule {
     focus-ring {
         active-gradient from="#f38ba8ee" to="#cc241dee" angle=45
     }
+}
+
+// Move the awww wallpaper into the overview backdrop. The backdrop is
+// stationary (it does not zoom out with the workspaces), so the wallpaper
+// fills the screen behind the zoomed-out workspaces in the overview.
+layer-rule {
+    match namespace="^awww-daemon$"
+    place-within-backdrop true
 }
 
 binds {

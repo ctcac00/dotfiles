@@ -198,3 +198,4 @@ if [ -n "${ZSH_DEBUGRC+1}" ]; then
 fi
 
 [[ -f ~/.secrets.zsh ]] && source ~/.secrets.zsh
+export PATH=$PATH:$HOME/.maestro/bin
