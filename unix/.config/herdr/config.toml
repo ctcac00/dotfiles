@@ -1,0 +1,15 @@
+onboarding = false
+
+[keys]
+prefix = "ctrl+a"
+
+detach = "prefix+d"
+rename_tab = "prefix+,"
+split_vertical = "prefix+%"
+split_horizontal = "prefix+\""
+
+[ui.toast]
+delivery = "herdr"
+
+[ui]
+show_agent_labels_on_pane_borders = true
