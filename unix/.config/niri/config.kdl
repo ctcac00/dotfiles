@@ -678,7 +678,12 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
-}
+
+    // Handy (speech-to-text) — IPC to the running instance (autostarts at login).
+    // Push-to-talk: first press starts recording, second stops + transcribes + pastes.
+    Mod+P hotkey-overlay-title="Handy: dictate" { spawn "handy" "--toggle-transcription"; }
+    // Mod+Shift+Escape { spawn "handy" "--cancel"; }
+  }
 
 overview {
   backdrop-color "#1a0a1f"

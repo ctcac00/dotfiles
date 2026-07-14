@@ -8,4 +8,8 @@
     },
   },
   "autoupdate": true,
+  "experimental": {
+    "openTelemetry": true,
+  },
+  "plugin": ["@langfuse/opencode-observability-plugin@latest"],
 }
