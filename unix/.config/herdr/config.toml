@@ -9,8 +9,8 @@ split_vertical = "prefix+%"
 split_horizontal = "prefix+\""
 settings = "prefix+shift+s"
 goto = "prefix+s"
-previous_agent = "prefix+["
-next_agent = "prefix+]"
+previous_agent = "prefix+shift+j"
+next_agent = "prefix+shift+k"
 
 [ui.toast]
 delivery = "herdr"

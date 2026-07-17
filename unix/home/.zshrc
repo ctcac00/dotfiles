@@ -155,11 +155,21 @@ export BAT_THEME=tokyonight_night
 # =============================================================================
 
 if [[ "$(uname)" == "Darwin" ]]; then
+  dbt-core() {
+    if [[ "$VIRTUAL_ENV" != "$HOME/.venvs/dbt-core" ]]; then
+      source "$HOME/.venvs/dbt-core/bin/activate"
+    fi
+    command dbt "$@"
+  }
+
   # dbt Fusion extension
   if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
     export PATH="$PATH:$HOME/.local/bin"
   fi
   alias dbtf="$HOME/.local/bin/dbt"
+  alias dbt-fusion="dbtf"
+
+  alias dbt-cloud="/opt/homebrew/bin/dbt"
 
   # Go binaries
   export PATH="$HOME/go/bin:$PATH"
