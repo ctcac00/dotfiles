@@ -129,6 +129,10 @@ eval "$(zoxide init zsh)"
 # asdf shims and completions.
 export PATH="${ASDF_DIR:-$HOME/.asdf}/bin:${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+
+# Deno completions.
+fpath=($HOME/.zsh/completions $fpath)
+
 autoload -Uz compinit && compinit
 
 # Deferred plugin loading.
@@ -201,6 +205,10 @@ elif [[ "$(uname)" == "Linux" ]]; then
   export ANDROID_HOME="$HOME/Android/Sdk"
   export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
   export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
+
+  # Resend CLI
+  export PATH="$HOME/.resend/bin:$PATH"
+  . "/home/carlos/.deno/env"
 fi
 
 if [ -n "${ZSH_DEBUGRC+1}" ]; then

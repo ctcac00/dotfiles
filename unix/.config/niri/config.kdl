@@ -370,14 +370,24 @@ window-rule {
     default-window-height {}
 }
 
+// The Android emulator opens two windows with app-id "Emulator": the device
+// screen (title "Android Emulator - <name>:<port>") and a narrow side control
+// rail with all the buttons (power/volume/rotate/screenshot/record). Qt tags
+// that rail as a toolbar, so Niri auto-floats it. Match the rail by its exact
+// title "Emulator" and force it into the tiling layout.
+window-rule {
+    match app-id="Emulator" title="^Emulator$"
+    open-floating false
+}
+
 // Clipse clipboard manager
 window-rule {
     match app-id="^clipse$"
 
     open-floating true
     // default-column-width { fixed 1024; }
-    default-column-width { proportion 0.5; }
-    default-window-height {proportion 0.5;}
+    default-column-width { proportion 0.35; }
+    default-window-height { proportion 0.5; }
 }
 
 // Waypaper wallpaper selector
