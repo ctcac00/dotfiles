@@ -83,30 +83,30 @@ alias ll='ls -l'      #long list
 alias cd=z
 alias tf='terraform'
 alias tfa='terraform apply'
-alias tfaa='terraform apply -auto-approve'
-alias tfd='terraform destroy'
-alias 'tfd!'='terraform destroy -auto-approve'
-alias tff='terraform fmt'
-alias tffr='terraform fmt -recursive'
-alias tfi='terraform init'
-alias tfiu='terraform init -upgrade'
-alias tfo='terraform output'
 alias tfp='terraform plan'
-alias tfs='terraform state'
-alias tfsh='terraform show'
 alias g='git'
 alias ga='git add'
-alias gb='git branch'
-alias gba='git branch --all'
-alias gbd='git branch --delete'
-alias gco='git checkout'
-alias gclean='git clean --interactive -d'
 alias gc='git commit --verbose'
+alias gco='git checkout'
 alias gd='git diff'
+alias gf='git fetch'
+alias glog='git log --oneline --graph --decorate --all'
 alias gm='git merge'
 alias gl='git pull'
 alias gp='git push'
+alias grb='git rebase'
+alias grm='git remote'
+alias grs='git reset'
+alias grsh='git reset --hard'
 alias gst='git status'
+alias gsta='git stash'
+alias gstd='git stash drop'
+alias gstp='git stash pop'
+alias gwt='git worktree'
+alias gwta='git worktree add'
+alias gwtl='git worktree list'
+alias gwtp='git worktree prune'
+alias gwtr='git worktree remove'
 alias c='clear'
 alias diff='diff --color=always'
 alias cat='bat'
@@ -203,7 +203,8 @@ elif [[ "$(uname)" == "Linux" ]]; then
 
   # Android SDK
   export ANDROID_HOME="$HOME/Android/Sdk"
-  export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
+  # export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
+  export JAVA_HOME="$(asdf where java)"
   export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
 
   # Resend CLI
