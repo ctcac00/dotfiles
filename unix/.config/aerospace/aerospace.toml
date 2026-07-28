@@ -107,7 +107,7 @@ alt-e = 'exec-and-forget open ~'
 alt-n = 'exec-and-forget /Applications/kitty.app/Contents/MacOS/kitty nvim'
 
 # Open Claude Code in terminal
-alt-c = 'exec-and-forget /Applications/kitty.app/Contents/MacOS/kitty claude'
+alt-c = 'exec-and-forget /Applications/kitty.app/Contents/MacOS/kitty --directory ~ claude'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-t = 'layout tiling floating'
