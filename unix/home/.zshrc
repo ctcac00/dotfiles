@@ -61,7 +61,7 @@ export EDITOR=nvim
 
 # Source additional local files if they exist.
 z4h source ~/.env.zsh
-source ~/.zsh-defer/zsh-defer.plugin.zsh
+[[ -f ~/.zsh-defer/zsh-defer.plugin.zsh ]] && source ~/.zsh-defer/zsh-defer.plugin.zsh
 
 # Define key bindings.
 z4h bindkey undo Ctrl+/   Shift+Tab  # undo the last command line change
@@ -119,12 +119,12 @@ setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
 # Load atuin binary path on Linux (installed via curl, not in system PATH)
 if [[ "$(uname)" == "Linux" ]]; then
-  . "$HOME/.atuin/bin/env"
+  [[ -f "$HOME/.atuin/bin/env" ]] && . "$HOME/.atuin/bin/env"
 fi
 
 # Initialise shell tools.
-eval "$(atuin init zsh)"
-eval "$(zoxide init zsh)"
+command -v atuin >/dev/null && eval "$(atuin init zsh)"
+command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
 
 # asdf shims and completions.
 export PATH="${ASDF_DIR:-$HOME/.asdf}/bin:${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
@@ -173,17 +173,39 @@ if [[ "$(uname)" == "Darwin" ]]; then
   alias dbtf="$HOME/.local/bin/dbt"
   alias dbt-fusion="dbtf"
 
-  alias dbt-cloud="/opt/homebrew/bin/dbt"
+  [[ -x /opt/homebrew/bin/dbt ]] && alias dbt-cloud="/opt/homebrew/bin/dbt"
 
   # Go binaries
-  export PATH="$HOME/go/bin:$PATH"
+  [[ -d "$HOME/go/bin" ]] && export PATH="$HOME/go/bin:$PATH"
+
+  # Android CLI dev setup (Android Studio not installed).
+  # Guarded so Macs without the SDK don't emit errors on shell startup.
+  if [[ -d "$HOME/Library/Android/sdk" ]]; then
+    export ANDROID_HOME="$HOME/Library/Android/sdk"
+    export ANDROID_SDK_ROOT="$ANDROID_HOME"
+    export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
+
+    # Temurin JDK 17 (matches Android Gradle Plugin requirement).
+    JDK17="$HOME/Library/Java/JavaVirtualMachines/jdk-17.0.20+8/Contents/Home"
+    if [[ -d "$JDK17" ]]; then
+      export JAVA_HOME="$JDK17"
+      export PATH="$JAVA_HOME/bin:$PATH"
+    fi
+    unset JDK17
+  fi
 
 elif [[ "$(uname)" == "Linux" ]]; then
-  # Android SDK
+  # Android SDK (consolidated)
   if [[ -d "$HOME/Android/Sdk" ]]; then
     export ANDROID_HOME="$HOME/Android/Sdk"
     export ANDROID_AVD_HOME="$HOME/.config/.android/avd"
-    export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$PATH"
+    export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$PATH"
+    # JAVA_HOME from asdf java plugin (errors if java plugin absent)
+    if command -v asdf >/dev/null; then
+      _asdf_java="$(asdf where java 2>/dev/null)"
+      [[ -n "$_asdf_java" ]] && export JAVA_HOME="$_asdf_java"
+      unset _asdf_java
+    fi
   fi
 
   export PATH="$PATH:/home/carlos/.lmstudio/bin"
@@ -201,15 +223,9 @@ elif [[ "$(uname)" == "Linux" ]]; then
   export BUN_INSTALL="$HOME/.bun"
   export PATH="$BUN_INSTALL/bin:$PATH"
 
-  # Android SDK
-  export ANDROID_HOME="$HOME/Android/Sdk"
-  # export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
-  export JAVA_HOME="$(asdf where java)"
-  export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
-
   # Resend CLI
-  export PATH="$HOME/.resend/bin:$PATH"
-  . "/home/carlos/.deno/env"
+  [[ -d "$HOME/.resend/bin" ]] && export PATH="$HOME/.resend/bin:$PATH"
+  [[ -f /home/carlos/.deno/env ]] && . "/home/carlos/.deno/env"
 fi
 
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
@@ -217,4 +233,4 @@ if [ -n "${ZSH_DEBUGRC+1}" ]; then
 fi
 
 [[ -f ~/.secrets.zsh ]] && source ~/.secrets.zsh
-export PATH=$PATH:$HOME/.maestro/bin
+[[ -d "$HOME/.maestro/bin" ]] && export PATH=$PATH:$HOME/.maestro/bin

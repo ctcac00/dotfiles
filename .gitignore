@@ -2,6 +2,7 @@ unix/.config/waypaper/config.ini
 unix/.config/tmux/plugins
 unix/.config/vlc/vlc-qt-interface.conf
 unix/.config/Thunar/accels.scm
+unix/.config/gh/hosts.yml
 unix/.config/SpeedCrunch/SpeedCrunch.ini
 .todos/
 .sidecar/
