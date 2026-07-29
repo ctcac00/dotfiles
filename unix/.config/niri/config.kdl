@@ -441,6 +441,8 @@ binds {
     Mod+Ctrl+Q hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Mod+Shift+N hotkey-overlay-title="Open Neovim in Terminal" { spawn-sh "kitty --class nvim -e nvim"; }
     Mod+X hotkey-overlay-title="Cast focused window" { spawn-sh "niri msg action set-dynamic-cast-window --id $(niri msg -j focused-window | jq .id)"; }
+    Mod+Shift+C hotkey-overlay-title="Open Claude AI" { spawn-sh "brave --new-window --ozone-platform=wayland --app=\"https://claude.ai\" --name=\"Claude AI\" --class=\"Claude AI\""; }
+    Mod+Shift+G hotkey-overlay-title="Open ChatGPT" { spawn-sh "brave --new-window --ozone-platform=wayland --app=\"https://chatgpt.com\" --name=\"ChatGPT\" --class=\"ChatGPT\""; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
