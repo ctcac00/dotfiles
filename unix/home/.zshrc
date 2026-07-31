@@ -107,7 +107,6 @@ alias gwta='git worktree add'
 alias gwtl='git worktree list'
 alias gwtp='git worktree prune'
 alias gwtr='git worktree remove'
-alias c='clear'
 alias diff='diff --color=always'
 alias cat='bat'
 alias k='kubectl'
@@ -234,3 +233,5 @@ fi
 
 [[ -f ~/.secrets.zsh ]] && source ~/.secrets.zsh
 [[ -d "$HOME/.maestro/bin" ]] && export PATH=$PATH:$HOME/.maestro/bin
+
+c() { printf "%$(tput lines)s" | tr ' ' '\n'; printf '\033[H'; }
