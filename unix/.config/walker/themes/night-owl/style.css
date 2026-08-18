@@ -25,7 +25,7 @@ scrollbar {
   caret-color: @fg;
   background: alpha(@bg_alt, 0.9);
   padding: 12px 16px;
-  border-radius: 100px;
+  border-radius: 18px;
   color: @fg;
 }
 
@@ -39,7 +39,7 @@ scrollbar {
 }
 
 .search-container {
-  border-radius: 100px;
+  border-radius: 18px;
 }
 
 .placeholder {
@@ -52,7 +52,7 @@ scrollbar {
 }
 
 .item-box {
-  border-radius: 100px;
+  border-radius: 18px;
   padding: 4px 8px;
 }
 
