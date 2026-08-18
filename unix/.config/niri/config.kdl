@@ -284,12 +284,13 @@ environment {
 
 // Autostart applications
 spawn-sh-at-startup "waybar -c $HOME/.config/waybar/config-niri.jsonc -s $HOME/.config/waybar/style-niri.css"
+spawn-at-startup "elephant"
+spawn-sh-at-startup "walker --gapplication-service"
 spawn-at-startup "swayidle" "-w"
 spawn-at-startup "wlsunset" "-l" "51.5" "-L" "-0.1"
 spawn-at-startup "awww-daemon"
 spawn-at-startup "swaync"
-spawn-sh-at-startup "wl-clip-persist --clipboard regular"
-spawn-sh-at-startup "clipse -listen"
+spawn-sh-at-startup "wl-Clip-persist --clipboard regular"
 spawn-sh-at-startup "wl-paste --type text --watch env DISPLAY=:1 xsel -ib"
 
 hotkey-overlay {
@@ -381,15 +382,6 @@ window-rule {
     open-floating false
 }
 
-// Clipse clipboard manager
-window-rule {
-    match app-id="^clipse$"
-
-    open-floating true
-    // default-column-width { fixed 1024; }
-    default-column-width { proportion 0.35; }
-    default-window-height { proportion 0.5; }
-}
 
 // Waypaper wallpaper selector
 window-rule {
@@ -447,12 +439,12 @@ binds {
 
     // ===================== App launch =====================
     Mod+Return hotkey-overlay-title="Open Terminal: kitty" { spawn "kitty"; }
-    Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -theme ~/.config/rofi/config.rasi -show drun"; }
+    Mod+Space hotkey-overlay-title="Run an Application: walker" { spawn-sh "walker"; }
     Mod+B hotkey-overlay-title="Open Browser: brave" { spawn-sh "brave"; }
     Mod+E hotkey-overlay-title="Open TUI File Manager" { spawn-sh "kitty spf"; }
     Mod+Shift+E hotkey-overlay-title="Open GUI File Manager: thunar" { spawn "thunar"; }
     Mod+Shift+W hotkey-overlay-title="Open Wallpaper Selector: waypaper" { spawn-sh "waypaper"; }
-    Mod+V hotkey-overlay-title="Open Clipboard Manager: clipse" { spawn-sh "kitty --class clipse -e clipse"; }
+    Mod+V hotkey-overlay-title="Open Clipboard Manager: walker" { spawn-sh "walker -m clipboard"; }
     Mod+N hotkey-overlay-title="Toggle Notification Panel: swaync" { spawn-sh "swaync-client -t -sw"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Mod+Ctrl+Q hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }

@@ -1,0 +1,126 @@
+@define-color bg #011627;
+@define-color bg_alt #1d3b53;
+@define-color fg #D6DEEB;
+@define-color selected #6B95E0;
+@define-color active #C792EA;
+@define-color urgent #FF2C83;
+
+* {
+  all: unset;
+  font-family: "Maple Mono NF";
+  font-size: 14px;
+}
+
+scrollbar {
+  opacity: 0;
+}
+
+.box-wrapper {
+  background: alpha(@bg, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.input {
+  caret-color: @fg;
+  background: alpha(@bg_alt, 0.9);
+  padding: 12px 16px;
+  border-radius: 100px;
+  color: @fg;
+}
+
+.input placeholder {
+  color: @fg;
+  opacity: 0.5;
+}
+
+.input selection {
+  background: lighter(@bg_alt);
+}
+
+.search-container {
+  border-radius: 100px;
+}
+
+.placeholder {
+  color: @fg;
+  opacity: 0.5;
+}
+
+.list {
+  color: @fg;
+}
+
+.item-box {
+  border-radius: 100px;
+  padding: 4px 8px;
+}
+
+child:selected .item-box,
+row:selected .item-box {
+  background: @selected;
+}
+
+child:selected .item-box,
+row:selected .item-box {
+  color: @bg;
+}
+
+child:selected .item-text,
+row:selected .item-text {
+  color: @bg;
+}
+
+child:selected .item-subtext,
+row:selected .item-subtext {
+  color: alpha(@bg, 0.7);
+}
+
+.large-icons {
+  -gtk-icon-size: 32px;
+}
+
+.item-subtext {
+  font-size: 12.5px;
+  opacity: 0.5;
+}
+
+.item-text {
+  color: @fg;
+}
+
+.keybinds {
+  padding-top: 10px;
+  border-top: 1px solid @bg_alt;
+  font-size: 12px;
+  color: @fg;
+}
+
+.keybind-label {
+  padding: 2px 4px;
+  border-radius: 4px;
+  border: 1px solid alpha(@fg, 0.3);
+}
+
+.keybind-bind {
+  text-transform: lowercase;
+  opacity: 0.35;
+}
+
+.error {
+  padding: 12px;
+  background: @urgent;
+  color: @fg;
+  border-radius: 10px;
+}
+
+.preview {
+  border: 1px solid alpha(@bg_alt, 0.5);
+  border-radius: 10px;
+  color: @fg;
+}
+
+.elephant-hint {
+  color: @fg;
+  opacity: 0.5;
+}
