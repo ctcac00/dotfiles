@@ -397,6 +397,15 @@ window-rule {
     open-floating true
 }
 
+// Speedcrunch calculator — float
+window-rule {
+    match app-id="^org.speedcrunch.speedcrunch$"
+
+    open-floating true
+    default-column-width { fixed 500; }
+    default-window-height { fixed 600; }
+}
+
 // Omarchy "Install Web App" prompt (foot running the install script)
 window-rule {
     match app-id="^omarchy-webapp-install$"
