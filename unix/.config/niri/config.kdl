@@ -416,6 +416,24 @@ window-rule {
 }
 
 window-rule {
+    match app-id="org.localsend.localsend_app"
+
+    open-floating true
+    default-column-width { fixed 1200; }
+    default-window-height { fixed 800; }
+}
+
+// Package install/remove pickers (kitty running pkg-install / pkg-remove)
+window-rule {
+    match app-id="^pkg-install$"
+    match app-id="^pkg-remove$"
+
+    open-floating true
+    default-column-width { fixed 1200; }
+    default-window-height { fixed 800; }
+}
+
+window-rule {
     match is-window-cast-target=true
 
     focus-ring {
@@ -461,6 +479,8 @@ binds {
     Mod+X hotkey-overlay-title="Cast focused window" { spawn-sh "niri msg action set-dynamic-cast-window --id $(niri msg -j focused-window | jq .id)"; }
     Mod+Shift+C hotkey-overlay-title="Open Claude AI" { spawn-sh "brave --new-window --ozone-platform=wayland --app=\"https://claude.ai\" --name=\"Claude AI\" --class=\"Claude AI\""; }
     Mod+Shift+G hotkey-overlay-title="Open ChatGPT" { spawn-sh "brave --new-window --ozone-platform=wayland --app=\"https://chatgpt.com\" --name=\"ChatGPT\" --class=\"ChatGPT\""; }
+    Mod+Shift+A hotkey-overlay-title="Install Package (paru)" { spawn-sh "kitty --class pkg-install pkg-install"; }
+    Mod+Shift+D hotkey-overlay-title="Remove Package (paru)" { spawn-sh "kitty --class pkg-remove pkg-remove"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
