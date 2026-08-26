@@ -104,3 +104,6 @@
 #    "terminal"
 #    "qutebrowser"
 # ]
+
+# --- App launchers (ported from AeroSpace exec-and-forget binds) ---
+# paneru no longer binds these keys, so they're free for skhd.

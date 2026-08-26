@@ -1,0 +1,94 @@
+# Paneru configuration
+
+[options]
+
+[padding]
+# Margin between the tiled windows and the screen edges.
+top = 2
+bottom = 2
+left = 8
+right = 8
+
+[windows.gaps]
+# Matches every window (no bundle_id restriction) to add gaps between them.
+# Gap between two adjacent windows = sum of their horizontal/vertical padding.
+title = ".*"
+horizontal_padding = 4
+vertical_padding = 1
+
+[bindings]
+
+# --- Focus (matches AeroSpace: alt-h/j/k/l = focus left/down/up/right) ---
+window_focus_west  = "alt - h"
+window_focus_south = "alt - j"
+window_focus_north = "alt - k"
+window_focus_east  = "alt - l"
+window_focus_first = "alt - ,"
+window_focus_last  = "alt - ."
+window_focus_managed   = "alt - tab"
+window_focus_unmanaged = "alt + shift - tab"
+
+# --- Move (matches AeroSpace: alt-shift-h/j/k/l = move left/down/up/right) ---
+window_swap_west  = "alt + shift - h"
+window_swap_south = "alt + shift - j"
+window_swap_north = "alt + shift - k"
+window_swap_east  = "alt + shift - l"
+window_swap_first = "alt + shift - ,"
+window_swap_last  = "alt + shift - ."
+
+# --- Resize (matches AeroSpace: alt-ctrl-left/right) ---
+window_shrink = "alt + ctrl - leftarrow"
+window_resize = "alt + ctrl - rightarrow"
+
+# --- Layout ---
+# alt-e, alt-n are used by skhd for app launchers (see ~/.config/skhd/skhdrc),
+# so paneru's own extra actions on those letters moved to alt+ctrl to avoid a clash.
+# alt-c is back to center (skhd's Claude launcher moved to alt+shift-c instead).
+window_center     = "alt - c"
+window_fullwidth  = "alt - m"                  # AeroSpace: alt-m = fullscreen
+window_manage     = "alt - t" # AeroSpace: alt-t = toggle floating/tiling
+window_stack      = "alt - s"
+window_unstack    = "alt + shift - s"
+window_equalize   = "alt + ctrl - e"
+window_balance    = "alt + shift - e"
+window_snap       = "alt - x"
+
+# --- Displays / floating layer ---
+window_nextdisplay        = "alt + ctrl - n"
+window_nextdisplaysend    = "alt + shift - n"
+mouse_nextdisplay         = "alt + ctrl + shift - n"
+window_raise_floating     = "alt - o"
+window_togglefloatlayer   = "alt + shift - o"
+
+# --- Virtual workspaces (matches AeroSpace: alt-1..9 switch, alt-shift-1..9 move & stay,
+# alt-left/right prev/next) ---
+window_virtual_north = "alt - leftarrow"
+window_virtual_south = "alt - rightarrow"
+window_virtual_first = "alt + ctrl - ,"
+window_virtual_last  = "alt + ctrl - ."
+window_virtualmove_north = "alt + ctrl + shift - k"
+window_virtualmove_south = "alt + ctrl + shift - j"
+
+window_virtualnum_1 = "alt - 1"
+window_virtualnum_2 = "alt - 2"
+window_virtualnum_3 = "alt - 3"
+window_virtualnum_4 = "alt - 4"
+window_virtualnum_5 = "alt - 5"
+window_virtualnum_6 = "alt - 6"
+window_virtualnum_7 = "alt - 7"
+window_virtualnum_8 = "alt - 8"
+window_virtualnum_9 = "alt - 9"
+
+window_virtualsendnum_1 = "alt + shift - 1"
+window_virtualsendnum_2 = "alt + shift - 2"
+window_virtualsendnum_3 = "alt + shift - 3"
+window_virtualsendnum_4 = "alt + shift - 4"
+window_virtualsendnum_5 = "alt + shift - 5"
+window_virtualsendnum_6 = "alt + shift - 6"
+window_virtualsendnum_7 = "alt + shift - 7"
+window_virtualsendnum_8 = "alt + shift - 8"
+window_virtualsendnum_9 = "alt + shift - 9"
+
+# --- App control (extra modifier to avoid accidents) ---
+restart = "alt + ctrl - r"
+quit    = "alt + ctrl + shift - q"
