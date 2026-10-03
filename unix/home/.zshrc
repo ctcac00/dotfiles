@@ -4,6 +4,19 @@
 #
 # Documentation: https://github.com/romkatv/zsh4humans/blob/v5/README.md.
 
+# Auto-enter herdr (terminal workspace manager, the tmux equivalent) on SSH
+# login. Runs before z4h init so the outer shell skips full init; herdr
+# spawns a fresh shell that inits normally inside the pane.
+#
+# - CTRL+a d  detach back to the ssh shell (server keeps running).
+# - Re-login reattaches to the same persistent session.
+#
+# Only over SSH, only from a real TTY, never when already inside herdr
+# (HERDR_ENV is set by herdr-managed panes), and only if herdr is installed.
+if [[ -n "$SSH_CONNECTION" ]] && [[ -z "$HERDR_ENV" ]] && [[ -t 0 ]] && command -v herdr >/dev/null 2>&1; then
+    exec herdr
+fi
+
 # Periodic auto-update on Zsh startup: 'ask' or 'no'.
 # You can manually run `z4h update` to update everything.
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
@@ -235,3 +248,6 @@ fi
 [[ -d "$HOME/.maestro/bin" ]] && export PATH=$PATH:$HOME/.maestro/bin
 
 c() { printf "%$(tput lines)s" | tr ' ' '\n'; printf '\033[H'; }
+
+# Flutter SDK
+export PATH="$PATH:/home/carlos/flutter/bin"
