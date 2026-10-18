@@ -238,6 +238,9 @@ elif [[ "$(uname)" == "Linux" ]]; then
   # Resend CLI
   [[ -d "$HOME/.resend/bin" ]] && export PATH="$HOME/.resend/bin:$PATH"
   [[ -f /home/carlos/.deno/env ]] && . "/home/carlos/.deno/env"
+
+  # Flutter web dev: use Brave (Chrome not installed)
+  [[ -x /usr/bin/brave ]] && export CHROME_EXECUTABLE=/usr/bin/brave
 fi
 
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
