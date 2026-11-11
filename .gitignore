@@ -12,3 +12,9 @@ unix/.config/SpeedCrunch/SpeedCrunch.ini
 .sidecar-start.sh
 .sidecar-base
 .td-root
+/unix/.config/herdr/.plugins.lock
+/unix/.config/herdr/herdr-client.log
+/unix/.config/herdr/herdr-server.log
+/unix/.config/herdr/herdr.sock.agent
+/unix/.config/herdr/session-snapshots
+/unix/.config/herdr/session.json

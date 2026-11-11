@@ -1,6 +1,4 @@
 # Taps
-tap "dbt-labs/dbt-cli"
-tap "astronomer/tap"
 tap "asmvik/formulae"
 tap "bjarneo/cliamp"
 tap "hashicorp/tap"
@@ -49,12 +47,9 @@ brew "ncdu"
 brew "neovim"
 brew "nmap"
 brew "node"
-brew "node@22"
 brew "pipx"
 brew "pnpm"
 brew "poetry"
-brew "python@3.12"
-brew "python@3.13"
 brew "qemu"
 brew "ripgrep"
 brew "rsync"
@@ -75,9 +70,6 @@ brew "zoxide"
 brew "zsh"
 
 # Custom tap formulas
-brew "dbt-labs/dbt-cli/dbt"
-brew "dbt-labs/dbt-cli/dbt-cloud-cli"
-brew "astronomer/tap/astro"
 brew "asmvik/formulae/skhd"
 brew "bjarneo/cliamp/cliamp"
 brew "hashicorp/tap/terraform"
@@ -104,7 +96,7 @@ cask "slack"
 cask "spotify"
 cask "spotmenu"
 cask "stats"
-cask "stolendata-mpv"
+cask "mpv"
 cask "telegram"
 cask "visual-studio-code"
 cask "vlc"
@@ -120,19 +112,8 @@ cask "font-monaspice-nerd-font"
 cask "font-mononoki-nerd-font"
 
 # Mac App Store
-mas "Azure VPN Client", id: 1553936137
 mas "Clocker", id: 1056643111
-mas "Glean", id: 6448766375
-mas "iMovie", id: 408981434
-mas "Jamf Trust", id: 1608041266
-mas "Keynote", id: 409183694
-mas "Microsoft Excel", id: 462058435
-mas "Numbers", id: 409203825
-mas "Okta Verify", id: 490179405
-mas "Pages", id: 409201541
-mas "Windows App", id: 1295203466
 mas "WireGuard", id: 1451685025
-mas "Xcode", id: 497799835
 
 # Not in Homebrew — install manually:
 #   claude-code:  npm install -g @anthropic-ai/claude-code

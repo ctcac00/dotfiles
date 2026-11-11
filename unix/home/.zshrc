@@ -254,3 +254,6 @@ c() { printf "%$(tput lines)s" | tr ' ' '\n'; printf '\033[H'; }
 
 # Flutter SDK
 export PATH="$PATH:/home/carlos/flutter/bin"
+
+# opencode
+export PATH=/Users/carloscastro/.opencode/bin:$PATH
