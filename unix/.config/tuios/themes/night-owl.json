@@ -1,0 +1,23 @@
+{
+  "id": "night-owl",
+  "dark": true,
+  "fg": "#d6deeb",
+  "bg": "#021727",
+  "cursor": "#80a4c2",
+  "black": "#011627",
+  "red": "#ef5350",
+  "green": "#22da6e",
+  "yellow": "#addb67",
+  "blue": "#82aaff",
+  "purple": "#c792ea",
+  "cyan": "#21c7a8",
+  "white": "#ffffff",
+  "bright_black": "#575656",
+  "bright_red": "#ef5350",
+  "bright_green": "#22da6e",
+  "bright_yellow": "#ffeb95",
+  "bright_blue": "#82aaff",
+  "bright_purple": "#c792ea",
+  "bright_cyan": "#7fdbca",
+  "bright_white": "#ffffff"
+}
