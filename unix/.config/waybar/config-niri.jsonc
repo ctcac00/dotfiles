@@ -35,27 +35,6 @@
     ],
 
     // Modules
-    "disk": {
-      "interval": 16,
-      "format": " {percentage_used}%",
-      "tooltip": "{}",
-      "tooltip-format": "Free {free}",
-      "states": {
-        "warning": 85,
-        "critical": 95,
-      },
-    },
-
-    "group/storage": {
-      "orientation": "horizontal",
-      "drawer": {
-        "transition-duration": "500",
-        "transition-left-to-right": "true",
-        "children-class": "drawer-child",
-      },
-      "modules": ["memory#ram", "memory#swap", "disk"],
-    },
-
     "group/audio": {
       "orientation": "horizontal",
       "drawer": {
@@ -75,55 +54,13 @@
         "mode-mon-col": 3,
         "on-scroll": 1,
         "format": {
-          "months": "<span color='#cba6f7'><b>{}</b></span>",
-          "days": "<span color='#cdd6f4'><b>{}</b></span>",
-          "weeks": "<span color='#94e2d5'> W{}</span>",
-          "today": "<span color='#f5e0dc'><b><u>{}</u></b></span>",
+          "months": "<span color='#c792ea'><b>{}</b></span>",
+          "days": "<span color='#d6deeb'><b>{}</b></span>",
+          "weeks": "<span color='#7efcff'> W{}</span>",
+          "today": "<span color='#ffcb6b'><b><u>{}</u></b></span>",
         },
       },
       "on-click": "brave --app=https://calendar.google.com",
-    },
-
-    "cpu": {
-      "interval": 4,
-      "format": " {usage}%",
-      "states": {
-        "warning": 80,
-        "critical": 95,
-      },
-    },
-
-    "memory#ram": {
-      "interval": 4,
-      "format": " {percentage}%",
-      "states": {
-        "warning": 80,
-        "critical": 95,
-      },
-      "tooltip": "{}",
-      "tooltip-format": "{used}/{total} GiB",
-    },
-
-    "memory#swap": {
-      "interval": 16,
-      "format": "󰾵 {swapPercentage}%",
-      "tooltip": "{}",
-      "tooltip-format": "{swapUsed}/{swapTotal}GiB",
-    },
-
-    "network#info": {
-      "interval": 2,
-      "format": "󱘖  Offline",
-      "format-wifi": "{icon} {bandwidthDownBits}",
-      "format-ethernet": "󰈀 {bandwidthDownBits}",
-      "min-length": 11,
-      "tooltip": "{}",
-      "tooltip-format-wifi": "{ifname}\n{essid}\n{signalStrength}% \n{frequency} GHz\n󰇚 {bandwidthDownBits}\n󰕒 {bandwidthUpBits}",
-      "tooltip-format-ethernet": "{ifname}\n󰇚 {bandwidthDownBits} \n󰕒 {bandwidthUpBits}",
-      "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨"],
-      "states": {
-        "normal": 25,
-      },
     },
 
     "niri/workspaces": {
@@ -132,6 +69,11 @@
 
     "niri/window": {
       "format": "{}",
+      "max-length": 50,
+      "rewrite": {
+        "(.*) [-—] Brave$": "󰖟 $1",
+        "(.*) [-—] Mozilla Firefox$": "󰈹 $1",
+      },
       "icon": true,
       "icon-size": 18,
     },
@@ -165,14 +107,6 @@
       "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
       "on-click": "pavucontrol",
       "tooltip-format": "{source_desc}",
-    },
-
-    "temperature": {
-      "critical-threshold": 90,
-      "interval": 4,
-      "format": "{icon} {temperatureC}°",
-      "format-icons": ["", "", "", "", ""],
-      "tooltip": false,
     },
 
     "tray": {
@@ -243,7 +177,7 @@
     "custom/updater": {
       "format": "{}  ",
       "exec": "checkupdates | wc -l",
-      "exec-if": "[[ $(checkupdates | wc -l) ]]",
+      "exec-if": "command -v checkupdates",
       "interval": 43200, // (Arch Linux will try to check 12 hrs interval only
       "on-click": "$HOME/.config/hypr/scripts/Update.sh",
       "tooltip": true,

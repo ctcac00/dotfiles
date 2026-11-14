@@ -74,20 +74,14 @@
 
 /* Main bar modules */ /* {{{ */
 #waybar.main #keyboard-state,
-#waybar.main #network,
 #waybar.main #clock,
-#waybar.main #cpu,
-#waybar.main #memory.swap,
-#waybar.main #memory.ram,
 #waybar.main #pulseaudio,
-#waybar.main #temperature,
 #waybar.main #tray,
 #waybar.main #window,
 #waybar.main #custom-notification,
 #waybar.main #custom-swayidle,
 #waybar.main #power-profiles-daemon,
-#waybar.main #custom-power,
-#waybar.main #disk {
+#waybar.main #custom-power {
   padding: 4px 8pt;
   background-color: transparent;
   /* Universal transition for smooth animations */
@@ -100,15 +94,6 @@
 /* }}} */
 
 /* Module colors */ /* {{{ */
-#waybar.main #cpu,
-#waybar.main #temperature,
-#waybar.main #memory.ram,
-#waybar.main #memory.swap,
-#waybar.main #disk,
-#waybar.main #network {
-  color: @night-owl-blue-accent;
-}
-
 #waybar.main #pulseaudio {
   color: @signature-purple;
 }
@@ -121,30 +106,10 @@
 #waybar.main #window {
   color: @niri-accent;
   font-style: italic;
-}
-
-#waybar.main #network.info {
-  padding: 0 10px;
-  color: @vivid-yellow;
-}
-
-#waybar.main #network.info.wifi.normal,
-#waybar.main #network.info.ethernet {
-  color: @night-owl-blue-accent;
-  padding-right: 15px;
-}
-
-#waybar.main #network.info.wifi {
-  color: @bright-red;
-  padding-right: 15px;
 } /* }}} */
 
 /* Main bar criticals */ /* {{{ */
-#waybar.main #workspaces button.urgent,
-#waybar.main #memory.swap.critical,
-#waybar.main #memory.ram.critical,
-#waybar.main #cpu.critical,
-#waybar.main #temperature.critical {
+#waybar.main #workspaces button.urgent {
   color: @bright-red;
   animation-name: pulse-critical;
   animation-duration: 0.7s;
@@ -163,12 +128,21 @@
 /* Niri Workspaces - Unique styling for Niri's scrollable workspaces */ /* {{{ */
 /* Default workspace settings */
 #waybar.main #workspaces button {
-  font-size: 12pt;
+  font-size: 11pt;
   color: @niri-accent;
   border: 1px solid @dark-gray;
-  margin: 6px 4px;
+  border-radius: 10px;
+  margin: 4px 3px;
+  padding: 0 7px;
+  min-width: 0;
+  min-height: 0;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   background-color: transparent;
+}
+
+#waybar.main #workspaces button label {
+  padding: 0;
+  margin: 0;
 }
 
 /* Active workspace - the one currently focused */
@@ -177,7 +151,6 @@
   color: @night-owl-blue;
   border-color: @niri-accent;
   font-weight: bold;
-  padding: 0 8px;
   box-shadow: 0 0 8px rgba(137, 221, 255, 0.4);
 }
 
