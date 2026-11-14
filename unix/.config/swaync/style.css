@@ -1,4 +1,4 @@
-@define-color cc-bg               rgba(1, 22, 39, 0.95); /* #011627 @ 70% */
+@define-color cc-bg               rgba(1, 22, 39, 0.85); /* #011627 @ 85% */
 @define-color noti-border-color  rgba(214, 222, 235, 0.15); /* #d6deeb @ 15% */
 @define-color noti-bg            rgba(1, 22, 39, 0.8); /* #011627 @ 80% */
 @define-color noti-bg-opaque     rgb(1, 22, 39); /* #011627 */
@@ -610,4 +610,96 @@
 
 .widget-inhibitors > button:hover {
   background: @noti-bg-hover;
+}
+
+/*** Stand-out overrides (Night Owl + niri accent) ***/
+@define-color accent        #89ddff;
+@define-color accent-border rgba(137, 221, 255, 0.35);
+@define-color card-bg       rgba(11, 41, 66, 0.85); /* #0b2942 @ 85% */
+@define-color urgent        #ff5370;
+@define-color low-gray      #5c6370;
+
+/* Panel: opaque, bordered, lifted */
+.control-center {
+  background: @cc-bg;
+  border: 1px solid @accent-border;
+  border-radius: 12px;
+  margin: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* Cards: lighter than panel, visible border, urgency stripe */
+.notification-row .notification-background .notification {
+  background: @card-bg;
+  border: 1px solid rgba(137, 221, 255, 0.25);
+}
+
+.notification-row .notification-background .notification.low {
+  border-color: rgba(92, 99, 112, 0.5);
+}
+
+.notification-row .notification-background .notification.normal {
+  border-color: rgba(137, 221, 255, 0.25);
+}
+
+.notification-row .notification-background .notification.critical {
+  border-color: rgba(255, 83, 112, 0.6);
+}
+
+/* Text hierarchy */
+.notification-row .notification-background .notification .summary {
+  color: @accent;
+  font-weight: bold;
+}
+
+.notification-row .notification-background .notification .body {
+  color: @text-color;
+}
+
+.notification-row .notification-background .notification .time {
+  color: @text-color-disabled;
+}
+
+/* Popups (toasts): stronger glow + edge margin */
+.floating-notifications {
+  padding: 4px;
+}
+
+.floating-notifications .notification {
+  box-shadow: 0 0 12px rgba(137, 221, 255, 0.25), 0 6px 20px rgba(0, 0, 0, 0.5);
+  margin: 6px 10px;
+}
+
+.floating-notifications .notification.critical {
+  box-shadow: 0 0 14px rgba(255, 83, 112, 0.35), 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* DND switch visible */
+.widget-dnd > switch {
+  background: @card-bg;
+  border: 1px solid @accent-border;
+}
+
+.widget-dnd > switch:checked {
+  background: @accent;
+}
+
+.widget-dnd > switch slider {
+  background: @text-color;
+}
+
+.widget-dnd > switch:checked slider {
+  background: @cc-bg;
+}
+
+/* Clear All button */
+.widget-title > button {
+  background: @card-bg;
+  border: 1px solid @accent-border;
+}
+
+.widget-title > button:hover {
+  background: @noti-bg-hover;
+  border-color: @accent;
+  color: @accent;
 }
