@@ -646,6 +646,32 @@
   border-color: rgba(255, 83, 112, 0.6);
 }
 
+/* Selected notification: highlighted background + rounded accent border.
+   Selection state unknown for swaync 0.12, so cover :selected, :focus and :focus-within. */
+.notification-row:selected,
+.notification-row:focus-within,
+.notification-row:focus {
+  background: transparent;
+}
+
+/* Grey wrapper behind the card: make transparent so the highlight shows */
+.notification-row .notification-background,
+.control-center-list row,
+.control-center-list > row {
+  background: transparent;
+  background-color: transparent;
+}
+
+.notification-row:selected .notification-background .notification,
+.notification-row:focus-within .notification-background .notification,
+.notification-row:focus .notification-background .notification,
+.notification-row .notification-background .notification:focus,
+.notification-row .notification-background .notification:focus-within {
+  background: rgba(9, 71, 113, 0.45); /* #094771 @ 45% */
+  border: 1px solid @accent;
+  border-radius: 12px;
+}
+
 /* Text hierarchy */
 .notification-row .notification-background .notification .summary {
   color: @accent;
