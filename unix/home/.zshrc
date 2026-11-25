@@ -190,6 +190,11 @@ if [[ "$(uname)" == "Darwin" ]]; then
   # Go binaries
   [[ -d "$HOME/go/bin" ]] && export PATH="$HOME/go/bin:$PATH"
 
+  # Rust: Homebrew rustup is keg-only, so expose its proxies (cargo, rustc).
+  # ~/.cargo/bin holds binaries from `cargo install`.
+  [[ -d /opt/homebrew/opt/rustup/bin ]] && export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
+  [[ -d "$HOME/.cargo/bin" ]] && export PATH="$HOME/.cargo/bin:$PATH"
+
   # Android CLI dev setup (Android Studio not installed).
   # Guarded so Macs without the SDK don't emit errors on shell startup.
   if [[ -d "$HOME/Library/Android/sdk" ]]; then
